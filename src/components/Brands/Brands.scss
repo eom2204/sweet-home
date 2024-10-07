@@ -1,0 +1,22 @@
+.brands {
+  display: block;
+
+  &__list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
+    &-item {
+      list-style-type: none;
+    }
+
+    &-link {
+      text-decoration: none;
+    }
+
+    &-image {
+      width: 100%;
+    }
+  }
+}
+

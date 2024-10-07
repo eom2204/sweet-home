@@ -1,0 +1,38 @@
+.burger-menu {
+
+  position: relative;
+
+  &__btn {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    @media screen and (max-width: 850px) {
+      display: block;
+    }
+  }
+
+  &__list {
+
+    &-wrapper {
+      background-color: #E5E5E5;
+      padding: 20px;
+      width: 150px;
+
+      position: absolute;
+      top: 120%;
+      right: 0;
+      z-index: 100;
+    }
+
+    &-item {
+      cursor: pointer;
+      margin-bottom: 5px;
+    }
+
+    &-link {
+      text-decoration: none;
+    }
+  }
+}
