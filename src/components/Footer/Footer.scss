@@ -1,0 +1,67 @@
+@import "../../styles/variables";
+
+.footer {
+  background-color: $color-background-black;
+
+  &-container {
+    color: $color-text-gray;
+    font-family: $font-primary;
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 75px 56px;
+
+    &__logo {
+      display: block;
+      max-width: 100%;
+      max-height: 107px;
+    }
+
+    &__title {
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 33.89px;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+
+    &__list {
+
+      &-item {
+        color: $color-text-gray;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21.78px;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+        text-align: left;
+
+        &--link {
+          color: $color-text-gray;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &__socials {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__copyright {
+    background-color: $color-background-copyright;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+
+    &--text {
+      color: $color-text-white;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 21.78px;
+      letter-spacing: 0.02em;
+    }
+  }
+}

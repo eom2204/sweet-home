@@ -1,0 +1,58 @@
+@import '../../../styles/variables';
+
+
+.main-nav {
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    max-height: 300px;
+    align-items: center;
+    text-transform: uppercase;
+    list-style-type: none;
+    gap: 70px;
+
+    @media screen and (max-width: $desktop-start) {
+      gap: 25px;
+    }
+
+    @media screen and (max-width: $tablet-start) {
+      background: $color-background-black;
+      color: $color-text-gray;
+      display: block;
+      list-style: none;
+      padding-top: 3rem;
+      position: fixed;
+      transform: translateY(-100%);
+      transition: transform 0.2s;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 99;
+    }
+
+    &-item {
+      @media screen and (max-width: $tablet-start) {
+        display: block;
+        margin: 2rem 4rem;
+        font-size: 1.8rem;
+        color: $color-text-gray;
+        text-decoration: none;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $color-text-gray;
+      transition: all 300ms ease-in-out;
+
+      &.active {
+        color: $color-button-main;
+      }
+    }
+  }
+}

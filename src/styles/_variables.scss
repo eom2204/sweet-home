@@ -1,0 +1,35 @@
+//fonts
+$font-primary: 'Inter', sans-serif;
+//$font-secondary: 'Open Sans', sans-serif;
+//$font-nav: 'Source Sans Pro', sans-serif;
+
+// Font sizes
+//$font-size-base: 16px;
+//$font-size-large: 24px;
+
+//colors
+$color-background-main: rgba(201, 205, 214, 1);
+$color-background-adv: rgba(78, 84, 88, 1);
+$color-background-black: rgba(29, 29, 29, 1);
+$color-background-copyright:rgba(136, 70, 38, 1);
+
+$color-button-main: rgba(255, 111, 24, 1);
+$color-button-hover: rgba(255, 141, 71, 1);
+
+$color-text-white: rgba(255, 255, 255, 1);
+$color-text-gray: rgba(201, 205, 214, 1);
+$color-text-black: rgba(0, 0, 0, 1);
+$color-element-white: rgba(255, 255, 255, 0.4);
+$color-element-brown: rgba(66, 47, 33, 1);
+
+
+
+//width
+$max-content-width: 1272px;
+
+//breakpoints
+$desktop-start: 1024px;
+$tablet-end: $desktop-start - 1;
+$tablet-start: 850px;
+$mobile-end: $tablet-start - 1;
+$mobile-start: 600px;

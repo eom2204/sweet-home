@@ -1,23 +1,50 @@
-import './Brands.scss';
 
-import logo_1 from '../../assets/logo_1.png'
+
+import {useEffect, useState} from "react";
+import axios from "axios";
+import {Box} from "@mui/material";
+
 
 function Brands() {
 
+    const [brands, setBrands] = useState([]);
+
+    // Fetch brands from backend on component mount
+    useEffect(() => {
+        const fetchBrands = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/api/brands');
+                if (response && response.data) {
+                    setBrands(response.data); // response is an array of brand objects
+                }
+            } catch (error) {
+                console.error('Error fetching brands:', error);
+            }
+        };
+
+        fetchBrands();
+    }, []);
+
+    // Check if there are any brands to display
+    if (!brands.length) {
+        return <p>Loading banners...</p>;
+    }
+
+
     return(
-        <section className="brands">
-            <h2 className="brands__title">
+        <Box sx={{textAlign:"center", paddingX:"5.25rem", marginBottom: "9.5rem"}}>
+            <h1>
                 Brands
-            </h2>
-                <ul className="brands__list">
-                    <li className="brands__list-item"><a className="brands__list-link" href=""><img className="brands__list-image" src={logo_1} alt=""/></a></li>
-                    <li className="brands__list-item"><a className="brands__list-link" href=""><img className="brands__list-image" src={logo_1} alt=""/></a></li>
-                    <li className="brands__list-item"><a className="brands__list-link" href=""><img className="brands__list-image" src={logo_1} alt=""/></a></li>
-                    <li className="brands__list-item"><a className="brands__list-link" href=""><img className="brands__list-image" src={logo_1} alt=""/></a></li>
-                    <li className="brands__list-item"><a className="brands__list-link" href=""><img className="brands__list-image" src={logo_1} alt=""/></a></li>
-                    <li className="brands__list-item"><a className="brands__list-link" href=""><img className="brands__list-image" src={logo_1} alt=""/></a></li>
-                </ul>
-        </section>
+            </h1>
+            <Box sx={{display: "flex", justifyContent: "space-between", gap: "3.8rem", marginTop: "46px"}}>
+                {brands.map((brand) => (
+                    <Box key={brand.id}>
+                        <img src={`http://localhost:5000/public/${brand.images}`} alt="brand"
+                             style={{width: '100%'}}/>
+                    </Box>
+                ))}
+            </Box>
+        </Box>
     )
 }
 

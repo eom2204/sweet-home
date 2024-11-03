@@ -1,14 +1,13 @@
+@import "../../styles/variables";
+
 .categories {
   display: block;
+  padding-left: 84px;
+  padding-right: 84px;
+  max-width: &max-content-width + 168px;
 
   &__title {
-    font-family: 'Delius Unicase', cursive;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 45px;
     text-align: center;
-    letter-spacing: 0.05em;
-    color: #000000;
     margin-top: 20px;
     margin-bottom: 20px;
   }

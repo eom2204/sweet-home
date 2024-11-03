@@ -1,0 +1,54 @@
+@import '../../styles/variables.scss';
+
+.about {
+
+  font-family: $font-primary;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29.64px;
+  letter-spacing: 1px;
+  text-align: center;
+
+  padding-left: 84px;
+  padding-right: 84px;
+  max-width: &max-content-width + 168px;
+
+  &__title {
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 44px;
+      text-align: center;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $color-text-black;
+    }
+
+    &__img {
+      width: 100%;
+      max-width: 160px;
+      margin-bottom: 24px;
+    }
+
+    &__title {
+    }
+  }
+
+  &__content {
+    text-align: left;
+
+    &__text {
+      margin-bottom: 24px;
+    }
+  }
+}
