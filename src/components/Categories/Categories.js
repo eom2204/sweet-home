@@ -20,14 +20,13 @@ function Categories() {
     if (status === 'failed') return <div>Error: {error}</div>;
 
     return (
-        <section className="categories">
-            <h1 className="categories__title">Categories</h1>
-            <ul>
+        <div className="categories">
+            <ul className="categories__list">
                 {categories.map(category => (
                     <li key={category.id}>{category.name}</li>
                 ))}
             </ul>
-        </section>
+        </div>
 
         // <section className="categories">
         //     <h2 className="categories__title">

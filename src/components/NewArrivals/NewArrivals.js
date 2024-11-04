@@ -1,96 +1,46 @@
 import './NewArrivals.scss';
 
-import { useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import { Box, Typography, Button, Card, CardMedia, CardContent } from '@mui/material';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import {useMediaQuery} from "@mui/system";
+import {fetchGoods} from "../../features/slices/productsSlice";
+import {useEffect} from "react";
+
 
 const NewArrivals = () => {
-    //Test
 
-        const products = [
-            {
-                id: 1,
-                name: 'Product 1',
-                description: 'Description for Product 1',
-                price: 29.99,
-                image: 'https://via.placeholder.com/150x150?text=Product+1',
-                arrivalDate: '2024-10-01',
-            },
-            {
-                id: 2,
-                name: 'Product 2',
-                description: 'Description for Product 2',
-                price: 29.0,
-                image: 'https://via.placeholder.com/150x150?text=Product+2',
-                arrivalDate: '2024-10-02',
-            },
-            {
-                id: 3,
-                name: 'Product 3',
-                description: 'Description for Product 3',
-                price: 26.90,
-                image: 'https://via.placeholder.com/150x150?text=Product+3',
-                arrivalDate: '2023-09-21',
-            },
-            {
-                id: 4,
-                name: 'Product 4',
-                description: 'Description for Product 4',
-                price: 9.99,
-                image: 'https://via.placeholder.com/150x150?text=Product+3',
-                arrivalDate: '2024-10-02',
-            },
-            {
-                id: 5,
-                name: 'Product 5',
-                description: 'Description for Product 5',
-                price: 890.99,
-                image: 'https://via.placeholder.com/150x150?text=Product+4',
-                arrivalDate: '2024-10-05',
-            },
-            {
-                id: 6,
-                name: 'Product 6',
-                description: 'Description for Product 6',
-                price: 2.99,
-                image: 'https://via.placeholder.com/150x150?text=Product+5',
-                arrivalDate: '2024-10-05',
-            },
-            {
-                id: 7,
-                name: 'Product 7',
-                description: 'Description for Product 7',
-                price: 19.99,
-                image: 'https://via.placeholder.com/150x150?text=Product+6',
-                arrivalDate: '2024-10-01',
-            },
-            {
-                id: 8,
-                name: 'Product 8',
-                description: 'Description for Product 8',
-                price: 8.99,
-                image: 'https://via.placeholder.com/150x150?text=Product+7',
-                arrivalDate: '2024-10-04',
-            },
-
-        ];
-
-
-
-    // Get products from Redux store and filter the 6 newest products by arrival date
-    //const products = useSelector((state) => state.products);
-    const newArrivals = [...products].sort((a, b) => new Date(b.arrivalDate) - new Date(a.arrivalDate)).slice(0, 6);
-
+    // Access goods data from Redux store
+    const dispatch = useDispatch();
+    const {goods, status, error} = useSelector((state) => state.goods);
     // Settings for the carousel
     const isLargeScreen = useMediaQuery('(min-width:1024px)');
     const isMediumScreen = useMediaQuery('(min-width:600px)');
 
+    useEffect(() => {
+        if (status === 'idle') {
+            dispatch(fetchGoods());
+        }
+    }, [status, dispatch]);
+
+    if (status === 'loading') return <div>Loading...</div>;
+    if (status === 'failed') return <div>Error: {error}</div>;
+
+    // Check if goods is defined and is an array
+    if (!goods || !Array.isArray(goods)) {
+        return <div>Loading...</div>;  // Show loading state or an empty message
+    }
+
+    // Get products from Redux store and filter the 6 newest products by arrival date
+    //const products = useSelector((state) => state.goods);
+    const newArrivals = [...goods].sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)).slice(0, 10);
+
+
     const settings = {
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: isLargeScreen ? 3 : isMediumScreen ? 2 : 1,
         slidesToScroll: 1,
@@ -106,9 +56,9 @@ const NewArrivals = () => {
                 flexDirection: isMediumScreen ? 'row' : 'column',
                 justifyContent: 'flex-start',
                 alignItems: isMediumScreen ? 'flex-start' : 'center',
-                paddingLeft: '84px',
-                paddingRight: '84px',
-                maxWidth: '1440',
+                //paddingLeft: '84px',
+                //paddingRight: '84px',
+                //maxWidth: '1440',
             }}
         >
             {/* Left Side: Title and Button */}
@@ -120,6 +70,7 @@ const NewArrivals = () => {
                     variant="outlined"
                     size="large"
                     sx={{ mt: '48px', position: 'absolute', left: 0, bottom: 0 }}
+                    className="button"
                 >
                     SEE MORE
                 </Button>
@@ -152,16 +103,17 @@ const NewArrivals = () => {
                                     display: 'flex',
                                     flexDirection: 'row', // Ensure row alignment
                                     width: '100%', // Set width to fill container
-                                    maxWidth: '350px', // Optional max width to keep the items compact
+                                    maxWidth: '202px', // Optional max width to keep the items compact
                                     margin: '0 24px',
+                                    maxHeight: '248px',
                                     boxShadow: 'none',
                                     background: 'transparent',
                                 }}
                             >
                                 <CardMedia
                                     component="img"
-                                    sx={{ width: '50%', objectFit: 'contain', marginRight: '24px' }}
-                                    image={product.image}
+                                    sx={{ width: '100%', objectFit: 'cover'}}
+                                    image={`http://localhost:5000/public/${product.images?.[0]}`}
                                     alt={product.name}
                                 />
                                 <CardContent

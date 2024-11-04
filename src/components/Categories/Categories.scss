@@ -1,16 +1,18 @@
 @import "../../styles/variables";
 
 .categories {
-  display: block;
-  padding-left: 84px;
-  padding-right: 84px;
-  max-width: &max-content-width + 168px;
+  margin-bottom: 10rem;
+  //display: block;
+  //padding-left: 84px;
+  //padding-right: 84px;
+  //max-width: &max-content-width + 168px;
 
-  &__title {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
+
 
   &__img {
     width: 100%;
