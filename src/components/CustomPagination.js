@@ -22,7 +22,7 @@ function CustomPagination({count, page, onChange}) {
                 <ArrowButton
                     onClick={() => onChange(null, Math.max(page - 1, 1))}
                     aria-label="Previous page"
-                    sx={{marginRight: "36px"}}
+                    sx={{marginRight: {xs: "10px", sm: "10px", md: "36px"}}}
                 >
                     <LeftArrowIcon/>
                 </ArrowButton>
@@ -106,7 +106,7 @@ function CustomPagination({count, page, onChange}) {
                 <ArrowButton
                     onClick={() => onChange(null, Math.min(page + 1, count))}
                     aria-label="Next page"
-                    sx={{marginLeft: "36px"}}
+                    sx={{marginLeft: {xs: "10px", sm: "10px", md: "36px"}}}
                 >
                     <RightArrowIcon/>
                 </ArrowButton>

@@ -28,8 +28,6 @@ $color-element-brown: rgba(66, 47, 33, 1);
 $max-content-width: 1272px;
 
 //breakpoints
-$desktop-start: 1024px;
-$tablet-end: $desktop-start - 1;
-$tablet-start: 850px;
-$mobile-end: $tablet-start - 1;
-$mobile-start: 600px;
+$large-screen--start: 1200px;
+$tablet-end: 900px;
+$mobile-end: 600px;

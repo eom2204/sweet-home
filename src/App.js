@@ -14,9 +14,29 @@ import ProfileLayout from "./components/ProfileLayout";
 import FavouritesPage from "./pages/FavouritesPage";
 import CartPage from "./pages/CartPage";
 import {childrenRoutes} from "./components/MainRoute";
+import {createTheme} from "@mui/system";
+import {ThemeProvider} from "@mui/styles";
 
 
 function App() {
+
+    const theme = createTheme({
+        typography: {
+            fontFamily: 'Inter, sans-serif',
+            h1: {
+                fontFamily: 'Inter, sans-serif',
+            },
+            h2: {
+                fontFamily: 'Inter, sans-serif',
+            },
+            h3: {
+                fontFamily: 'Inter, sans-serif',
+            },
+            h4: {
+                fontFamily: 'Inter, sans-serif',
+            },
+        },
+    });
 
 
     const router = createBrowserRouter([
@@ -55,7 +75,10 @@ function App() {
     )
 
     return (
+        <ThemeProvider theme={theme}>
             <RouterProvider router={router}/>
+        </ThemeProvider>
+
     );
 }
 

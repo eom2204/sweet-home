@@ -1,14 +1,28 @@
 import './Categories.scss';
 
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import {fetchCategories} from "../../features/slices/categoriesSlice";
 import {useDispatch, useSelector} from "react-redux";
+import {makeStyles} from "@mui/styles";
 
+
+const useStyles = makeStyles((theme) => ({
+    row: {
+        display: 'grid',
+        gridTemplateColumns: '1fr 2fr 1.5fr'
+    },
+    underRow: {
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr'
+    }
+}))
 
 function Categories() {
+    const cl = useStyles();
 
     const dispatch = useDispatch();
     const {categories, status, error} = useSelector((state) => state.categories);
+
 
     useEffect(() => {
         if (status === 'idle') {
@@ -19,14 +33,54 @@ function Categories() {
     if (status === 'loading') return <div>Loading...</div>;
     if (status === 'failed') return <div>Error: {error}</div>;
 
-    return (
-        <div className="categories">
-            <ul className="categories__list">
-                {categories.map(category => (
-                    <li key={category.id}>{category.name}</li>
+
+    // Grid
+
+    const images = [
+        { src: '../../assets/example_image.png', title: 'Image 1' },
+        { src: '../../assets/example_image.png', title: 'Image 2' },
+        { src: '../../assets/example_image.png', title: 'Image 3' },
+        { src: '../../assets/example_image.png', title: 'Image 4' },
+        { src: '../../assets/example_image.png', title: 'Image 5' },
+    ];
+
+    function splitArray(arr) {
+        return arr.reduce((acu, _, index) => {
+            if (index % 5 === 0) {
+                acu.push(arr.slice(index, index + 3));
+            } else if (index % 5 === 3) {
+                acu.push(arr.slice(index, index + 2));
+            }
+            return acu;
+        }, []);
+    }
+
+
+return (
+    <div className="categories">
+        {splitArray(images).map((row, i) => (
+            <div key={i} className={row.length === 3 ? cl.row : cl.underRow}>
+                {row.map((item, idx) => (
+                    <div key={idx} className={cl.imageWrapper}>
+                        <img src={item.src} alt={item.title} className="categories__img"/>
+                        <div className="categories__img--title">{item.title}</div>
+                    </div>
                 ))}
-            </ul>
-        </div>
+            </div>
+        ))}
+    </div>)
+
+    // return (
+    //     <div className="categories">
+    //         <ul className="categories__list">
+    //             {categories.map(category => (
+    //                 <li key={category.id}>{category.name}</li>
+    //             ))}
+    //         </ul>
+    //     </div>
+
+
+
 
         // <section className="categories">
         //     <h2 className="categories__title">
@@ -117,7 +171,6 @@ function Categories() {
         //         </div>
         //     </div>
         // </section>
-    );
 }
 
 export default Categories;

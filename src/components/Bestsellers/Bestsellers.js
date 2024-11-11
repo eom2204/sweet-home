@@ -1,15 +1,16 @@
-import './Bestsellers.scss';
-
-import React, {useEffect, useState} from 'react';
-import {Box, Pagination, Typography} from '@mui/material';
+import {useEffect, useState} from 'react';
+import {Box, Typography, useMediaQuery} from '@mui/material';
 import {useNavigate} from "react-router-dom";
 import Grid from '@mui/material/Grid2';
 import {useDispatch, useSelector} from "react-redux";
 import {fetchGoods} from "../../features/slices/productsSlice";
 import CustomPagination from "../CustomPagination";
+import {useTheme} from "@mui/styles";
 
 
 function Bestsellers() {
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // Checks if screen is smaller than 600px
 
     const [page, setPage] = useState(1);
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ function Bestsellers() {
     // Access goods data from Redux store
     const dispatch = useDispatch();
     const {goods, status, error} = useSelector((state) => state.goods);
+
 
     useEffect(() => {
         if (status === 'idle') {
@@ -35,9 +37,6 @@ function Bestsellers() {
     // Filter for food items that are bestsellers
     const bestsellers = goods.filter(item => item.bestsellers);
 
-    console.log(bestsellers);
-
-
     const handleProductClick = (productId) => {
         navigate(`/product/${productId}`);
     };
@@ -46,57 +45,65 @@ function Bestsellers() {
     //     navigate(`/category/${bestsellers.categoryId}`);
     // };
 
+    //Pagination
+    const itemsPerPage = isSmallScreen ? 2 : 3;
+    const pageCount = Math.ceil(bestsellers.length / itemsPerPage);
+
+    // Get the items for the current page
+    const paginatedItems = bestsellers.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+
     const handlePageChange = (event, value) => {
         setPage(value);
     };
 
+
     return (
         <Box sx={{
-            display: 'flex', gap: '55px', maxWidth: '1440', marginBottom: "10rem"
+            display: 'flex', gap: '55px', alignItems: "stretch", maxWidth: '1440', marginBottom: "10rem"
         }}>
             {/* Left: Category Image */}
             <Box
                 flex="1"
-                display="flex"
                 alignItems="center"
                 justifyContent="center"
                 sx={{
-                    backgroundColor: 'grey.200', // for visibility
                     height: {xs: '200px', sm: 'auto'},
-                    minHeight: {sm: '300px'}, // Ensure a minimum height
+                    minHeight: {sm: '250px'},
                     cursor: 'pointer',
-                    //width: '40%'
+                    display: {xs: "none", sm: "none", md: "flex"}
                 }}>
                 <img src={`http://localhost:5000/public/${bestsellers?.[0]?.images?.[0]}`} alt="bestsellers"
-                     style={{maxWidth: '100%', objectFit: "cover", maxHeight: '100%',}}
+                     style={{width: '100%', objectFit: "cover", height: '100%', maxWidth: '523px', maxHeight:'462px'}}
                 />
             </Box>
 
             {/* Right: Product Carousel */}
-            <Box width="60%">
+            <Box sx={{textAlign: 'center', width: {xs: "100%", sm: "100%", md: "60%"}, marginY: '0'}}>
                 {/* Title and Pagination*/}
-                <Box display="flex" alignItems="center" sx={{gap: "3.4rem", marginBottom: "40px"}}>
+                <Box display="flex" sx={{gap: "20px", justifyContent: "space-between", marginBottom: "40px"}}>
                     <Typography variant="h4" fontWeight="bold">
                         Bestsellers
                     </Typography>
                     <CustomPagination
-                        count={Math.ceil(bestsellers.length / 3)}
+                        count={pageCount}
                         page={page}
                         onChange={handlePageChange}
                     />
                 </Box>
 
-                {/* Product Grid - 3 items in one row */}
-                <Grid container spacing={3} sm={6} md={4}>
-                    {bestsellers.slice((page - 1) * 3, page * 3).map((product) => (
-                        <Grid key={product.id} sm={6} md={4}>
-                            <Box sx={{maxWidth: '202px'}}>
+                {/* Product Grid */}
+                <Grid container spacing={2} justifyContent="space-between">
+                    {paginatedItems.map((product) => (
+                        <Grid item key={product.id} sx={{width: {xs: "47%", sm: "47%", md: "31%"}}}
+                        >
+                            <Box>
                                 <Box
                                     component="img"
                                     src={`http://localhost:5000/public/${product.images?.[0]}`}
                                     alt={product.name}
                                     sx={{
                                         width: '100%',
+                                        maxWidth: '202px',
                                         height: '248px',
                                         cursor: 'pointer',
                                         objectFit: 'cover',
@@ -105,11 +112,11 @@ function Bestsellers() {
                                     onClick={() => handleProductClick(product.id)}
                                 />
                                 {/* Product Details */}
-                                <Box>
-                                    <Typography variant="h6">{product.name}</Typography>
-                                    {/*<Typography variant="body2">{product.description}</Typography>*/}
-                                    <Typography variant="subtitle1" fontWeight="bold">
-                                        {product.price}
+                                <Box marginBottom="0">
+                                    <Typography variant="h6" fontWeight="bold">{product.name}</Typography>
+                                    <Typography variant="body2">{product.group}</Typography>
+                                    <Typography variant="subtitle1">
+                                        ${product.price}
                                     </Typography>
                                 </Box>
                             </Box>

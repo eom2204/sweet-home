@@ -17,12 +17,20 @@
     justify-content: space-around;
     align-items: center;
     list-style-type: none;
+    flex-wrap: wrap;
 
     &__item {
+      align-items: center;
+      justify-content: center;
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       margin-bottom: 44px;
       text-align: center;
+      flex-basis: 25%; /* Default: 4 items per row */
+
+      @media (max-width: 600px) {
+        flex-basis: 50%; /* 2 items per row */
+      }
     }
 
     &__link {

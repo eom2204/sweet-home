@@ -1,14 +1,16 @@
-import './Popular.scss';
-import React, {useEffect, useState} from 'react';
-import {Box, CssBaseline, extendTheme, Pagination, Typography} from '@mui/material';
+import {useEffect, useState} from 'react';
+import {Box, Typography, useMediaQuery} from '@mui/material';
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchGoods} from "../../features/slices/productsSlice";
 import Grid from "@mui/material/Grid2";
 import CustomPagination from "../CustomPagination";
+import {useTheme} from "@mui/styles";
 
 
 function Popular() {
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // Checks if screen is smaller than 600px
 
     const [page, setPage] = useState(1);
     const navigate = useNavigate();
@@ -34,25 +36,26 @@ function Popular() {
     // Filter for food items that are bestsellers
     const popularGoods = goods.filter(item => item.popularAnalyses);
 
+    const handleProductClick = (productId) => {
+        navigate(`/product/${productId}`);
+    };
 
-    const itemsPerPage = 6; // Set items per page to 6
+    //Pagination
+    const itemsPerPage = isSmallScreen ? 4 : 6; // Set items per page to 6
     const pageCount = Math.ceil(popularGoods.length / itemsPerPage);
 
     // Get the items for the current page
     const paginatedItems = popularGoods.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
-    const handleProductClick = (productId) => {
-        navigate(`/product/${productId}`);
-    };
-
     const handlePageChange = (event, value) => {
         setPage(value);
     };
 
+
     return (
 
             <Box sx={{
-                display: 'flex', gap: '55px', maxWidth: '1440', marginBottom: "10rem"
+                display: 'flex', gap: '55px', alignItems: "stretch", maxWidth: '1440', marginBottom: "10rem"
             }}>
                 {/* Left: Category Image */}
                 <Box
@@ -61,39 +64,40 @@ function Popular() {
                     alignItems="center"
                     justifyContent="center"
                     sx={{
-                        backgroundColor: 'grey.200', // for visibility
                         height: {xs: '200px', sm: 'auto'},
-                        minHeight: {sm: '300px'}, // Ensure a minimum height
-                    }}>
+                        minHeight: {sm: '250px'}, // Ensure a minimum height
+                        cursor: 'pointer',
+                        display: {xs: "none", sm: "none", md: "flex"}
+                }}>
                     <img src={`http://localhost:5000/public/${popularGoods?.[0]?.images?.[0]}`} alt="popular goods"
-                         style={{maxWidth: '100%', objectFit: "cover", maxHeight: '100%',}}
+                         style={{width: '100%', objectFit: "cover", height: '100%', maxWidth: '523px'}}
                     />
                 </Box>
-                {/*// sx={{width: "40%"}}>*/}
 
                 {/* Right: Product Carousel */
                 }
-                <Box sx={{textAlign: 'center', mt: 4, mb: 4, width: "60%", marginY: '0'}}>
+                <Box sx={{textAlign: 'center', width: {xs: "100%", sm: "100%", md: "60%"}, marginY: '0'}}>
                     {/* Title and Pagination*/}
-                    <Box sx={{display: 'flex', justifyContent: 'space between', alignItems: 'center', gap: '20px', marginBottom: "40px"}}>
+                    <Box display="flex" sx={{justifyContent: 'space-between', gap: '20px', marginBottom: "40px"}}>
                         <Typography variant="h4" fontWeight="bold">Popular</Typography>
                         <CustomPagination
-                            count={Math.ceil(popularGoods.length / 3)}
+                            count={pageCount}
                             page={page}
                             onChange={handlePageChange}
                         />
                     </Box>
 
-                    {/* Product Grid - 3 items in one row */}
-                    <Grid container spacing={2}>
+                    {/* Product Grid */}
+                    <Grid container spacing={2} justifyContent="space-between">
                         {paginatedItems.map((product) => (
-                            <Grid size={3} key={product.id} sx={{width: '30%'}}>
+                            <Grid item sx={{width: {xs: "47%", sm: "47%", md: "31%"}}}>
                                 <Box
                                     component="img"
                                     src={`http://localhost:5000/public/${product.images?.[0]}`}
                                     alt={product.name}
                                     sx={{
                                         width: '100%',
+                                        maxWidth: '202px',
                                         height: '248px',
                                         cursor: 'pointer',
                                         objectFit: 'cover',
@@ -102,11 +106,11 @@ function Popular() {
                                     onClick={() => handleProductClick(product.id)}
                                 />
                                 <Box>
-                                    <Typography variant="h6" sx={{fontWeight: 'bold'}}>{product.name}</Typography>
-                                    {/*<Typography variant="body2" color="text.secondary" sx={{my: 1}}>*/}
-                                    {/*    {product.description}*/}
-                                    {/*</Typography>*/}
-                                    <Typography variant="subtitle1" color="primary">${product.price}</Typography>
+                                    <Typography variant="h6" fontWeight="bold">{product.name}</Typography>
+                                    <Typography variant="body2">
+                                        {product.group}
+                                    </Typography>
+                                    <Typography variant="subtitle1">${product.price}</Typography>
                                 </Box>
                             </Grid>
                         ))}

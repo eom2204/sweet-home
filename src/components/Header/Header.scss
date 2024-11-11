@@ -5,6 +5,10 @@
   &__logo {
     display: inline-block;
     max-height: 80px;
+
+    @media screen and (max-width: $mobile-end) {
+      max-height: 56px;
+    }
   }
 
   &__menu {
@@ -28,8 +32,9 @@
       margin: 0 auto;
       padding: 20px;
 
-      @media screen and (max-width: $tablet-start) {
-        justify-content: space-around;
+
+      @media screen and (max-width: $tablet-end) {
+        justify-content: space-between;
       }
     }
   }
@@ -76,6 +81,15 @@
 
     &-text {
       color: $color-text-white;
+
+      @media screen and (max-width: $mobile-end) {
+        font-family: Helvetica;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 120%; /* 14.4px */
+        letter-spacing: 1px;
+      }
     }
   }
 }
