@@ -2,26 +2,35 @@
 
 .header {
 
+  background-color: $color-background-black;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 5;
+
+  &__container {
+    display: block;
+    position: relative;
+
+
+    @media screen and (max-width: $tablet-end) {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+  }
+
   &__logo {
     display: inline-block;
+    margin-left: -10px;
     max-height: 80px;
 
-    @media screen and (max-width: $mobile-end) {
+    @media screen and (max-width: $tablet-end) {
       max-height: 56px;
     }
   }
 
   &__menu {
-    background-color: $color-background-black;
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 5;
-
-    //@media screen and (max-width: $desktop-start) {
-    //  //padding-left: 20px;
-    //  //padding-right: 20px;
-    //}
 
     &--wrapper {
       display: flex;
@@ -29,22 +38,22 @@
       flex-wrap: nowrap;
       justify-content: space-between;
       max-width: $max-content-width;
-      margin: 0 auto;
       padding: 20px;
 
 
       @media screen and (max-width: $tablet-end) {
         justify-content: space-between;
+        padding-top: 30px;
+        padding-bottom: 10px;
       }
     }
   }
 
-
-
   &__icons {
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
     cursor: pointer;
-    display: flex;
     gap: 27px;
     -webkit-user-select: none;
     user-select: none;
@@ -72,18 +81,40 @@
     }
   }
 
+  &__search {
+
+    &--large-screen {
+      display: block;
+
+      @media screen and (max-width: $tablet-end) {
+        display: none;
+      }
+    }
+
+    &--small-screen {
+      display: none;
+
+      @media screen and (max-width: $tablet-end) {
+        display: block;
+      }
+    }
+  }
+
   &__sale {
     background-color: $color-background-adv;
     padding: 20px;
-    margin-top: 24px;
     max-width: inherit;
     text-align: center;
+
+    @media screen and (max-width: $tablet-end) {
+      padding: 7px 0;
+    }
+
 
     &-text {
       color: $color-text-white;
 
-      @media screen and (max-width: $mobile-end) {
-        font-family: Helvetica;
+      @media screen and (max-width: $tablet-end) {
         font-size: 12px;
         font-style: normal;
         font-weight: 300;

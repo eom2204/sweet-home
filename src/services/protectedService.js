@@ -12,7 +12,7 @@ export const getProtectedData = async () => {
     }
 
     try {
-        const response = await axios.get('/auth', {
+        const response = await axios.get('/api/user/auth', {
             headers: {
                 Authorization: `Bearer ${token}`, // Add token in Authorization header
             },

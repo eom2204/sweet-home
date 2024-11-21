@@ -1,6 +1,6 @@
-.burger-menu {
+@import "../../../styles/variables";
 
-  position: relative;
+.burger-menu {
 
   &__btn {
     display: none;
@@ -8,7 +8,7 @@
     border: none;
     cursor: pointer;
 
-    @media screen and (max-width: 850px) {
+    @media screen and (max-width: $tablet-end) {
       display: block;
     }
   }
@@ -16,22 +16,31 @@
   &__list {
 
     &-wrapper {
-      background-color: #E5E5E5;
+      background-color: $color-background-black;
       padding: 20px;
-      width: 150px;
+      text-align: center;
+      overflow: hidden;
 
       position: absolute;
-      top: 120%;
+      top: 100%;
+      left: 0;
       right: 0;
       z-index: 100;
+
     }
 
     &-item {
       cursor: pointer;
-      margin-bottom: 5px;
+      margin-bottom: 24px;
     }
 
     &-link {
+      color: $color-text-gray;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 123.5%; /* 19.76px */
+      letter-spacing: 1px;
       text-decoration: none;
     }
   }

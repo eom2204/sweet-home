@@ -1,12 +1,10 @@
-import './SignUp.scss';
+import './SignUpBenefits.scss';
 import {Box, Typography} from "@mui/material";
 import Button from "../Button/Button";
 
-function SignUp() {
+function SignUpBenefits() {
     return (
-        <Box sx={{maxWidth: '416px', width: '100%', textAlign: 'center'}}>
-            <Typography variant="h5" sx={{marginBottom: "48px"}}>Is this your first visit?</Typography>
-            <Button type="submit" text="SIGN UP"></Button>
+
             <Box sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -54,8 +52,7 @@ function SignUp() {
                     <Typography variant="subtitle1" sx={{marginLeft: "22px"}}>Easy access to order history</Typography>
                 </Box>
             </Box>
-        </Box>
     );
 }
 
-export default SignUp;
+export default SignUpBenefits;

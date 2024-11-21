@@ -10,6 +10,11 @@
   text-align: center;
 
   &__title {
+    margin-bottom: 44px;
+
+    @media screen and (max-width: $tablet-end) {
+      margin-bottom: 32px;
+    }
   }
 
   &-container {
@@ -48,11 +53,4 @@
     }
   }
 
-  &__content {
-    text-align: left;
-
-    &__text {
-      margin-bottom: 24px;
-    }
-  }
 }

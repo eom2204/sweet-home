@@ -2,6 +2,7 @@
   "name": "online_store",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://sweet-home-api.onrender.com",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
@@ -20,10 +21,10 @@
     "buffer": "^6.0.3",
     "classnames": "^2.5.1",
     "dotenv": "^16.4.5",
-    "http-proxy-middleware": "^3.0.3",
     "https-browserify": "^1.0.0",
     "js-cookie": "^3.0.5",
     "jwt-decode": "^4.0.0",
+    "lodash.debounce": "^4.0.8",
     "process": "^0.11.10",
     "react": "^18.3.1",
     "react-app-rewired": "^2.2.1",
@@ -44,7 +45,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000",
+
   "eslintConfig": {
     "extends": [
       "react-app",

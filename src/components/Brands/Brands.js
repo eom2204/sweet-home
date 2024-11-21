@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {Box} from "@mui/material";
+import {Box, Typography} from "@mui/material";
+import localBrands from "../../data/brands.json";
 
 
 function Brands() {
@@ -11,12 +12,13 @@ function Brands() {
     useEffect(() => {
         const fetchBrands = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/brands');
+                const response = await axios.get('/api/brands');
                 if (response && response.data) {
-                    setBrands(response.data); // response is an array of brand objects
+                    setBrands(response.data); // Use server data if available
                 }
             } catch (error) {
-                console.error('Error fetching brands:', error);
+                console.error('Error fetching brands; using local data:', error);
+                setBrands(localBrands); // Use local JSON as fallback
             }
         };
 
@@ -28,16 +30,17 @@ function Brands() {
         return <p>Loading banners...</p>;
     }
 
+    const imagePath = process.env.REACT_APP_IMAGE_PATH;
 
     return(
-        <Box sx={{textAlign:"center", marginBottom: "9.5rem"}}>
-            <h1>
+        <Box sx={{textAlign:"center", marginY: {xs: '44px', sm: '44px', md: '120px'}}}>
+            <Typography variant="h3" component="h2">
                 Brands
-            </h1>
+            </Typography>
             <Box sx={{display: "flex", flexWrap: {xs: "wrap", sm: "wrap", md: "nowrap"}, justifyContent: "space-between", gap: {md: "2.8rem"}, marginTop: "46px"}}>
                 {brands.map((brand) => (
                     <Box key={brand.id} sx={{flexBasis: { xs: "50%", sm: "33.33%", md: "16.66%" }, justifyContent: "center", marginBottom: "48px"}}>
-                        <img src={`http://localhost:5000/public/${brand.images}`} alt="brand"
+                        <img src={`${imagePath}${brand.images}`} alt="brand"
                              style={{width: "100%", maxWidth: "152px"}}/>
                     </Box>
                 ))}

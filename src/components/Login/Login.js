@@ -1,72 +1,47 @@
-// login logic and store the token in localStorage
-
-import './Login.scss';
+// login logic and store the token in Cookies
 
 import {useState} from 'react';
-import {login} from "../../services/authService";
-import {useNavigate} from "react-router-dom";
 import Button from '../Button/Button';
 import {Box, Typography} from "@mui/material";
-import SignUp from "../SignUp/SignUp";
+import SignUpBenefits from "../SignUp/SignUpBenefits";
+import LoginForm from "./LoginForm";
+import RegistrationForm from "./RegistrationForm";
+import './Login.scss';
 
 
-const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
-    const navigate = useNavigate();
+function Login() {
 
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        try {
-            await login(email, password); // Call login function from service
-            navigate('/profile'); // Redirect to profile page on success
-        } catch (error) {
-            setError('Login failed. Please try again.');
-        }
-    };
+    // State to track which form is currently visible
+    const [isLoginFormVisible, setIsLoginFormVisible] = useState(true);
 
-    console.log("Environment Image Path:", process.env.REACT_APP_IMAGE_PATH);
+    // Functions to show each form
+    const showLoginForm = () => setIsLoginFormVisible(true);
+    const showRegistrationForm = () => setIsLoginFormVisible(false);
 
-
-    // const handleClick = () => {
-    //     alert('Button clicked!');
-    // };
 
     return (
-        <Box sx={{display: 'flex', marginTop: "168px"}}>
-            <Box sx={{width: '50%', display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: 'green'}}>
+        <Box sx={{display: 'flex', flexDirection: {xs: 'column', sm: 'column', md: 'row'}, marginTop: "168px"}}>
+            <Box sx={{
+                width: {xs: '100%', sm: '100%', md: '50%'},
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                backgroundColor: 'green'
+            }}>
                 <Box sx={{maxWidth: '416px', width: '100%', textAlign: 'center'}}>
                     <Typography variant="h5" sx={{marginBottom: "32px"}}>Already have an account?</Typography>
-                    {error && <p style={{color: 'red'}}>{error}</p>}
-                    <form onSubmit={handleLogin}>
-                        <input className="login__input"
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Email"
-                            required
-                        />
-                        <input className="login__input"
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Password"
-                            required
-                        />
 
-                        <div>
-                            <a href="">Forgot my password</a>
-                        </div>
-
-                        <Button type="submit" text="LOG IN"></Button>
-                    </form>
+                    {isLoginFormVisible ?
+                        (<LoginForm/>) :
+                        (<Button type="button" text="LOG IN" onClick={showLoginForm}></Button>)
+                    }
 
                     <Box>
                         <Typography sx={{marginTop: "32px", marginBottom: "18px"}}>or continue with</Typography>
                         <Box sx={{display: "flex", gap: "16px", justifyContent: "center"}}>
                             <a href="">
-                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
                                     <rect x="0.5" y="0.5" width="47" height="47" rx="23.5" stroke="black"/>
                                     <g clipPath="url(#clip0_149_2734)">
                                         <path
@@ -81,7 +56,8 @@ const Login = () => {
                                 </svg>
                             </a>
                             <a href="">
-                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
                                     <rect x="0.5" y="0.5" width="47" height="47" rx="23.5" stroke="black"/>
                                     <g clipPath="url(#clip0_149_2735)">
                                         <path
@@ -101,8 +77,20 @@ const Login = () => {
             </Box>
 
 
-            <Box sx={{width: '50%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                <SignUp />
+            <Box sx={{width: {xs: '100%', sm: '100%', md: '50%'}, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+
+                <Box sx={{maxWidth: '416px', width: '100%', textAlign: 'center'}}>
+                    <Typography variant="h5" sx={{marginBottom: "48px"}}>Is this your first visit?</Typography>
+
+                    {isLoginFormVisible ?
+                        (<>
+                            <Button type="button" text="SIGN UP" onClick={showRegistrationForm}></Button>
+                            <SignUpBenefits/>
+                        </>) :
+                        (<RegistrationForm/>)
+                    }
+
+                </Box>
             </Box>
         </Box>
     );

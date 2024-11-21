@@ -1,7 +1,7 @@
 import Breadcrumb from "../components/Breadcrumb/Breadcrumb";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {fetchCategories} from "../features/slices/categoriesSlice";
+import {fetchCategories} from "../app/redux/slices/categoriesSlice";
 
 
 function CataloguePage() {

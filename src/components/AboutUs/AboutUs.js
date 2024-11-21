@@ -11,7 +11,7 @@ function AboutUs() {
 
     return (
         <section className="about">
-            <h1 className="about__title">About Us</h1>
+            <h2 className="about__title">About us</h2>
             <div className="">
                 <ul className="about-container">
                     <li className="about-container__item">
@@ -39,15 +39,6 @@ function AboutUs() {
                         </a>
                     </li>
                 </ul>
-            </div>
-            <div className="about__content">
-                <p className="about__content__text">Sweet Home, Ukrainian a company based in the North of France, designs unique,
-                    elegant, ecological furniture, Made in Ukraine.
-                </p>
-                <p className="about__content__text"> Our indoor products, is crafted from superior quality oak beams, recovered
-                    from 19th and 20th century
-                    buildings.
-                </p>
             </div>
         </section>
     );

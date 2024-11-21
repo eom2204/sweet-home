@@ -2,9 +2,22 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // Thunk to fetch categories from backend
 export const fetchCategories = createAsyncThunk('categories/fetchCategories', async () => {
-    const response = await fetch('/api/category');
-    const data = await response.json();
-    return data;
+    try {
+        const response = await fetch('/api/category');
+        // Check if the response is OK
+        if (!response.ok) {
+            throw new Error('Failed to fetch categories');
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching categories, using local data:', error);
+        // If there is an error, return local data as fallback
+        const localData = require('../../../data/categories.json');
+        return localData;  // Return local categories as fallback
+    }
+
 });
 
 const categoriesSlice = createSlice({

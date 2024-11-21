@@ -1,12 +1,21 @@
 @import "../../styles/variables";
 
-.slick-slider {
-  //height: 100vh;
-  margin-bottom: 8.3rem;
-}
+//.slick-slider {
+//  margin-bottom: 8.3rem;
+//}
 
 .banner {
   position: relative;
+  //height: 100vh;
+  max-height: 560px;
+
+  @media screen and (max-width: $mobile-end) {
+    max-height: 240px;
+  }
+
+  &__image {
+    width: 100%;
+  }
 
   &__title {
     color: $color-text-white;
@@ -54,7 +63,7 @@
       }
 
       & li button {
-        background: black;
+        background: $color-background-main;
         font-size: 0;
         width: 10px;
         height: 10px;
@@ -66,7 +75,7 @@
       /* Remove number text content and add width transition */
       & li button::before {
         content: '';
-        background-color: black;
+        background-color: $color-background-main;
         border-radius: 50%;
         display: block;
         width: 10px;
@@ -78,7 +87,7 @@
       & li.slick-active button::before {
         width: 20px;
         border-radius: 12px;
-        background-color: black;
+        background-color: $color-background-main;
       }
     }
 
@@ -100,7 +109,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: $color-element-white;
+      background: $color-background-main;
       color: $color-element-brown;
       border-radius: 50%;
       height: 44px;

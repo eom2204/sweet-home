@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import {Box, Typography, useMediaQuery} from '@mui/material';
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchGoods} from "../../features/slices/productsSlice";
+import {fetchGoods} from "../../app/redux/slices/productsSlice";
 import Grid from "@mui/material/Grid2";
 import CustomPagination from "../CustomPagination";
 import {useTheme} from "@mui/styles";
@@ -51,11 +51,13 @@ function Popular() {
         setPage(value);
     };
 
+    const imagePath = process.env.REACT_APP_IMAGE_PATH;
+
 
     return (
 
             <Box sx={{
-                display: 'flex', gap: '55px', alignItems: "stretch", maxWidth: '1440', marginBottom: "10rem"
+                display: 'flex', gap: '55px', alignItems: "stretch", marginY: {xs: '44px', sm: '44px', md: '120px'}
             }}>
                 {/* Left: Category Image */}
                 <Box
@@ -69,7 +71,7 @@ function Popular() {
                         cursor: 'pointer',
                         display: {xs: "none", sm: "none", md: "flex"}
                 }}>
-                    <img src={`http://localhost:5000/public/${popularGoods?.[0]?.images?.[0]}`} alt="popular goods"
+                    <img src={`${imagePath}${popularGoods?.[0]?.images?.[0]}`} alt="popular goods"
                          style={{width: '100%', objectFit: "cover", height: '100%', maxWidth: '523px'}}
                     />
                 </Box>
@@ -78,8 +80,8 @@ function Popular() {
                 }
                 <Box sx={{textAlign: 'center', width: {xs: "100%", sm: "100%", md: "60%"}, marginY: '0'}}>
                     {/* Title and Pagination*/}
-                    <Box display="flex" sx={{justifyContent: 'space-between', gap: '20px', marginBottom: "40px"}}>
-                        <Typography variant="h4" fontWeight="bold">Popular</Typography>
+                    <Box display="flex" sx={{justifyContent: 'space-between', marginBottom: "40px"}}>
+                        <Typography variant="h3" component="h2">Popular</Typography>
                         <CustomPagination
                             count={pageCount}
                             page={page}
@@ -93,7 +95,7 @@ function Popular() {
                             <Grid item sx={{width: {xs: "47%", sm: "47%", md: "31%"}}}>
                                 <Box
                                     component="img"
-                                    src={`http://localhost:5000/public/${product.images?.[0]}`}
+                                    src={`${imagePath}${product.images?.[0]}`}
                                     alt={product.name}
                                     sx={{
                                         width: '100%',

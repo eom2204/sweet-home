@@ -1,19 +1,16 @@
+@import "../../../styles/variables";
+
+
 .search {
   position: relative;
 
-  &-wrapper {
-
-    @media screen and (max-width: 850px) {
-      height: 100%;
-      display: none;
-    }
+  @media screen and (max-width: $tablet-end) {
+    margin: 0 16px 20px;
   }
-
 
   &__list {
 
     &-wrapper {
-      background-color: #E5E5E5;
       padding: 20px;
       position: absolute;
       top: 120%;
@@ -33,20 +30,31 @@
   }
 
   &__icon {
-    padding-left: 13px;
     position: absolute;
-    top: 4px;
+    margin-left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
   }
 
   &__input {
-    border: 1px solid #262626;
+    background-color: transparent;
+    border: 1px solid $color-text-gray;
     border-radius: 16px;
+    color: $color-text-gray;
+    caret-color: $color-text-gray;
     outline: none;
     padding: 8px 12px 8px 33px;
+    position: relative;
     width: 300px;
 
-    @media screen and (max-width: 1130px) {
-      width: 220px;
+    @media screen and (max-width: $large-screen--start) {
+      width: 200px;
+    }
+
+    @media screen and (max-width: $tablet-end) {
+      width: 100%;
+
     }
   }
 
@@ -65,17 +73,6 @@
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 35px;
-  }
-
-  &__mobile-btn {
-    display: none;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-
-    @media screen and (max-width: 850px) {
-      display: block;
-    }
   }
 }
 

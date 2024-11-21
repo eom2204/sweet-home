@@ -1,3 +1,4 @@
+import {styled} from "@mui/system";
 import Banner from "../components/Banner/Banner";
 import Brands from "../components/Brands/Brands";
 import Bestsellers from "../components/Bestsellers/Bestsellers";
@@ -5,7 +6,7 @@ import NewArrivals from "../components/NewArrivals/NewArrivals";
 import AboutUs from "../components/AboutUs/AboutUs";
 import Popular from "../components/Popular/Popular";
 import Categories from "../components/Categories/Categories";
-import {styled} from "@mui/system";
+
 
 
 const ContentWrapper = styled('div')(({ theme }) => ({
@@ -31,10 +32,10 @@ function HomePage() {
             <ContentWrapper>
                 <Categories/>
                 <NewArrivals/>
+                <AboutUs/>
                 <Popular/>
                 <Brands/>
                 <Bestsellers/>
-                <AboutUs/>
             </ContentWrapper>
 
         </>

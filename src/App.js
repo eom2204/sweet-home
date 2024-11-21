@@ -1,21 +1,19 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-
-import './App.scss';
-
 import Root from "./pages/Root";
+import {createTheme} from "@mui/system";
+import {ThemeProvider} from "@mui/styles";
 
 import AdminDashboard from './pages/AdminDashboard'; // Admin page
 import ProfilePage from './pages/ProfilePage'; // User profile page
 import ErrorPage from './pages/ErrorPage';
-
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminRoute from './components/AdminRoute';
 import ProfileLayout from "./components/ProfileLayout";
 import FavouritesPage from "./pages/FavouritesPage";
 import CartPage from "./pages/CartPage";
 import {childrenRoutes} from "./components/MainRoute";
-import {createTheme} from "@mui/system";
-import {ThemeProvider} from "@mui/styles";
+
+import './App.scss';
 
 
 function App() {

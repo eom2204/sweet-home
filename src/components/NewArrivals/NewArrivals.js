@@ -1,15 +1,14 @@
-//import './NewArrivals.scss';
-
+import {useEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux';
-import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import {useMediaQuery} from "@mui/system";
-import {fetchGoods} from "../../features/slices/productsSlice";
-import {useEffect} from "react";
-import Button from '../Button/Button';
+import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material';
 import {useTheme} from "@mui/styles";
+import {useMediaQuery} from "@mui/system";
+import {fetchGoods} from "../../app/redux/slices/productsSlice";
+import Button from '../Button/Button';
+import './NewArrivals.scss';
 
 
 const NewArrivals = () => {
@@ -39,12 +38,12 @@ const NewArrivals = () => {
     // filter the 10 newest products by arrival date
     const newArrivals = [...goods].sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)).slice(0, 10);
 
+    const imagePath = process.env.REACT_APP_IMAGE_PATH;
 
     const settings = {
         dots: false,
         infinite: false,
-        //speed: 500,
-        slidesToShow: isSmallScreen ? 2 : 3,
+        slidesToShow: isSmallScreen ? 2 : 4,
         slidesToScroll: 1,
         prevArrow: <button className="slick-prev">◀</button>,
         nextArrow: <button className="slick-next">▶</button>,
@@ -55,27 +54,27 @@ const NewArrivals = () => {
         <Box
             sx={{
                 display: 'flex',
-                flexDirection: isSmallScreen ? 'column' : 'row',
-                justifyContent: 'space-between',
-                alignItems: isSmallScreen ? 'center' : 'flex-start',
-                gap: '62px',
+                alignItems: 'center',
+                flexDirection: 'column',
+                marginTop: isSmallScreen ? '44px' : '120px',
+                marginBottom: isSmallScreen ? '44px' : '120px',
+                //justifyContent: 'space-between',
+                //alignItems: isSmallScreen ? 'center' : 'flex-start',
+                // gap: '62px',
+                //textAlign: 'center',
             }}
         >
-            {/* Left Side: Title and Button */}
-            <Box sx={{ display: 'flex', flexDirection: 'column', position: 'relative', textAlign: 'left',
-                width: {xs: "100%", sm: "100%", md: "40%"}}}>
-                <Typography variant={isSmallScreen ? 'h4' : 'h5'} sx={{ mb: '48px' }}>
-                    New Arrivals
-                </Typography>
-                <Button type="submit" text="SEE MORE"></Button>
-            </Box>
+            <Typography variant='h3' component='h2' sx={{ marginBottom: {xs: '24px', sm: '24px', md: '44px' }}}>
+                New Arrivals
+            </Typography>
+
 
             {/* Right Side: Carousel */}
             <Box
                 sx={{
                     overflow: 'hidden',
                     position: 'relative',
-                    width: {xs: "100%", sm: "100%", md: "60%"},
+                    width: '100%',
                 }}
             >
 
@@ -101,7 +100,7 @@ const NewArrivals = () => {
                                         height: '248px',
                                         cursor: 'pointer',
                                         marginBottom: '8px',}}
-                                    image={`http://localhost:5000/public/${product.images?.[0]}`}
+                                    image={`${imagePath}${product.images?.[0]}`}
                                     alt={product.name}
                                 />
                                 <CardContent
@@ -122,8 +121,8 @@ const NewArrivals = () => {
                             </Card>
                         ))}
                     </Slider>
-
             </Box>
+            <Button type="submit" text="SEE MORE" className="arrivals__button"></Button>
         </Box>
     );
 };

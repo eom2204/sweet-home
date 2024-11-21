@@ -8,20 +8,22 @@ $font-primary: 'Inter', sans-serif;
 //$font-size-large: 24px;
 
 //colors
-$color-background-main: rgba(201, 205, 214, 1);
-$color-background-adv: rgba(78, 84, 88, 1);
+$color-background-main: rgba(246, 243, 236, 1);
+$color-background-secondary: rgba(217, 204, 188, 1);
+$color-background-adv: rgba(206, 62, 27, 1);
 $color-background-black: rgba(29, 29, 29, 1);
-$color-background-copyright:rgba(136, 70, 38, 1);
+$color-background-copyright: rgba(65, 66, 35, 1);
 
-$color-button-main: rgba(255, 111, 24, 1);
+$color-button-main: rgba(59, 26, 6, 1);
 $color-button-hover: rgba(255, 141, 71, 1);
 
-$color-text-white: rgba(255, 255, 255, 1);
+$color-arrow-slider: rgba(255, 230, 168, 1);
+
+$color-text-white: rgba(246, 243, 236, 1);
 $color-text-gray: rgba(201, 205, 214, 1);
 $color-text-black: rgba(0, 0, 0, 1);
 $color-element-white: rgba(255, 255, 255, 0.4);
 $color-element-brown: rgba(66, 47, 33, 1);
-
 
 
 //width
@@ -31,3 +33,5 @@ $max-content-width: 1272px;
 $large-screen--start: 1200px;
 $tablet-end: 900px;
 $mobile-end: 600px;
+
+
