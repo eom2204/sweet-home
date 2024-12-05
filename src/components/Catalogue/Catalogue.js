@@ -1,19 +1,18 @@
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { fetchCategories } from "../../app/redux/slices/categoriesSlice";
+import { useEffect, useState } from "react";
 import { fetchGoods } from "../../app/redux/slices/productsSlice";
 import "./catalogue.scss";
-import Card from "../Card/Card";
+import Card from "../Card/Card.js";
+import CustomPagination from "../CustomPagination.js";
+import Categories from "../Categories/Categories.js";
 
 function Catalogue() {
-  const dispatch = useDispatch();
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedGroup, setSelectedGroup] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const {
-    categories,
-    status: categoriesStatus,
-    error: categoriesError,
-  } = useSelector((state) => state.categories);
+  const dispatch = useDispatch();
 
   const {
     goods,
@@ -22,30 +21,42 @@ function Catalogue() {
   } = useSelector((state) => state.goods);
 
   useEffect(() => {
-    if (categoriesStatus === "idle") {
-      dispatch(fetchCategories());
-    }
     if (goodsStatus === "idle") {
       dispatch(fetchGoods());
     }
-  }, [categoriesStatus, goodsStatus, dispatch]);
+  }, [goodsStatus, dispatch]);
 
-  if (categoriesStatus === "loading" || goodsStatus === "loading")
-    return <div>Loading...</div>;
-  if (categoriesStatus === "failed") return <div>Error: {categoriesError}</div>;
+  if (goodsStatus === "loading") return <div>Loading...</div>;
   if (goodsStatus === "failed") return <div>Error: {goodsError}</div>;
+
+  const filteredGoods = selectedGroup
+    ? goods.filter((product) => product.groupId === selectedGroup)
+    : selectedCategory
+    ? goods.filter((product) => product.categoryId === selectedCategory)
+    : goods;
+
+  const itemsPerPage = 24;
+  const totalItems = filteredGoods.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  const currentItems = filteredGoods.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const handlePageChange = (event, value) => {
+    setCurrentPage(value);
+  };
 
   return (
     <section className="container">
       <aside className="aside-list">
         <Breadcrumb />
-        <ul>
-          {categories.map((category) => (
-            <li key={category.id} className="list-element">
-              {category.name}
-            </li>
-          ))}
-        </ul>
+        <Categories
+          displayMode="list"
+          setSelectedCategory={setSelectedCategory}
+          setSelectedGroup={setSelectedGroup}
+        />
       </aside>
       <section className="main-section">
         <div className="select-section">
@@ -66,10 +77,19 @@ function Catalogue() {
           </select>
         </div>
         <div className="cards-section">
-          {goods.map((product) => (
+          {currentItems.map((product) => (
             <Card key={product.id} product={product} />
           ))}
         </div>
+      </section>
+      <section className="pagination-section">
+        {totalPages > 1 && (
+          <CustomPagination
+            count={totalPages}
+            page={currentPage}
+            onChange={handlePageChange}
+          />
+        )}
       </section>
     </section>
   );
