@@ -5,6 +5,7 @@ import { fetchCategories } from "../../app/redux/slices/categoriesSlice";
 import { fetchGoods } from "../../app/redux/slices/productsSlice";
 import "./catalogue.scss";
 import Card from "../Card/Card.js";
+import CustomPagination from "../CustomPagination.js";
 
 function Catalogue() {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -65,8 +66,8 @@ function Catalogue() {
     currentPage * itemsPerPage
   );
 
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
+  const handlePageChange = (event, value) => {
+    setCurrentPage(value);
   };
 
   return (
@@ -130,23 +131,15 @@ function Catalogue() {
           ))}
         </div>
       </section>
-      {totalPages > 1 && (
-        <div className="pagination">
-          <button
-            className="page-button-left"
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-          ></button>
-          <span className="page-number">
-            {currentPage} - {totalPages}
-          </span>
-          <button
-            className="page-button-right"
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-          ></button>
-        </div>
-      )}
+      <section className="pagination-section">
+        {totalPages > 1 && (
+          <CustomPagination
+            count={totalPages}
+            page={currentPage}
+            onChange={handlePageChange}
+          />
+        )}
+      </section>
     </section>
   );
 }

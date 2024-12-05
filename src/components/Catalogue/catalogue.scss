@@ -68,37 +68,8 @@
   margin-top: 16px;
 }
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.pagination-section {
   margin-top: 48px;
   grid-column: 1 / -1;
   width: 100%;
-}
-
-.page-button-left {
-  width: 44px;
-  height: 44px;
-  border: none;
-  cursor: pointer;
-  background-image: url("../../../public/ArrowLeft.svg");
-}
-
-.page-button-right {
-  width: 44px;
-  height: 44px;
-  border: none;
-  cursor: pointer;
-  background-image: url("../../../public/ArrowRight.svg");
-}
-
-.page-number {
-  font-family: Helvetica;
-  width: 195px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19.2px;
-  letter-spacing: 1px;
-  text-align: center;
 }
