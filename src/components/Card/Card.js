@@ -2,7 +2,7 @@ import React from "react";
 import "./Card.scss";
 
 const Card = ({ product }) => {
-  const { name, price, images, category, discount } = product;
+  const { name, price, images, group, discount } = product;
 
   const originalPrice = Math.round(
     discount > 0 ? (price / (1 - discount / 100)).toFixed(2) : null
@@ -15,7 +15,7 @@ const Card = ({ product }) => {
       </div>
       <div className="card-content">
         <h3 className="card-title">{name}</h3>
-        <p className="card-category">{category}</p>
+        <p className="card-category">{group}</p>
         <div className="card-price">
           <span
             className={`card-price-current ${discount > 0 ? "discounted" : ""}`}
