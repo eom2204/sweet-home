@@ -1,11 +1,11 @@
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { fetchCategories } from "../../app/redux/slices/categoriesSlice";
 import { fetchGoods } from "../../app/redux/slices/productsSlice";
 import "./catalogue.scss";
 import Card from "../Card/Card.js";
 import CustomPagination from "../CustomPagination.js";
+import Categories from "../Categories/Categories.js";
 
 function Catalogue() {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -14,23 +14,6 @@ function Catalogue() {
 
   const dispatch = useDispatch();
 
-  const handleCategoryClick = (categoryId) => {
-    setSelectedCategory(categoryId);
-    setSelectedGroup(null);
-    setCurrentPage(1);
-  };
-
-  const handleGroupClick = (groupId) => {
-    setSelectedGroup(groupId);
-    setCurrentPage(1);
-  };
-
-  const {
-    categories,
-    status: categoriesStatus,
-    error: categoriesError,
-  } = useSelector((state) => state.categories);
-
   const {
     goods,
     status: goodsStatus,
@@ -38,17 +21,12 @@ function Catalogue() {
   } = useSelector((state) => state.goods);
 
   useEffect(() => {
-    if (categoriesStatus === "idle") {
-      dispatch(fetchCategories());
-    }
     if (goodsStatus === "idle") {
       dispatch(fetchGoods());
     }
-  }, [categoriesStatus, goodsStatus, dispatch]);
+  }, [goodsStatus, dispatch]);
 
-  if (categoriesStatus === "loading" || goodsStatus === "loading")
-    return <div>Loading...</div>;
-  if (categoriesStatus === "failed") return <div>Error: {categoriesError}</div>;
+  if (goodsStatus === "loading") return <div>Loading...</div>;
   if (goodsStatus === "failed") return <div>Error: {goodsError}</div>;
 
   const filteredGoods = selectedGroup
@@ -74,38 +52,11 @@ function Catalogue() {
     <section className="container">
       <aside className="aside-list">
         <Breadcrumb />
-        <ul>
-          {categories
-            .slice()
-            .sort((a, b) => a.id - b.id)
-            .map((category) => (
-              <li key={category.id}>
-                <div
-                  className={`list-element ${
-                    selectedCategory === category.id ? "active" : ""
-                  }`}
-                  onClick={() => handleCategoryClick(category.id)}
-                >
-                  {category.name}
-                </div>
-                {selectedCategory === category.id && category.groups && (
-                  <ul className="group-list">
-                    {category.groups.map((group) => (
-                      <li
-                        key={group.id}
-                        className={`group-list-element ${
-                          selectedGroup === group.id ? "active" : ""
-                        }`}
-                        onClick={() => handleGroupClick(group.id)}
-                      >
-                        {group.name}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-        </ul>
+        <Categories
+          displayMode="list"
+          setSelectedCategory={setSelectedCategory}
+          setSelectedGroup={setSelectedGroup}
+        />
       </aside>
       <section className="main-section">
         <div className="select-section">
