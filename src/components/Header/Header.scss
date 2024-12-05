@@ -1,0 +1,126 @@
+@import "../../styles/variables";
+
+.header {
+
+  background-color: $color-background-black;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 5;
+
+  &__container {
+    display: block;
+    position: relative;
+
+
+    @media screen and (max-width: $tablet-end) {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-left: -10px;
+    max-height: 80px;
+
+    @media screen and (max-width: $tablet-end) {
+      max-height: 56px;
+    }
+  }
+
+  &__menu {
+
+    &--wrapper {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      max-width: $max-content-width;
+      padding: 20px;
+
+
+      @media screen and (max-width: $tablet-end) {
+        justify-content: space-between;
+        padding-top: 30px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    gap: 27px;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: 1;
+
+    &-favorite {
+      position: relative;
+    }
+
+    &_favorite-counter {
+      right: -8px;
+      top: -5px;
+
+      align-items: center;
+      background-color: #c57100;
+      border-radius: 100%;
+      color: #fff;
+      display: flex;
+      font-size: 10px;
+      font-weight: 500;
+      height: 16px;
+      justify-content: center;
+      position: absolute;
+      width: 16px;
+    }
+  }
+
+  &__search {
+
+    &--large-screen {
+      display: block;
+
+      @media screen and (max-width: $tablet-end) {
+        display: none;
+      }
+    }
+
+    &--small-screen {
+      display: none;
+
+      @media screen and (max-width: $tablet-end) {
+        display: block;
+      }
+    }
+  }
+
+  &__sale {
+    background-color: $color-background-adv;
+    padding: 20px;
+    max-width: inherit;
+    text-align: center;
+
+    @media screen and (max-width: $tablet-end) {
+      padding: 7px 0;
+    }
+
+
+    &-text {
+      color: $color-text-white;
+
+      @media screen and (max-width: $tablet-end) {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 120%; /* 14.4px */
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

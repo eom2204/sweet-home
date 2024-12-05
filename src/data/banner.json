@@ -1,0 +1,30 @@
+[
+  {
+    "id": 6,
+    "img": "e57a48cc-ef7b-4a6c-8db2-ccdae2f8c163.png",
+    "title": "<span>MID-SEASON SALE</span>",
+    "createdAt": "2024-10-16T20:55:30.623Z",
+    "updatedAt": "2024-10-16T20:55:30.623Z"
+  },
+  {
+    "id": 7,
+    "img": "91d7f602-292a-4094-a607-9b79b55c1f40.png",
+    "title": "<span>FREAKING\nHALLOWEEN PARTY ACCESSORIES</span>",
+    "createdAt": "2024-10-16T20:57:25.070Z",
+    "updatedAt": "2024-11-12T22:18:45.019Z"
+  },
+  {
+    "id": 8,
+    "img": "5fc8308e-eb52-42df-b578-be9697415826.png",
+    "title": "<span>BEST OFFERS FOR<span style=\"color:#20C33E\">CHRISTMAS</span></span>",
+    "createdAt": "2024-10-16T21:09:31.387Z",
+    "updatedAt": "2024-10-16T21:09:31.387Z"
+  },
+  {
+    "id": 9,
+    "img": "c73544c1-c027-430e-9d5e-a24d7d3f3555.png",
+    "title": "<span>SEE NEW ARRIVALS</span>",
+    "createdAt": "2024-10-16T21:10:44.849Z",
+    "updatedAt": "2024-10-16T21:10:44.849Z"
+  }
+]

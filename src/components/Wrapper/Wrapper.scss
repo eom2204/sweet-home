@@ -1,0 +1,9 @@
+@import "../../styles/variables";
+
+.wrapper-container {
+  padding: 176px 0 352px;
+
+  @media screen and (max-width: $tablet-end) {
+    padding: 178px 0 506px;
+  }
+}

@@ -1,0 +1,140 @@
+@import "../../styles/variables";
+
+//.slick-slider {
+//  margin-bottom: 8.3rem;
+//}
+
+.banner {
+  position: relative;
+  //height: 100vh;
+  max-height: 560px;
+
+  @media screen and (max-width: $mobile-end) {
+    max-height: 240px;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__title {
+    color: $color-text-white;
+    font-family: $font-primary;
+    font-size: 5rem;
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 160px;
+    right: 360px;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    @media screen and (max-width: $tablet-end) {
+      font-size: 2.5rem;
+      left: 50px;
+      max-width: 12.5rem;
+    }
+  }
+
+  &-slider {
+
+    &__dots {
+      display: flex !important;
+      justify-content: center;
+      gap: 4px;
+      align-items: center;
+      position: absolute;
+      bottom: 44px;
+      width: 100%;
+      padding: 0;
+      list-style: none;
+
+      @media screen and (max-width: $tablet-end) {
+        bottom: 10px;
+      }
+
+      & li {
+        display: inline-block;
+        margin: 0 5px;
+        position: relative;
+        height: 10px;
+        width: 10px;
+        cursor: pointer;
+      }
+
+      & li button {
+        background: $color-background-main;
+        font-size: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: none;
+        padding: 0;
+      }
+
+      /* Remove number text content and add width transition */
+      & li button::before {
+        content: '';
+        background-color: $color-background-main;
+        border-radius: 50%;
+        display: block;
+        width: 10px;
+        height: 10px;
+        transition: width 0.3s ease;
+      }
+
+      /* Make the active dot twice as wide */
+      & li.slick-active button::before {
+        width: 20px;
+        border-radius: 12px;
+        background-color: $color-background-main;
+      }
+    }
+
+    //@media (max-width: 768px) {
+    //  .custom-dots {
+    //    bottom: 10px;
+    //  }
+    //
+    //  .custom-dots li button:before {
+    //    font-size: 10px;
+    //  }
+    //
+    //  .custom-dots li.slick-active button:before {
+    //    width: 20px;
+    //  }
+    //}
+
+    &__next-arrow, &__prev-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $color-background-main;
+      color: $color-element-brown;
+      border-radius: 50%;
+      height: 44px;
+      width: 44px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    &__next-arrow {
+      right: 84px;
+
+      @media screen and (max-width: $tablet-end) {
+        right: 10px;
+      }
+    }
+
+    &__prev-arrow {
+      left: 84px;
+
+      @media screen and (max-width: $tablet-end) {
+        left: 10px;
+      }
+    }
+  }
+}

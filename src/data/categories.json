@@ -1,0 +1,111 @@
+[
+  {
+    "id": 1,
+    "name": "Bathroom",
+    "image": "/category/bathRoom.png",
+    "createdAt": "2024-10-16T22:33:11.981Z",
+    "updatedAt": "2024-11-12T22:06:01.568Z",
+    "groups": [
+      {
+        "id": 1,
+        "name": "Towels"
+      },
+      {
+        "id": 2,
+        "name": "Accessories"
+      },
+      {
+        "id": 3,
+        "name": "Mirrors"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Wardrobe",
+    "image": "/category/wardrobe.png",
+    "createdAt": "2024-10-21T18:27:04.676Z",
+    "updatedAt": "2024-11-12T22:06:49.875Z",
+    "groups": [
+      {
+        "id": 11,
+        "name": "Hangers"
+      },
+      {
+        "id": 12,
+        "name": "Wardrobe organization"
+      },
+      {
+        "id": 13,
+        "name": "Containers and boxes"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Parties",
+    "image": "/category/party.png",
+    "createdAt": "2024-10-21T18:27:16.468Z",
+    "updatedAt": "2024-11-12T22:06:49.883Z",
+    "groups": [
+      {
+        "id": 16,
+        "name": "Christmas"
+      },
+      {
+        "id": 17,
+        "name": "Halloween"
+      },
+      {
+        "id": 18,
+        "name": "Birthday"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Kitchen & Dining Room",
+    "image": "/category/kitchen.png",
+    "createdAt": "2024-10-21T18:26:44.808Z",
+    "updatedAt": "2024-11-12T22:06:49.887Z",
+    "groups": [
+      {
+        "id": 7,
+        "name": "Cups and glasses"
+      },
+      {
+        "id": 8,
+        "name": "Kitchen accessories"
+      },
+      {
+        "id": 9,
+        "name": "Tableware"
+      },
+      {
+        "id": 10,
+        "name": "Accessories for coffee and tea"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Bedroom & Living Room",
+    "image": "/category/bedroom.png",
+    "createdAt": "2024-10-21T18:22:04.844Z",
+    "updatedAt": "2024-11-12T22:06:49.892Z",
+    "groups": [
+      {
+        "id": 4,
+        "name": "Blanket"
+      },
+      {
+        "id": 5,
+        "name": "Pillows"
+      },
+      {
+        "id": 6,
+        "name": "Candles"
+      }
+    ]
+  }
+]

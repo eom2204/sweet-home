@@ -1,0 +1,37 @@
+@import '../../../styles/variables';
+
+
+.main-nav {
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    max-height: 300px;
+    align-items: center;
+    text-transform: uppercase;
+    list-style-type: none;
+    gap: 70px;
+    white-space: nowrap;
+
+    @media screen and (max-width: $large-screen--start) {
+      gap: 25px;
+    }
+
+    @media screen and (max-width: $tablet-end) {
+      display: none;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $color-text-gray;
+      transition: all 300ms ease-in-out;
+
+      &.active {
+        color: $color-background-adv;
+      }
+    }
+  }
+}

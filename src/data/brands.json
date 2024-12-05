@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "joseph-joseph",
+    "images": "brand/joseph-joseph.png",
+    "createdAt": "2024-10-27T16:25:00.783Z",
+    "updatedAt": "2024-10-27T18:29:20.967Z"
+  },
+  {
+    "id": 2,
+    "name": "englishhome",
+    "images": "brand/englishhome.png",
+    "createdAt": "2024-10-27T16:25:00.783Z",
+    "updatedAt": "2024-10-27T18:29:20.974Z"
+  },
+  {
+    "id": 3,
+    "name": "ikea",
+    "images": "brand/ikea.png",
+    "createdAt": "2024-10-27T16:25:00.783Z",
+    "updatedAt": "2024-10-27T18:29:20.976Z"
+  },
+  {
+    "id": 4,
+    "name": "sinsay",
+    "images": "brand/sinsay.png",
+    "createdAt": "2024-10-27T16:25:00.783Z",
+    "updatedAt": "2024-10-27T18:29:20.978Z"
+  },
+  {
+    "id": 5,
+    "name": "kare",
+    "images": "brand/kare.png",
+    "createdAt": "2024-10-27T16:25:00.784Z",
+    "updatedAt": "2024-10-27T18:29:20.980Z"
+  },
+  {
+    "id": 6,
+    "name": "jusk",
+    "images": "brand/jusk.png",
+    "createdAt": "2024-10-27T16:25:00.784Z",
+    "updatedAt": "2024-10-27T18:29:20.982Z"
+  }
+]

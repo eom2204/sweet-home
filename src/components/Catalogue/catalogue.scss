@@ -1,0 +1,54 @@
+@import "../../styles/variables";
+
+.container {
+  margin: 24px 87px 128px 80px;
+  display: flex;
+  flex-direction: row;
+}
+
+.aside-list {
+  width: 314px;
+  height: auto;
+}
+
+.list-element {
+  font-family: Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29.64px;
+  letter-spacing: 1px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.main-section {
+  margin-top: 60px;
+  margin-left: 111px;
+  width: 100%;
+}
+
+.select-section {
+  display: flex;
+  flex-direction: row;
+  gap: 23px;
+}
+
+.select {
+  border: none;
+  background-color: inherit;
+  font-family: Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29.64px;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.cards-section {
+  width: 100%;
+  display: grid;
+  grid-column-gap: 16px;
+  grid-row-gap: 32px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 16px;
+}

@@ -1,0 +1,22 @@
+@import "./styles/reset.css";
+@import "./styles/variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-background-main;
+  font-family: 'Inter', sans-serif;
+}
+
+h2 {
+  font-family: $font-primary;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 59.28px;
+  letter-spacing: -2px;
+  text-align: center;
+}
