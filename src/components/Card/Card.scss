@@ -5,9 +5,13 @@
 }
 
 .card-image {
-  width: 202px;
-  height: 248px;
+  img {
+    width: 202px;
+    height: 248px;
+  }
 }
+
+
 
 .card-content {
   text-align: center;

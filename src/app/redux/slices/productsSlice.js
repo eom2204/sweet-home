@@ -5,11 +5,10 @@ export const fetchGoods = createAsyncThunk('products/fetchGoods', async () => {
     try {
         const response = await fetch('/api/goods');
         // Check if the response is OK
-        if (!response.ok) {
+        if (!response.data) {
             throw new Error('Failed to fetch goods');
         }
-        const data = await response.json();
-        return data;
+        return response.data;
 
     } catch (error) {
         console.error('Error fetching goods, using local data:', error);

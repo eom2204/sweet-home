@@ -16,8 +16,9 @@ import {childrenRoutes} from "./components/MainRoute";
 import './App.scss';
 
 
-function App() {
 
+
+function App() {
     const theme = createTheme({
         typography: {
             fontFamily: 'Inter, sans-serif',
