@@ -13,10 +13,10 @@
     align-items: center;
     text-transform: uppercase;
     list-style-type: none;
-    gap: 70px;
+    gap: 60px;
     white-space: nowrap;
 
-    @media screen and (max-width: $large-screen--start) {
+    @media screen and (max-width: $large-screen) {
       gap: 25px;
     }
 

@@ -1,25 +1,7 @@
 @import "../../styles/variables.scss";
 
 .popular {
-  &__box--left {
-    @media screen and (max-width: $tablet-end) {
-      display: none !important;
-    }
-  }
-
-  &__box--right {
-    &-container {
-      @media screen and (max-width: $tablet-end) {
-        width: 100% !important;
-      }
-    }
-
-    &-grid {
-      @media screen and (max-width: $mobile-end) {
-        width: 45% !important;
-      }
-    }
-
-  }
-
+    background-color: $color-background-secondary;
+    padding-top: 64px;
+    padding-bottom: 64px;
 }

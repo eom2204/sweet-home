@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.wrapper-section {
+  margin-left: 84px;
+  margin-right: 84px;
+  //max-width: $max-content-width;
+
+  @media screen and (max-width: $large-screen) {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  @media screen and (max-width: $mobile-end) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

@@ -9,15 +9,15 @@
     display: flex;
     gap: 7.5rem;
     justify-content: space-between;
-    padding: 60px 75px 56px;
+    padding: 60px 0 56px;
 
-    @media screen and (max-width: $large-screen--start) {
+    @media screen and (max-width: $large-screen) {
       gap: 3rem;
     }
 
     @media screen and (max-width: $tablet-end) {
       gap: 20px;
-      padding: 16px 10px;
+      padding: 16px 0;
     }
 
     &__item-flex {
@@ -25,7 +25,7 @@
       justify-content: space-between;
       gap: 7.5rem;
 
-      @media screen and (max-width: $large-screen--start) {
+      @media screen and (max-width: $large-screen) {
         gap: 3rem;
       }
 

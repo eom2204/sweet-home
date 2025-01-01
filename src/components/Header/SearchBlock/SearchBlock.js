@@ -15,8 +15,6 @@ const SearchBlock = () => {
 
     const navigate = useNavigate();
 
-    console.log('Redux state goods:', goods);
-
     // Debounced filtering logic
     const debouncedFilter = debounce((query) => {
         const filtered = goods.filter(item =>

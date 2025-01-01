@@ -38,3 +38,40 @@ export const register = async (email, username, password) => {
 export const logout = () => {
     AccessKey.remove();
 };
+
+
+// Function to get the token from cookies:
+export const getToken = () => {
+    return AccessKey.get();
+}
+
+// Function to check if the provided token is valid
+export const validateToken = async (token) => {
+    try {
+        const response = await axios.post('/api/user/auth', {}, {
+            headers: {
+                Authorization: `Bearer ${token}`, // Send token in Authorization header
+            },
+        });
+
+        if (response.status === 200 && response.data.valid) {
+            return true;  // Token is valid
+        } else {
+            return false;  // Token is invalid
+        }
+    } catch (error) {
+        console.error('Token validation failed:', error);
+        return false;  // Token validation failed
+    }
+};
+
+// Function to check if the user is authenticated (token exists and is valid), if the token exists and then validates it using the validateToken function
+export const isAuthenticated = async () => {
+    const token = getToken();
+    if (!token) {
+        return false;  // No token, user is not authenticated
+    }
+
+    // Validate token with backend
+    return await validateToken(token);
+};

@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {makeStyles} from "@mui/styles";
 import {fetchCategories} from "../../app/redux/slices/categoriesSlice";
+import WrapperSection from "../WrapperSection/WrapperSection";
 import './Categories.scss';
 
 
@@ -66,17 +67,19 @@ function Categories() {
 
     return (
         <div className="categories">
-            {splitArray(categories).map((row, i) => (
-                <div key={i} className={row.length === 3 ? cl.row : cl.underRow}>
-                    {row.map((item, idx) => (
-                        <div key={idx} className={cl.imageWrapper}>
-                            <Link to={`/${item.name}`}> {/* Use the categorySlug here */}
-                                <img src={`${imagePath}${item.image}`} alt={item.title} className="categories__img"/>
-                            </Link>
-                        </div>
-                    ))}
-                </div>
-            ))}
+            <WrapperSection>
+                {splitArray(categories).map((row, i) => (
+                    <div key={i} className={row.length === 3 ? cl.row : cl.underRow}>
+                        {row.map((item, idx) => (
+                            <div key={idx} className={cl.imageWrapper}>
+                                <Link to={`/${item.name}`}>
+                                    <img src={`${imagePath}${item.image}`} alt={item.title} className="categories__img"/>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                ))}
+            </WrapperSection>
         </div>)
 }
 

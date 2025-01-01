@@ -1,10 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from "axios";
 
 // Thunk to fetch products from backend
 export const fetchGoods = createAsyncThunk('products/fetchGoods', async () => {
     try {
-        const response = await fetch('/api/goods');
+        const response = await axios.get('/api/goods');
         // Check if the response is OK
+        console.log('response', response);
         if (!response.data) {
             throw new Error('Failed to fetch goods');
         }

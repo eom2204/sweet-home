@@ -3,10 +3,9 @@
 import {useState} from 'react';
 import Button from '../Button/Button';
 import {Box, Typography} from "@mui/material";
-import SignUpBenefits from "../SignUp/SignUpBenefits";
-import LoginForm from "./LoginForm";
-import RegistrationForm from "./RegistrationForm";
-import './Login.scss';
+import SignUpBenefits from "../SignUpBenefits/SignUpBenefits";
+import LoginForm from "./LoginForm/LoginForm";
+import RegistrationForm from "./RegistrationForm/RegistrationForm";
 
 
 function Login() {
@@ -20,13 +19,13 @@ function Login() {
 
 
     return (
-        <Box sx={{display: 'flex', flexDirection: {xs: 'column', sm: 'column', md: 'row'}, marginTop: "168px"}}>
+        <Box sx={{display: 'flex', flexDirection: {xs: 'column', sm: 'row', md: 'row'}, marginTop: "168px"}}>
             <Box sx={{
                 width: {xs: '100%', sm: '100%', md: '50%'},
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                backgroundColor: 'green'
+                borderRight: '1px solid black',
             }}>
                 <Box sx={{maxWidth: '416px', width: '100%', textAlign: 'center'}}>
                     <Typography variant="h5" sx={{marginBottom: "32px"}}>Already have an account?</Typography>
@@ -89,7 +88,6 @@ function Login() {
                         </>) :
                         (<RegistrationForm/>)
                     }
-
                 </Box>
             </Box>
         </Box>

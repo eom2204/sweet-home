@@ -8,10 +8,12 @@ import {useTheme} from "@mui/styles";
 import {useMediaQuery} from "@mui/system";
 import {fetchGoods} from "../../app/redux/slices/productsSlice";
 import Button from '../Button/Button';
+import WrapperSection from "../WrapperSection/WrapperSection";
 import './NewArrivals.scss';
 
 
 const NewArrivals = () => {
+    const imagePath = process.env.REACT_APP_IMAGE_PATH;
 
     // Access goods data from Redux store
     const dispatch = useDispatch();
@@ -38,8 +40,6 @@ const NewArrivals = () => {
     // filter the 10 newest products by arrival date
     const newArrivals = [...goods].sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)).slice(0, 10);
 
-    const imagePath = process.env.REACT_APP_IMAGE_PATH;
-
     const settings = {
         dots: false,
         infinite: false,
@@ -51,32 +51,33 @@ const NewArrivals = () => {
     };
 
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                alignItems: 'center',
-                flexDirection: 'column',
-                marginTop: isSmallScreen ? '44px' : '120px',
-                marginBottom: isSmallScreen ? '44px' : '120px',
-                //justifyContent: 'space-between',
-                //alignItems: isSmallScreen ? 'center' : 'flex-start',
-                // gap: '62px',
-                //textAlign: 'center',
-            }}
-        >
-            <Typography variant='h3' component='h2' sx={{ marginBottom: {xs: '24px', sm: '24px', md: '44px' }}}>
-                New Arrivals
-            </Typography>
-
-
-            {/* Right Side: Carousel */}
+        <WrapperSection>
             <Box
                 sx={{
-                    overflow: 'hidden',
-                    position: 'relative',
-                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    flexDirection: 'column',
+                    marginTop: isSmallScreen ? '44px' : '120px',
+                    marginBottom: isSmallScreen ? '44px' : '120px',
+                    //justifyContent: 'space-between',
+                    //alignItems: isSmallScreen ? 'center' : 'flex-start',
+                    // gap: '62px',
+                    //textAlign: 'center',
                 }}
             >
+                <Typography variant='h3' component='h2' sx={{ marginBottom: {xs: '24px', sm: '24px', md: '44px' }}}>
+                    New Arrivals
+                </Typography>
+
+
+                {/* Right Side: Carousel */}
+                <Box
+                    sx={{
+                        overflow: 'hidden',
+                        position: 'relative',
+                        width: '100%',
+                    }}
+                >
 
                     <Slider {...settings}>
                         {newArrivals.map((product) => (
@@ -121,9 +122,10 @@ const NewArrivals = () => {
                             </Card>
                         ))}
                     </Slider>
+                </Box>
+                <Button type="submit" text="SEE MORE" className="arrivals__button"></Button>
             </Box>
-            <Button type="submit" text="SEE MORE" className="arrivals__button"></Button>
-        </Box>
+        </WrapperSection>
     );
 };
 

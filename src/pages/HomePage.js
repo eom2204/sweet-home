@@ -9,34 +9,31 @@ import Categories from "../components/Categories/Categories";
 
 
 
-const ContentWrapper = styled('div')(({ theme }) => ({
-    marginLeft: '5.25rem',
-    marginRight: '5.25rem',
-
-    // Responsive breakpoints using MUI theme
-    [theme.breakpoints.down('md')]: {
-        marginLeft: '2rem',
-        marginRight: '2rem',
-    },
-    [theme.breakpoints.down('sm')]: {
-        marginLeft: '10px',
-        marginRight: '10px',
-    },
-}));
+// const ContentWrapper = styled('div')(({ theme }) => ({
+//     marginX: '5.25rem',
+//
+//     // Responsive breakpoints using MUI theme
+//     [theme.breakpoints.down('md')]: {
+//         marginX: '2rem',
+//     },
+//     [theme.breakpoints.down('sm')]: {
+//         marginX: '10px',
+//     },
+// }));
 
 function HomePage() {
 
     return (
         <>
             <Banner/>
-            <ContentWrapper>
+            {/*<ContentWrapper>*/}
                 <Categories/>
                 <NewArrivals/>
                 <AboutUs/>
                 <Popular/>
                 <Brands/>
                 <Bestsellers/>
-            </ContentWrapper>
+            {/*</ContentWrapper>*/}
 
         </>
     )

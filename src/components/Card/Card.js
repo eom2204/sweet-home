@@ -1,4 +1,5 @@
 import React from "react";
+import FavoriteGoods from "../FavoriteGoods/FavoriteGoods";
 import "./Card.scss";
 
 const Card = ({ product }) => {
@@ -14,6 +15,7 @@ const Card = ({ product }) => {
     <div className="card">
       <div className="card-image">
           <img  src={`${imagePath}${images[0]}`} alt={name} loading={"lazy"}/>
+          <FavoriteGoods itemId={product.id} />
       </div>
       <div className="card-content">
         <h3 className="card-title">{name}</h3>

@@ -1,8 +1,9 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {login} from "../../services/authService";
-import Button from "../Button/Button";
+import {login} from "../../../services/authService";
+import Button from "../../Button/Button";
 import {Box} from "@mui/material";
+import './LoginForm.scss';
 
 
 function LoginForm() {

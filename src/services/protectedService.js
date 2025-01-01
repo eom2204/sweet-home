@@ -19,7 +19,14 @@ export const getProtectedData = async () => {
         });
         return response.data;
     } catch (error) {
-        console.error('Protected Route Error:', error);
-        throw error;
+        if (error.response && error.response.status === 401) {
+            // Token expired or invalid
+            console.error('Token expired or unauthorized. Redirecting to login.');
+            AccessKey.remove(); // Clear the token
+            window.location.href = '/login'; // Redirect to login
+        } else {
+            console.error('Protected Route Error:', error);
+            throw error;
+        }
     }
 };

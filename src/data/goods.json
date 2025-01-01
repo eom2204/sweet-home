@@ -8,9 +8,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/bathroom-mirror-art-1.jpg",
-      "goods/bathroom-mirror-art-2.jpg",
-      "goods/bathroom-mirror-art-3.jpg"
+      "goods/bathroom-mirror-art-1.webp",
+      "goods/bathroom-mirror-art-2.webp",
+      "goods/bathroom-mirror-art-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.276Z",
     "updatedAt": "2024-10-30T22:38:57.276Z",
@@ -30,9 +30,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/bathroom-mirror-black-1.jpg",
-      "goods/bathroom-mirror-black-2.jpg",
-      "goods/bathroom-mirror-black-3.jpg"
+      "goods/bathroom-mirror-black-1.webp",
+      "goods/bathroom-mirror-black-2.webp",
+      "goods/bathroom-mirror-black-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.292Z",
     "updatedAt": "2024-10-30T22:38:57.292Z",
@@ -52,9 +52,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/bathroom-mirror-blue-1.jpg",
-      "goods/bathroom-mirror-blue-2.jpg",
-      "goods/bathroom-mirror-blue-3.jpg"
+      "goods/bathroom-mirror-blue-1.webp",
+      "goods/bathroom-mirror-blue-2.webp",
+      "goods/bathroom-mirror-blue-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.300Z",
     "updatedAt": "2024-10-30T22:38:57.300Z",
@@ -74,9 +74,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/bathroom-mirror-circle-1.jpg",
-      "goods/bathroom-mirror-circle-2.jpg",
-      "goods/bathroom-mirror-circle-3.jpg"
+      "goods/bathroom-mirror-circle-1.webp",
+      "goods/bathroom-mirror-circle-2.webp",
+      "goods/bathroom-mirror-circle-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.307Z",
     "updatedAt": "2024-10-30T22:38:57.307Z",
@@ -96,9 +96,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/bathroom-mirror-flash-1.jpg",
-      "goods/bathroom-mirror-flash-2.jpg",
-      "goods/bathroom-mirror-flash-3.jpg"
+      "goods/bathroom-mirror-flash-1.webp",
+      "goods/bathroom-mirror-flash-2.webp",
+      "goods/bathroom-mirror-flash-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.314Z",
     "updatedAt": "2024-10-30T22:38:57.314Z",
@@ -118,9 +118,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/bathroom-mirror-golden-1.jpg",
-      "goods/bathroom-mirror-golden-2.jpg",
-      "goods/bathroom-mirror-golden-3.jpg"
+      "goods/bathroom-mirror-golden-1.webp",
+      "goods/bathroom-mirror-golden-2.webp",
+      "goods/bathroom-mirror-golden-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.321Z",
     "updatedAt": "2024-10-30T22:38:57.321Z",
@@ -140,9 +140,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/bathroom-mirror-light-1.jpg",
-      "goods/bathroom-mirror-light-2.jpg",
-      "goods/bathroom-mirror-light-3.jpg"
+      "goods/bathroom-mirror-light-1.webp",
+      "goods/bathroom-mirror-light-2.webp",
+      "goods/bathroom-mirror-light-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.328Z",
     "updatedAt": "2024-10-30T22:38:57.328Z",
@@ -162,9 +162,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/bathroom-mirror-nice-1.jpg",
-      "goods/bathroom-mirror-nice-2.jpg",
-      "goods/bathroom-mirror-nice-3.jpg"
+      "goods/bathroom-mirror-nice-1.webp",
+      "goods/bathroom-mirror-nice-2.webp",
+      "goods/bathroom-mirror-nice-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.335Z",
     "updatedAt": "2024-10-30T22:38:57.335Z",
@@ -184,9 +184,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/bathroom-mirror-oval-1.jpg",
-      "goods/bathroom-mirror-oval-2.jpg",
-      "goods/bathroom-mirror-oval-3.jpg"
+      "goods/bathroom-mirror-oval-1.webp",
+      "goods/bathroom-mirror-oval-2.webp",
+      "goods/bathroom-mirror-oval-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.342Z",
     "updatedAt": "2024-10-30T22:38:57.342Z",
@@ -206,9 +206,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/bathroom-mirror-shine-1.jpg",
-      "goods/bathroom-mirror-shine-2.jpg",
-      "goods/bathroom-mirror-shine-3.jpg"
+      "goods/bathroom-mirror-shine-1.webp",
+      "goods/bathroom-mirror-shine-2.webp",
+      "goods/bathroom-mirror-shine-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.349Z",
     "updatedAt": "2024-10-30T22:38:57.349Z",
@@ -228,9 +228,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/bathroom-mirror-smart-1.jpg",
-      "goods/bathroom-mirror-smart-2.jpg",
-      "goods/bathroom-mirror-smart-3.jpg"
+      "goods/bathroom-mirror-smart-1.webp",
+      "goods/bathroom-mirror-smart-2.webp",
+      "goods/bathroom-mirror-smart-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.355Z",
     "updatedAt": "2024-10-30T22:38:57.355Z",
@@ -250,9 +250,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/bathroom-mirror-wood-1.jpg",
-      "goods/bathroom-mirror-wood-2.jpg",
-      "goods/bathroom-mirror-wood-3.jpg"
+      "goods/bathroom-mirror-wood-1.webp",
+      "goods/bathroom-mirror-wood-2.webp",
+      "goods/bathroom-mirror-wood-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.361Z",
     "updatedAt": "2024-10-30T22:38:57.361Z",
@@ -272,9 +272,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/bathroomset-1.jpg",
-      "goods/bathroomset-2.jpg",
-      "goods/bathroomset-3.jpg"
+      "goods/bathroomset-1.webp",
+      "goods/bathroomset-2.webp",
+      "goods/bathroomset-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.368Z",
     "updatedAt": "2024-10-30T22:38:57.368Z",
@@ -294,9 +294,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/bottle-set-1.jpg",
-      "goods/bottle-set-2.jpg",
-      "goods/bottle-set-3.jpg"
+      "goods/bottle-set-1.webp",
+      "goods/bottle-set-2.webp",
+      "goods/bottle-set-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.375Z",
     "updatedAt": "2024-10-30T22:38:57.375Z",
@@ -316,9 +316,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/holder-blue-1.jpg",
-      "goods/holder-blue-2.jpg",
-      "goods/holder-blue-3.jpg"
+      "goods/holder-blue-1.webp",
+      "goods/holder-blue-2.webp",
+      "goods/holder-blue-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.383Z",
     "updatedAt": "2024-10-30T22:38:57.383Z",
@@ -338,9 +338,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/holder-pink-1.jpg",
-      "goods/holder-pink-2.jpg",
-      "goods/holder-pink-3.jpg"
+      "goods/holder-pink-1.webp",
+      "goods/holder-pink-2.webp",
+      "goods/holder-pink-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.389Z",
     "updatedAt": "2024-10-30T22:38:57.389Z",
@@ -360,9 +360,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/holder-white-1.jpg",
-      "goods/holder-white-2.jpg",
-      "goods/holder-white-3.jpg"
+      "goods/holder-white-1.webp",
+      "goods/holder-white-2.webp",
+      "goods/holder-white-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.394Z",
     "updatedAt": "2024-10-30T22:38:57.394Z",
@@ -382,9 +382,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/pad-sat-wood-1.jpg",
-      "goods/pad-sat-wood-2.jpg",
-      "goods/pad-sat-wood-3.jpg"
+      "goods/pad-sat-wood-1.webp",
+      "goods/pad-sat-wood-2.webp",
+      "goods/pad-sat-wood-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.400Z",
     "updatedAt": "2024-10-30T22:38:57.400Z",
@@ -404,9 +404,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/soap-black-1.jpg",
-      "goods/soap-black-2.jpg",
-      "goods/soap-black-3.jpg"
+      "goods/soap-black-1.webp",
+      "goods/soap-black-2.webp",
+      "goods/soap-black-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.406Z",
     "updatedAt": "2024-10-30T22:38:57.406Z",
@@ -426,9 +426,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/soap-blue-1.jpg",
-      "goods/soap-blue-2.jpg",
-      "goods/soap-blue-3.jpg"
+      "goods/soap-blue-1.webp",
+      "goods/soap-blue-2.webp",
+      "goods/soap-blue-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.412Z",
     "updatedAt": "2024-10-30T22:38:57.412Z",
@@ -448,9 +448,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/soap-craft-1.jpg",
-      "goods/soap-craft-2.jpg",
-      "goods/soap-craft-3.jpg"
+      "goods/soap-craft-1.webp",
+      "goods/soap-craft-2.webp",
+      "goods/soap-craft-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.419Z",
     "updatedAt": "2024-10-30T22:38:57.419Z",
@@ -470,9 +470,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/soap-gold-1.jpg",
-      "goods/soap-gold-2.jpg",
-      "goods/soap-gold-3.jpg"
+      "goods/soap-gold-1.webp",
+      "goods/soap-gold-2.webp",
+      "goods/soap-gold-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.429Z",
     "updatedAt": "2024-10-30T22:38:57.429Z",
@@ -492,9 +492,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/soap-grey-1.jpg",
-      "goods/soap-grey-2.jpg",
-      "goods/soap-grey-3.jpg"
+      "goods/soap-grey-1.webp",
+      "goods/soap-grey-2.webp",
+      "goods/soap-grey-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.435Z",
     "updatedAt": "2024-10-30T22:38:57.435Z",
@@ -514,9 +514,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/soap-lavander-1.jpg",
-      "goods/soap-lavander-2.jpg",
-      "goods/soap-lavander-3.jpg"
+      "goods/soap-lavander-1.webp",
+      "goods/soap-lavander-2.webp",
+      "goods/soap-lavander-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.441Z",
     "updatedAt": "2024-10-30T22:38:57.441Z",
@@ -536,9 +536,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/soap-light-white-1.jpg",
-      "goods/soap-light-white-2.jpg",
-      "goods/soap-light-white-3.jpg"
+      "goods/soap-light-white-1.webp",
+      "goods/soap-light-white-2.webp",
+      "goods/soap-light-white-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.447Z",
     "updatedAt": "2024-10-30T22:38:57.447Z",
@@ -558,9 +558,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/soap-lite-1.jpg",
-      "goods/soap-lite-2.jpg",
-      "goods/soap-lite-3.jpg"
+      "goods/soap-lite-1.webp",
+      "goods/soap-lite-2.webp",
+      "goods/soap-lite-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.453Z",
     "updatedAt": "2024-10-30T22:38:57.453Z",
@@ -580,9 +580,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/soap-set2-1.jpg",
-      "goods/soap-set2-2.jpg",
-      "goods/soap-set2-3.jpg"
+      "goods/soap-set2-1.webp",
+      "goods/soap-set2-2.webp",
+      "goods/soap-set2-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.459Z",
     "updatedAt": "2024-10-30T22:38:57.459Z",
@@ -602,9 +602,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/soap-set3-1.jpg",
-      "goods/soap-set3-2.jpg",
-      "goods/soap-set3-3.jpg"
+      "goods/soap-set3-1.webp",
+      "goods/soap-set3-2.webp",
+      "goods/soap-set3-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.465Z",
     "updatedAt": "2024-10-30T22:38:57.465Z",
@@ -624,9 +624,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/soap-silver-1.jpg",
-      "goods/soap-silver-2.jpg",
-      "goods/soap-silver-3.jpg"
+      "goods/soap-silver-1.webp",
+      "goods/soap-silver-2.webp",
+      "goods/soap-silver-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.470Z",
     "updatedAt": "2024-10-30T22:38:57.470Z",
@@ -646,9 +646,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/soap-white-1.jpg",
-      "goods/soap-white-2.jpg",
-      "goods/soap-white-3.jpg"
+      "goods/soap-white-1.webp",
+      "goods/soap-white-2.webp",
+      "goods/soap-white-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.478Z",
     "updatedAt": "2024-10-30T22:38:57.478Z",
@@ -668,9 +668,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/spa-set-1.jpg",
-      "goods/spa-set-2.jpg",
-      "goods/spa-set-3.jpg"
+      "goods/spa-set-1.webp",
+      "goods/spa-set-2.webp",
+      "goods/spa-set-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.484Z",
     "updatedAt": "2024-10-30T22:38:57.484Z",
@@ -690,9 +690,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/towelholder-1.jpg",
-      "goods/towelholder-2.jpg",
-      "goods/towelholder-3.jpg"
+      "goods/towelholder-1.webp",
+      "goods/towelholder-2.webp",
+      "goods/towelholder-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.492Z",
     "updatedAt": "2024-10-30T22:38:57.492Z",
@@ -712,9 +712,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/wellness-set-1.jpg",
-      "goods/wellness-set-2.jpg",
-      "goods/wellness-set-3.jpg"
+      "goods/wellness-set-1.webp",
+      "goods/wellness-set-2.webp",
+      "goods/wellness-set-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.498Z",
     "updatedAt": "2024-10-30T22:38:57.498Z",
@@ -734,9 +734,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/towels-blue-1.jpg",
-      "goods/towels-blue-2.jpg",
-      "goods/towels-blue-3.jpg"
+      "goods/towels-blue-1.webp",
+      "goods/towels-blue-2.webp",
+      "goods/towels-blue-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.504Z",
     "updatedAt": "2024-10-30T22:38:57.504Z",
@@ -756,9 +756,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/towels-pink-1.jpg",
-      "goods/towels-pink-2.jpg",
-      "goods/towels-pink-3.jpg"
+      "goods/towels-pink-1.webp",
+      "goods/towels-pink-2.webp",
+      "goods/towels-pink-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.512Z",
     "updatedAt": "2024-10-30T22:38:57.512Z",
@@ -778,9 +778,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/towels-set-color-1.jpg",
-      "goods/towels-set-color-2.jpg",
-      "goods/towels-set-color-3.jpg"
+      "goods/towels-set-color-1.webp",
+      "goods/towels-set-color-2.webp",
+      "goods/towels-set-color-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.518Z",
     "updatedAt": "2024-10-30T22:38:57.518Z",
@@ -800,9 +800,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/towels-set-dark-1.jpg",
-      "goods/towels-set-dark-2.jpg",
-      "goods/towels-set-dark-3.jpg"
+      "goods/towels-set-dark-1.webp",
+      "goods/towels-set-dark-2.webp",
+      "goods/towels-set-dark-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.522Z",
     "updatedAt": "2024-10-30T22:38:57.522Z",
@@ -822,9 +822,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/towels-set-green-1.jpg",
-      "goods/towels-set-green-2.jpg",
-      "goods/towels-set-green-3.jpg"
+      "goods/towels-set-green-1.webp",
+      "goods/towels-set-green-2.webp",
+      "goods/towels-set-green-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.528Z",
     "updatedAt": "2024-10-30T22:38:57.528Z",
@@ -844,9 +844,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/towels-set-grey-1.jpg",
-      "goods/towels-set-grey-2.jpg",
-      "goods/towels-set-grey-3.jpg"
+      "goods/towels-set-grey-1.webp",
+      "goods/towels-set-grey-2.webp",
+      "goods/towels-set-grey-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.533Z",
     "updatedAt": "2024-10-30T22:38:57.533Z",
@@ -866,9 +866,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/towels-set-grey-light-1.jpg",
-      "goods/towels-set-grey-light-2.jpg",
-      "goods/towels-set-grey-light-3.jpg"
+      "goods/towels-set-grey-light-1.webp",
+      "goods/towels-set-grey-light-2.webp",
+      "goods/towels-set-grey-light-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.540Z",
     "updatedAt": "2024-10-30T22:38:57.540Z",
@@ -888,9 +888,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/towels-set-pastel-1.jpg",
-      "goods/towels-set-pastel-2.jpg",
-      "goods/towels-set-pastel-3.jpg"
+      "goods/towels-set-pastel-1.webp",
+      "goods/towels-set-pastel-2.webp",
+      "goods/towels-set-pastel-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.546Z",
     "updatedAt": "2024-10-30T22:38:57.546Z",
@@ -910,9 +910,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/towels-set-pink-1.jpg",
-      "goods/towels-set-pink-2.jpg",
-      "goods/towels-set-pink-3.jpg"
+      "goods/towels-set-pink-1.webp",
+      "goods/towels-set-pink-2.webp",
+      "goods/towels-set-pink-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.551Z",
     "updatedAt": "2024-10-30T22:38:57.551Z",
@@ -932,9 +932,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/towels-small-dark-1.jpg",
-      "goods/towels-small-dark-2.jpg",
-      "goods/towels-small-dark-3.jpg"
+      "goods/towels-small-dark-1.webp",
+      "goods/towels-small-dark-2.webp",
+      "goods/towels-small-dark-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.557Z",
     "updatedAt": "2024-10-30T22:38:57.557Z",
@@ -954,9 +954,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/towels-small-grey-1.jpg",
-      "goods/towels-small-grey-2.jpg",
-      "goods/towels-small-grey-3.jpg"
+      "goods/towels-small-grey-1.webp",
+      "goods/towels-small-grey-2.webp",
+      "goods/towels-small-grey-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.562Z",
     "updatedAt": "2024-10-30T22:38:57.562Z",
@@ -976,9 +976,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/towels-small-pink-1.jpg",
-      "goods/towels-small-pink-2.jpg",
-      "goods/towels-small-pink-3.jpg"
+      "goods/towels-small-pink-1.webp",
+      "goods/towels-small-pink-2.webp",
+      "goods/towels-small-pink-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.568Z",
     "updatedAt": "2024-10-30T22:38:57.568Z",
@@ -998,9 +998,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/towels-stripe-1.jpg",
-      "goods/towels-stripe-2.jpg",
-      "goods/towels-stripe-3.jpg"
+      "goods/towels-stripe-1.webp",
+      "goods/towels-stripe-2.webp",
+      "goods/towels-stripe-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.574Z",
     "updatedAt": "2024-10-30T22:38:57.574Z",
@@ -1020,9 +1020,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/towels-white-1.jpg",
-      "goods/towels-white-2.jpg",
-      "goods/towels-white-3.jpg"
+      "goods/towels-white-1.webp",
+      "goods/towels-white-2.webp",
+      "goods/towels-white-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.578Z",
     "updatedAt": "2024-10-30T22:38:57.578Z",
@@ -1042,9 +1042,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/towels-yellow-1.jpg",
-      "goods/towels-yellow-2.jpg",
-      "goods/towels-yellow-3.jpg"
+      "goods/towels-yellow-1.webp",
+      "goods/towels-yellow-2.webp",
+      "goods/towels-yellow-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.583Z",
     "updatedAt": "2024-10-30T22:38:57.583Z",
@@ -1064,9 +1064,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/bedroom-pillow-abstraction-1.jpg",
-      "goods/bedroom-pillow-abstraction-2.jpg",
-      "goods/bedroom-pillow-abstraction-3.jpg"
+      "goods/bedroom-pillow-abstraction-1.webp",
+      "goods/bedroom-pillow-abstraction-2.webp",
+      "goods/bedroom-pillow-abstraction-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.611Z",
     "updatedAt": "2024-10-30T22:38:57.611Z",
@@ -1086,9 +1086,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/bedroom-pillow-arrow-1.jpg",
-      "goods/bedroom-pillow-arrow-2.jpg",
-      "goods/bedroom-pillow-arrow-3.jpg"
+      "goods/bedroom-pillow-arrow-1.webp",
+      "goods/bedroom-pillow-arrow-2.webp",
+      "goods/bedroom-pillow-arrow-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.616Z",
     "updatedAt": "2024-10-30T22:38:57.616Z",
@@ -1108,9 +1108,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/bedroom-pillow-blue-1.jpg",
-      "goods/bedroom-pillow-blue-2.jpg",
-      "goods/bedroom-pillow-blue-3.jpg"
+      "goods/bedroom-pillow-blue-1.webp",
+      "goods/bedroom-pillow-blue-2.webp",
+      "goods/bedroom-pillow-blue-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.621Z",
     "updatedAt": "2024-10-30T22:38:57.621Z",
@@ -1130,9 +1130,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/bedroom-pillow-button-1.jpg",
-      "goods/bedroom-pillow-button-2.jpg",
-      "goods/bedroom-pillow-button-3.jpg"
+      "goods/bedroom-pillow-button-1.webp",
+      "goods/bedroom-pillow-button-2.webp",
+      "goods/bedroom-pillow-button-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.627Z",
     "updatedAt": "2024-10-30T22:38:57.627Z",
@@ -1152,9 +1152,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/bedroom-pillow-cactus-1.jpg",
-      "goods/bedroom-pillow-cactus-2.jpg",
-      "goods/bedroom-pillow-cactus-3.jpg"
+      "goods/bedroom-pillow-cactus-1.webp",
+      "goods/bedroom-pillow-cactus-2.webp",
+      "goods/bedroom-pillow-cactus-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.633Z",
     "updatedAt": "2024-10-30T22:38:57.633Z",
@@ -1174,9 +1174,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/bedroom-pillow-christmas-1.jpg",
-      "goods/bedroom-pillow-christmas-2.jpg",
-      "goods/bedroom-pillow-christmas-3.jpg"
+      "goods/bedroom-pillow-christmas-1.webp",
+      "goods/bedroom-pillow-christmas-2.webp",
+      "goods/bedroom-pillow-christmas-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.638Z",
     "updatedAt": "2024-10-30T22:38:57.638Z",
@@ -1196,9 +1196,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/bedroom-pillow-circle-1.jpg",
-      "goods/bedroom-pillow-circle-2.jpg",
-      "goods/bedroom-pillow-circle-3.jpg"
+      "goods/bedroom-pillow-circle-1.webp",
+      "goods/bedroom-pillow-circle-2.webp",
+      "goods/bedroom-pillow-circle-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.644Z",
     "updatedAt": "2024-10-30T22:38:57.644Z",
@@ -1218,9 +1218,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/bedroom-pillow-darkgray-1.jpg",
-      "goods/bedroom-pillow-darkgray-2.jpg",
-      "goods/bedroom-pillow-darkgray-3.jpg"
+      "goods/bedroom-pillow-darkgray-1.webp",
+      "goods/bedroom-pillow-darkgray-2.webp",
+      "goods/bedroom-pillow-darkgray-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.650Z",
     "updatedAt": "2024-10-30T22:38:57.650Z",
@@ -1240,9 +1240,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/bedroom-pillow-disturb-1.jpg",
-      "goods/bedroom-pillow-disturb-2.jpg",
-      "goods/bedroom-pillow-disturb-3.jpg"
+      "goods/bedroom-pillow-disturb-1.webp",
+      "goods/bedroom-pillow-disturb-2.webp",
+      "goods/bedroom-pillow-disturb-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.657Z",
     "updatedAt": "2024-10-30T22:38:57.657Z",
@@ -1262,9 +1262,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/bedroom-pillow-grass-1.jpg",
-      "goods/bedroom-pillow-grass-2.jpg",
-      "goods/bedroom-pillow-grass-3.jpg"
+      "goods/bedroom-pillow-grass-1.webp",
+      "goods/bedroom-pillow-grass-2.webp",
+      "goods/bedroom-pillow-grass-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.663Z",
     "updatedAt": "2024-10-30T22:38:57.663Z",
@@ -1284,9 +1284,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/bedroom-pillow-gray-1.jpg",
-      "goods/bedroom-pillow-gray-2.jpg",
-      "goods/bedroom-pillow-gray-3.jpg"
+      "goods/bedroom-pillow-gray-1.webp",
+      "goods/bedroom-pillow-gray-2.webp",
+      "goods/bedroom-pillow-gray-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.670Z",
     "updatedAt": "2024-10-30T22:38:57.670Z",
@@ -1306,9 +1306,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/bedroom-pillow-happy-1.jpg",
-      "goods/bedroom-pillow-happy-2.jpg",
-      "goods/bedroom-pillow-happy-3.jpg"
+      "goods/bedroom-pillow-happy-1.webp",
+      "goods/bedroom-pillow-happy-2.webp",
+      "goods/bedroom-pillow-happy-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.676Z",
     "updatedAt": "2024-10-30T22:38:57.676Z",
@@ -1328,9 +1328,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/bedroom-pillow-inscription-1.jpg",
-      "goods/bedroom-pillow-inscription-2.jpg",
-      "goods/bedroom-pillow-inscription-3.jpg"
+      "goods/bedroom-pillow-inscription-1.webp",
+      "goods/bedroom-pillow-inscription-2.webp",
+      "goods/bedroom-pillow-inscription-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.681Z",
     "updatedAt": "2024-10-30T22:38:57.681Z",
@@ -1350,9 +1350,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/bedroom-pillow-long-1.jpg",
-      "goods/bedroom-pillow-long-2.jpg",
-      "goods/bedroom-pillow-long-3.jpg"
+      "goods/bedroom-pillow-long-1.webp",
+      "goods/bedroom-pillow-long-2.webp",
+      "goods/bedroom-pillow-long-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.686Z",
     "updatedAt": "2024-10-30T22:38:57.686Z",
@@ -1372,9 +1372,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/bedroom-pillow-malevich-1.jpg",
-      "goods/bedroom-pillow-malevich-2.jpg",
-      "goods/bedroom-pillow-malevich-3.jpg"
+      "goods/bedroom-pillow-malevich-1.webp",
+      "goods/bedroom-pillow-malevich-2.webp",
+      "goods/bedroom-pillow-malevich-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.691Z",
     "updatedAt": "2024-10-30T22:38:57.691Z",
@@ -1394,9 +1394,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/bedroom-pillow-next-1.jpg",
-      "goods/bedroom-pillow-next-2.jpg",
-      "goods/bedroom-pillow-next-3.jpg"
+      "goods/bedroom-pillow-next-1.webp",
+      "goods/bedroom-pillow-next-2.webp",
+      "goods/bedroom-pillow-next-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.696Z",
     "updatedAt": "2024-10-30T22:38:57.696Z",
@@ -1416,9 +1416,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/bedroom-pillow-pattern-1.jpg",
-      "goods/bedroom-pillow-pattern-2.jpg",
-      "goods/bedroom-pillow-pattern-3.jpg"
+      "goods/bedroom-pillow-pattern-1.webp",
+      "goods/bedroom-pillow-pattern-2.webp",
+      "goods/bedroom-pillow-pattern-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.702Z",
     "updatedAt": "2024-10-30T22:38:57.702Z",
@@ -1438,9 +1438,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/bedroom-pillow-square-1.jpg",
-      "goods/bedroom-pillow-square-2.jpg",
-      "goods/bedroom-pillow-square-3.jpg"
+      "goods/bedroom-pillow-square-1.webp",
+      "goods/bedroom-pillow-square-2.webp",
+      "goods/bedroom-pillow-square-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.708Z",
     "updatedAt": "2024-10-30T22:38:57.708Z",
@@ -1460,9 +1460,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/bedroom-pillow-stripe-1.jpg",
-      "goods/bedroom-pillow-stripe-2.jpg",
-      "goods/bedroom-pillow-stripe-3.jpg"
+      "goods/bedroom-pillow-stripe-1.webp",
+      "goods/bedroom-pillow-stripe-2.webp",
+      "goods/bedroom-pillow-stripe-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.715Z",
     "updatedAt": "2024-10-30T22:38:57.715Z",
@@ -1482,9 +1482,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/bedroom-pillow-terry-1.jpg",
-      "goods/bedroom-pillow-terry-2.jpg",
-      "goods/bedroom-pillow-terry-3.jpg"
+      "goods/bedroom-pillow-terry-1.webp",
+      "goods/bedroom-pillow-terry-2.webp",
+      "goods/bedroom-pillow-terry-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.721Z",
     "updatedAt": "2024-10-30T22:38:57.721Z",
@@ -1504,9 +1504,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/bedroom-pillow-white-1.jpg",
-      "goods/bedroom-pillow-white-2.jpg",
-      "goods/bedroom-pillow-white-3.jpg"
+      "goods/bedroom-pillow-white-1.webp",
+      "goods/bedroom-pillow-white-2.webp",
+      "goods/bedroom-pillow-white-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.727Z",
     "updatedAt": "2024-10-30T22:38:57.727Z",
@@ -1526,9 +1526,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/bedroom-pillow-whiterhombus-1.jpg",
-      "goods/bedroom-pillow-whiterhombus-2.jpg",
-      "goods/bedroom-pillow-whiterhombus-3.jpg"
+      "goods/bedroom-pillow-whiterhombus-1.webp",
+      "goods/bedroom-pillow-whiterhombus-2.webp",
+      "goods/bedroom-pillow-whiterhombus-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.734Z",
     "updatedAt": "2024-10-30T22:38:57.734Z",
@@ -1548,9 +1548,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/bedroom-pillow-yellow-1.jpg",
-      "goods/bedroom-pillow-yellow-3.jpg",
-      "goods/bedroom-pillow-yellow-3.jpg"
+      "goods/bedroom-pillow-yellow-1.webp",
+      "goods/bedroom-pillow-yellow-3.webp",
+      "goods/bedroom-pillow-yellow-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.745Z",
     "updatedAt": "2024-10-30T22:38:57.745Z",
@@ -1570,9 +1570,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/bedroom-pillow-zipper-1.jpg",
-      "goods/bedroom-pillow-zipper-2.jpg",
-      "goods/bedroom-pillow-zipper-3.jpg"
+      "goods/bedroom-pillow-zipper-1.webp",
+      "goods/bedroom-pillow-zipper-2.webp",
+      "goods/bedroom-pillow-zipper-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.750Z",
     "updatedAt": "2024-10-30T22:38:57.750Z",
@@ -1592,9 +1592,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/candl- ball-1.jpg",
-      "goods/candl- ball-2.jpg",
-      "goods/candl- ball-3.jpg"
+      "goods/candl- ball-1.webp",
+      "goods/candl- ball-2.webp",
+      "goods/candl- ball-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.755Z",
     "updatedAt": "2024-10-30T22:38:57.755Z",
@@ -1614,9 +1614,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/candl- big-1.jpg",
-      "goods/candl- big-2.jpg",
-      "goods/candl- big-3.jpg"
+      "goods/candl- big-1.webp",
+      "goods/candl- big-2.webp",
+      "goods/candl- big-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.764Z",
     "updatedAt": "2024-10-30T22:38:57.764Z",
@@ -1636,9 +1636,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/candl- black-1.jpg",
-      "goods/candl- black-2.jpg",
-      "goods/candl- black-3.jpg"
+      "goods/candl- black-1.webp",
+      "goods/candl- black-2.webp",
+      "goods/candl- black-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.769Z",
     "updatedAt": "2024-10-30T22:38:57.769Z",
@@ -1658,9 +1658,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/candl- cozy-1.jpg",
-      "goods/candl- cozy-2.jpg",
-      "goods/candl- cozy-3.jpg"
+      "goods/candl- cozy-1.webp",
+      "goods/candl- cozy-2.webp",
+      "goods/candl- cozy-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.774Z",
     "updatedAt": "2024-10-30T22:38:57.774Z",
@@ -1680,9 +1680,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/candl- cup-1.jpg",
-      "goods/candl- cup-2.jpg",
-      "goods/candl- cup-3.jpg"
+      "goods/candl- cup-1.webp",
+      "goods/candl- cup-2.webp",
+      "goods/candl- cup-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.779Z",
     "updatedAt": "2024-10-30T22:38:57.779Z",
@@ -1702,9 +1702,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/candl- flower-1.jpg",
-      "goods/candl- flower-2.jpg",
-      "goods/candl- flower-3.jpg"
+      "goods/candl- flower-1.webp",
+      "goods/candl- flower-2.webp",
+      "goods/candl- flower-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.784Z",
     "updatedAt": "2024-10-30T22:38:57.784Z",
@@ -1724,9 +1724,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/candl- heart-1.jpg",
-      "goods/candl- heart-2.jpg",
-      "goods/candl- heart-3.jpg"
+      "goods/candl- heart-1.webp",
+      "goods/candl- heart-2.webp",
+      "goods/candl- heart-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.788Z",
     "updatedAt": "2024-10-30T22:38:57.788Z",
@@ -1746,9 +1746,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/candl- mini-1.jpg",
-      "goods/candl- mini-2.jpg",
-      "goods/candl- mini-3.jpg"
+      "goods/candl- mini-1.webp",
+      "goods/candl- mini-2.webp",
+      "goods/candl- mini-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.793Z",
     "updatedAt": "2024-10-30T22:38:57.793Z",
@@ -1768,9 +1768,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/candl- pink-1.jpg",
-      "goods/candl- pink-2.jpg",
-      "goods/candl- pink-3.jpg"
+      "goods/candl- pink-1.webp",
+      "goods/candl- pink-2.webp",
+      "goods/candl- pink-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.798Z",
     "updatedAt": "2024-10-30T22:38:57.798Z",
@@ -1790,9 +1790,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/candl- small-1.jpg",
-      "goods/candl- small-2.jpg",
-      "goods/candl- small-3.jpg"
+      "goods/candl- small-1.webp",
+      "goods/candl- small-2.webp",
+      "goods/candl- small-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.803Z",
     "updatedAt": "2024-10-30T22:38:57.803Z",
@@ -1812,9 +1812,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/candl- trio-1.jpg",
-      "goods/candl- trio-2.jpg",
-      "goods/candl- trio-3.jpg"
+      "goods/candl- trio-1.webp",
+      "goods/candl- trio-2.webp",
+      "goods/candl- trio-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.809Z",
     "updatedAt": "2024-10-30T22:38:57.809Z",
@@ -1834,9 +1834,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/candle-bottle-1.jpg",
-      "goods/candle-bottle-2.jpg",
-      "goods/candle-bottle-3.jpg"
+      "goods/candle-bottle-1.webp",
+      "goods/candle-bottle-2.webp",
+      "goods/candle-bottle-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.814Z",
     "updatedAt": "2024-10-30T22:38:57.814Z",
@@ -1856,9 +1856,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/candles-christmas-1.jpg",
-      "goods/candles-christmas-2.jpg",
-      "goods/candles-christmas-3.jpg"
+      "goods/candles-christmas-1.webp",
+      "goods/candles-christmas-2.webp",
+      "goods/candles-christmas-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.819Z",
     "updatedAt": "2024-10-30T22:38:57.819Z",
@@ -1878,9 +1878,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/candles-set-1.jpg",
-      "goods/candles-set-2.jpg",
-      "goods/candles-set-3.jpg"
+      "goods/candles-set-1.webp",
+      "goods/candles-set-2.webp",
+      "goods/candles-set-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.825Z",
     "updatedAt": "2024-10-30T22:38:57.825Z",
@@ -1900,9 +1900,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/candles-stick-1.jpg",
-      "goods/candles-stick-2.jpg",
-      "goods/candles-stick-3.jpg"
+      "goods/candles-stick-1.webp",
+      "goods/candles-stick-2.webp",
+      "goods/candles-stick-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.829Z",
     "updatedAt": "2024-10-30T22:38:57.829Z",
@@ -1922,9 +1922,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/christmas-lantern-white-1.jpg",
-      "goods/christmas-lantern-white-2.jpg",
-      "goods/christmas-lantern-white-3.jpg"
+      "goods/christmas-lantern-white-1.webp",
+      "goods/christmas-lantern-white-2.webp",
+      "goods/christmas-lantern-white-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.834Z",
     "updatedAt": "2024-10-30T22:38:57.834Z",
@@ -1944,9 +1944,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/kitchen-appliances-white-1.jpg",
-      "goods/kitchen-appliances-white-2.jpg",
-      "goods/kitchen-appliances-white-3.jpg"
+      "goods/kitchen-appliances-white-1.webp",
+      "goods/kitchen-appliances-white-2.webp",
+      "goods/kitchen-appliances-white-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.959Z",
     "updatedAt": "2024-10-30T22:38:57.959Z",
@@ -1966,9 +1966,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/kitchen-appliances-wood-1.jpg",
-      "goods/kitchen-appliances-wood-2.jpg",
-      "goods/kitchen-appliances-wood-3.jpg"
+      "goods/kitchen-appliances-wood-1.webp",
+      "goods/kitchen-appliances-wood-2.webp",
+      "goods/kitchen-appliances-wood-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.965Z",
     "updatedAt": "2024-10-30T22:38:57.965Z",
@@ -1988,9 +1988,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/kitchen-glass-cans-wood-light-1.jpg",
-      "goods/kitchen-glass-cans-wood-light-2.jpg",
-      "goods/kitchen-glass-cans-wood-light-3.jpg"
+      "goods/kitchen-glass-cans-wood-light-1.webp",
+      "goods/kitchen-glass-cans-wood-light-2.webp",
+      "goods/kitchen-glass-cans-wood-light-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.971Z",
     "updatedAt": "2024-10-30T22:38:57.971Z",
@@ -2010,9 +2010,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/kitchen-glass-iron-light-1.jpg",
-      "goods/kitchen-glass-iron-light-2.jpg",
-      "goods/kitchen-glass-iron-light-3.jpg"
+      "goods/kitchen-glass-iron-light-1.webp",
+      "goods/kitchen-glass-iron-light-2.webp",
+      "goods/kitchen-glass-iron-light-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.978Z",
     "updatedAt": "2024-10-30T22:38:57.978Z",
@@ -2032,9 +2032,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/kitchen-pan-wood-white-1.jpg",
-      "goods/kitchen-pan-wood-white-2.jpg",
-      "goods/kitchen-pan-wood-white-3.jpg"
+      "goods/kitchen-pan-wood-white-1.webp",
+      "goods/kitchen-pan-wood-white-2.webp",
+      "goods/kitchen-pan-wood-white-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.984Z",
     "updatedAt": "2024-10-30T22:38:57.984Z",
@@ -2054,9 +2054,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/kitchen-shelf-wood-1.jpg",
-      "goods/kitchen-shelf-wood-2.jpg",
-      "goods/kitchen-shelf-wood-3.jpg"
+      "goods/kitchen-shelf-wood-1.webp",
+      "goods/kitchen-shelf-wood-2.webp",
+      "goods/kitchen-shelf-wood-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.989Z",
     "updatedAt": "2024-10-30T22:38:57.989Z",
@@ -2076,9 +2076,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/kitchen-spoons-set-1.jpg",
-      "goods/kitchen-spoons-set-2.jpg",
-      "goods/kitchen-spoons-set-3.jpg"
+      "goods/kitchen-spoons-set-1.webp",
+      "goods/kitchen-spoons-set-2.webp",
+      "goods/kitchen-spoons-set-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:57.994Z",
     "updatedAt": "2024-10-30T22:38:57.994Z",
@@ -2098,9 +2098,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/kitchen-stand-1.jpg",
-      "goods/kitchen-stand-2.jpg",
-      "goods/kitchen-stand-3.jpg"
+      "goods/kitchen-stand-1.webp",
+      "goods/kitchen-stand-2.webp",
+      "goods/kitchen-stand-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.000Z",
     "updatedAt": "2024-10-30T22:38:58.000Z",
@@ -2120,9 +2120,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/christmas-angel-1.jpg",
-      "goods/christmas-angel-2.jpg",
-      "goods/christmas-angel-3.jpg"
+      "goods/christmas-angel-1.webp",
+      "goods/christmas-angel-2.webp",
+      "goods/christmas-angel-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.018Z",
     "updatedAt": "2024-10-30T22:38:58.018Z",
@@ -2142,9 +2142,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/christmas-decorations-ball-redgold-1.jpg",
-      "goods/christmas-decorations-ball-redgold-2.jpg",
-      "goods/christmas-decorations-ball-redgold-3.jpg"
+      "goods/christmas-decorations-ball-redgold-1.webp",
+      "goods/christmas-decorations-ball-redgold-2.webp",
+      "goods/christmas-decorations-ball-redgold-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.023Z",
     "updatedAt": "2024-10-30T22:38:58.023Z",
@@ -2164,9 +2164,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/christmas-decoration-tree-white-1.jpg",
-      "goods/christmas-decoration-tree-white-2.jpg",
-      "goods/christmas-decoration-tree-white-3.jpg"
+      "goods/christmas-decoration-tree-white-1.webp",
+      "goods/christmas-decoration-tree-white-2.webp",
+      "goods/christmas-decoration-tree-white-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.033Z",
     "updatedAt": "2024-10-30T22:38:58.033Z",
@@ -2186,9 +2186,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/christmas-feathers-angel-1.jpg",
-      "goods/christmas-feathers-angel-2.jpg",
-      "goods/christmas-feathers-angel-3.jpg"
+      "goods/christmas-feathers-angel-1.webp",
+      "goods/christmas-feathers-angel-2.webp",
+      "goods/christmas-feathers-angel-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.038Z",
     "updatedAt": "2024-10-30T22:38:58.038Z",
@@ -2208,9 +2208,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/christmas-garland-white-1.jpg",
-      "goods/christmas-garland-white-2.jpg",
-      "goods/christmas-garland-white-3.jpg"
+      "goods/christmas-garland-white-1.webp",
+      "goods/christmas-garland-white-2.webp",
+      "goods/christmas-garland-white-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.043Z",
     "updatedAt": "2024-10-30T22:38:58.043Z",
@@ -2230,9 +2230,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/christmas-toy-ball-golden-1.jpg",
-      "goods/christmas-toy-ball-golden-2.jpg",
-      "goods/christmas-toy-ball-golden-3.jpg"
+      "goods/christmas-toy-ball-golden-1.webp",
+      "goods/christmas-toy-ball-golden-2.webp",
+      "goods/christmas-toy-ball-golden-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.048Z",
     "updatedAt": "2024-10-30T22:38:58.048Z",
@@ -2252,9 +2252,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/christmas-toy-ball-red-1.jpg",
-      "goods/christmas-toy-ball-red-2.jpg",
-      "goods/christmas-toy-ball-red-3.jpg"
+      "goods/christmas-toy-ball-red-1.webp",
+      "goods/christmas-toy-ball-red-2.webp",
+      "goods/christmas-toy-ball-red-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.053Z",
     "updatedAt": "2024-10-30T22:38:58.053Z",
@@ -2274,9 +2274,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/christmas-toy-ball-silver-1.jpg",
-      "goods/christmas-toy-ball-silver-2.jpg",
-      "goods/christmas-toy-ball-silver-3.jpg"
+      "goods/christmas-toy-ball-silver-1.webp",
+      "goods/christmas-toy-ball-silver-2.webp",
+      "goods/christmas-toy-ball-silver-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.058Z",
     "updatedAt": "2024-10-30T22:38:58.058Z",
@@ -2296,9 +2296,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/christmas-toy-bell-red-1.jpg",
-      "goods/christmas-toy-bell-red-2.jpg",
-      "goods/christmas-toy-bell-red-3.jpg"
+      "goods/christmas-toy-bell-red-1.webp",
+      "goods/christmas-toy-bell-red-2.webp",
+      "goods/christmas-toy-bell-red-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.063Z",
     "updatedAt": "2024-10-30T22:38:58.063Z",
@@ -2318,9 +2318,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/christmas-toy-heart-red-1.jpg",
-      "goods/christmas-toy-heart-red-2.jpg",
-      "goods/christmas-toy-heart-red-3.jpg"
+      "goods/christmas-toy-heart-red-1.webp",
+      "goods/christmas-toy-heart-red-2.webp",
+      "goods/christmas-toy-heart-red-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.068Z",
     "updatedAt": "2024-10-30T22:38:58.068Z",
@@ -2340,9 +2340,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/christmas-toy-phone-red-1.jpg",
-      "goods/christmas-toy-phone-red-2.jpg",
-      "goods/christmas-toy-phone-red-3.jpg"
+      "goods/christmas-toy-phone-red-1.webp",
+      "goods/christmas-toy-phone-red-2.webp",
+      "goods/christmas-toy-phone-red-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.072Z",
     "updatedAt": "2024-10-30T22:38:58.072Z",
@@ -2362,9 +2362,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/christmas-toy-star-red-1.jpg",
-      "goods/christmas-toy-star-red-2.jpg",
-      "goods/christmas-toy-star-red-3.jpg"
+      "goods/christmas-toy-star-red-1.webp",
+      "goods/christmas-toy-star-red-2.webp",
+      "goods/christmas-toy-star-red-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.077Z",
     "updatedAt": "2024-10-30T22:38:58.077Z",
@@ -2384,9 +2384,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/christmas-wood-angel-1.jpg",
-      "goods/christmas-wood-angel-2.jpg",
-      "goods/christmas-wood-angel-3.jpg"
+      "goods/christmas-wood-angel-1.webp",
+      "goods/christmas-wood-angel-2.webp",
+      "goods/christmas-wood-angel-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.082Z",
     "updatedAt": "2024-10-30T22:38:58.082Z",
@@ -2406,9 +2406,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/christmas-wreath-metal-1.jpg",
-      "goods/christmas-wreath-metal-2.jpg",
-      "goods/christmas-wreath-metal-3.jpg"
+      "goods/christmas-wreath-metal-1.webp",
+      "goods/christmas-wreath-metal-2.webp",
+      "goods/christmas-wreath-metal-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.087Z",
     "updatedAt": "2024-10-30T22:38:58.087Z",
@@ -2428,9 +2428,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/decor-gnome-red-1.jpg",
+      "goods/decor-gnome-red-1.webp",
       "goods/undefined",
-      "goods/decor-gnome-red-3.jpg"
+      "goods/decor-gnome-red-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.092Z",
     "updatedAt": "2024-10-30T22:38:58.092Z",
@@ -2450,9 +2450,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/decor-gnome-white-1.jpg",
-      "goods/decor-gnome-white-2.jpg",
-      "goods/decor-gnome-white-3.jpg"
+      "goods/decor-gnome-white-1.webp",
+      "goods/decor-gnome-white-2.webp",
+      "goods/decor-gnome-white-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.098Z",
     "updatedAt": "2024-10-30T22:38:58.098Z",
@@ -2472,9 +2472,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/сhristmas-sock-door-1.jpg",
-      "goods/сhristmas-sock-door-2.jpg",
-      "goods/сhristmas-sock-door-3.jpg"
+      "goods/сhristmas-sock-door-1.webp",
+      "goods/сhristmas-sock-door-2.webp",
+      "goods/сhristmas-sock-door-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.103Z",
     "updatedAt": "2024-10-30T22:38:58.103Z",
@@ -2494,9 +2494,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/сhristmas-sock-fireplace-1.jpg",
-      "goods/сhristmas-sock-fireplace-2.jpg",
-      "goods/сhristmas-sock-fireplace-3.jpg"
+      "goods/сhristmas-sock-fireplace-1.webp",
+      "goods/сhristmas-sock-fireplace-2.webp",
+      "goods/сhristmas-sock-fireplace-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.110Z",
     "updatedAt": "2024-10-30T22:38:58.110Z",
@@ -2516,9 +2516,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/сhristmas-sock-fireplacewhiteand red-1.jpg",
-      "goods/сhristmas-sock-fireplacewhiteand red-2.jpg",
-      "goods/сhristmas-sock-fireplacewhiteand red-3.jpg"
+      "goods/сhristmas-sock-fireplacewhiteand red-1.webp",
+      "goods/сhristmas-sock-fireplacewhiteand red-2.webp",
+      "goods/сhristmas-sock-fireplacewhiteand red-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.115Z",
     "updatedAt": "2024-10-30T22:38:58.115Z",
@@ -2538,9 +2538,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/сhristmas-sockletter-red-1.jpg",
-      "goods/сhristmas-sockletter-red-2.jpg",
-      "goods/сhristmas-sockletter-red-3.jpg"
+      "goods/сhristmas-sockletter-red-1.webp",
+      "goods/сhristmas-sockletter-red-2.webp",
+      "goods/сhristmas-sockletter-red-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.120Z",
     "updatedAt": "2024-10-30T22:38:58.120Z",
@@ -2560,9 +2560,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/сhristmas-sockset-fireplace-1.jpg",
-      "goods/сhristmas-sockset-fireplace-2.jpg",
-      "goods/сhristmas-sockset-fireplace-2.jpg"
+      "goods/сhristmas-sockset-fireplace-1.webp",
+      "goods/сhristmas-sockset-fireplace-2.webp",
+      "goods/сhristmas-sockset-fireplace-2.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.126Z",
     "updatedAt": "2024-10-30T22:38:58.126Z",
@@ -2582,9 +2582,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/halloween-basket-1.jpg",
-      "goods/halloween-basket-2.jpg",
-      "goods/halloween-basket-3.jpg"
+      "goods/halloween-basket-1.webp",
+      "goods/halloween-basket-2.webp",
+      "goods/halloween-basket-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.131Z",
     "updatedAt": "2024-10-30T22:38:58.131Z",
@@ -2604,9 +2604,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/halloween-dishes-1.jpg",
-      "goods/halloween-dishes-2.jpg",
-      "goods/halloween-dishes-3.jpg"
+      "goods/halloween-dishes-1.webp",
+      "goods/halloween-dishes-2.webp",
+      "goods/halloween-dishes-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.136Z",
     "updatedAt": "2024-10-30T22:38:58.136Z",
@@ -2626,9 +2626,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/halloween-figure-1.jpg",
-      "goods/halloween-figure-2.jpg",
-      "goods/halloween-figure-3.jpg"
+      "goods/halloween-figure-1.webp",
+      "goods/halloween-figure-2.webp",
+      "goods/halloween-figure-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.142Z",
     "updatedAt": "2024-10-30T22:38:58.142Z",
@@ -2648,9 +2648,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/halloween-garland-1.jpg",
-      "goods/halloween-garland-2.jpg",
-      "goods/halloween-garland-3.jpg"
+      "goods/halloween-garland-1.webp",
+      "goods/halloween-garland-2.webp",
+      "goods/halloween-garland-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.147Z",
     "updatedAt": "2024-10-30T22:38:58.147Z",
@@ -2670,9 +2670,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/halloween-lamp-1.jpg",
-      "goods/halloween-lamp-2.jpg",
-      "goods/halloween-lamp-3.jpg"
+      "goods/halloween-lamp-1.webp",
+      "goods/halloween-lamp-2.webp",
+      "goods/halloween-lamp-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.152Z",
     "updatedAt": "2024-10-30T22:38:58.152Z",
@@ -2692,9 +2692,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/halloween-lantern-1.jpg",
-      "goods/halloween-lantern-2.jpg",
-      "goods/halloween-lantern-3.jpg"
+      "goods/halloween-lantern-1.webp",
+      "goods/halloween-lantern-2.webp",
+      "goods/halloween-lantern-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.157Z",
     "updatedAt": "2024-10-30T22:38:58.157Z",
@@ -2714,9 +2714,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/halloween-light-1.jpg",
-      "goods/halloween-light-2.jpg",
-      "goods/halloween-light-3.jpg"
+      "goods/halloween-light-1.webp",
+      "goods/halloween-light-2.webp",
+      "goods/halloween-light-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.162Z",
     "updatedAt": "2024-10-30T22:38:58.162Z",
@@ -2736,9 +2736,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/halloween-package-1.jpg",
-      "goods/halloween-package-2.jpg",
-      "goods/halloween-package-3.jpg"
+      "goods/halloween-package-1.webp",
+      "goods/halloween-package-2.webp",
+      "goods/halloween-package-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.167Z",
     "updatedAt": "2024-10-30T22:38:58.167Z",
@@ -2758,9 +2758,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/halloween-pillow-1.jpg",
-      "goods/halloween-pillow-2.jpg",
-      "goods/halloween-pillow-3.jpg"
+      "goods/halloween-pillow-1.webp",
+      "goods/halloween-pillow-2.webp",
+      "goods/halloween-pillow-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.175Z",
     "updatedAt": "2024-10-30T22:38:58.175Z",
@@ -2780,9 +2780,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/halloween-table-1.jpg",
-      "goods/halloween-table-2.jpg",
-      "goods/halloween-table-3.jpg"
+      "goods/halloween-table-1.webp",
+      "goods/halloween-table-2.webp",
+      "goods/halloween-table-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.180Z",
     "updatedAt": "2024-10-30T22:38:58.180Z",
@@ -2802,9 +2802,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/birthday-balls-cactus-green-1.jpg",
-      "goods/birthday-balls-cactus-green-2.jpg",
-      "goods/birthday-balls-cactus-green-3.jpg"
+      "goods/birthday-balls-cactus-green-1.webp",
+      "goods/birthday-balls-cactus-green-2.webp",
+      "goods/birthday-balls-cactus-green-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.185Z",
     "updatedAt": "2024-10-30T22:38:58.185Z",
@@ -2824,9 +2824,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/birthday-balls-double-pink-1.jpg",
-      "goods/birthday-balls-double-pink-2.jpg",
-      "goods/birthday-balls-double-pink-3.jpg"
+      "goods/birthday-balls-double-pink-1.webp",
+      "goods/birthday-balls-double-pink-2.webp",
+      "goods/birthday-balls-double-pink-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.189Z",
     "updatedAt": "2024-10-30T22:38:58.189Z",
@@ -2846,9 +2846,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/birthday-balls-many-colors-1.jpg",
-      "goods/birthday-balls-many-colors-2.jpg",
-      "goods/birthday-balls-many-colors-3.jpg"
+      "goods/birthday-balls-many-colors-1.webp",
+      "goods/birthday-balls-many-colors-2.webp",
+      "goods/birthday-balls-many-colors-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.195Z",
     "updatedAt": "2024-10-30T22:38:58.195Z",
@@ -2868,9 +2868,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/birthday-balls-silver-inscription-1.jpg",
-      "goods/birthday-balls-silver-inscription-2.jpg",
-      "goods/birthday-balls-silver-inscription-3.jpg"
+      "goods/birthday-balls-silver-inscription-1.webp",
+      "goods/birthday-balls-silver-inscription-2.webp",
+      "goods/birthday-balls-silver-inscription-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.202Z",
     "updatedAt": "2024-10-30T22:38:58.202Z",
@@ -2890,9 +2890,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/birthday-balls-solid-blue-1.jpg",
-      "goods/birthday-balls-solid-blue-2.jpg",
-      "goods/birthday-balls-solid-blue-3.jpg"
+      "goods/birthday-balls-solid-blue-1.webp",
+      "goods/birthday-balls-solid-blue-2.webp",
+      "goods/birthday-balls-solid-blue-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.209Z",
     "updatedAt": "2024-10-30T22:38:58.209Z",
@@ -2912,9 +2912,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/birthday-balls-spot-color-1.jpg",
-      "goods/birthday-balls-spot-color-2.jpg",
-      "goods/birthday-balls-spot-color-3.jpg"
+      "goods/birthday-balls-spot-color-1.webp",
+      "goods/birthday-balls-spot-color-2.webp",
+      "goods/birthday-balls-spot-color-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.214Z",
     "updatedAt": "2024-10-30T22:38:58.214Z",
@@ -2934,9 +2934,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/birthday-bullets-lots-of-iron-1.jpg",
-      "goods/birthday-bullets-lots-of-iron-2.jpg",
-      "goods/birthday-bullets-lots-of-iron-3.jpg"
+      "goods/birthday-bullets-lots-of-iron-1.webp",
+      "goods/birthday-bullets-lots-of-iron-2.webp",
+      "goods/birthday-bullets-lots-of-iron-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.220Z",
     "updatedAt": "2024-10-30T22:38:58.220Z",
@@ -2956,9 +2956,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/birthday-candles-letter-set-colors-1.jpg",
-      "goods/birthday-candles-letter-set-colors-2.jpg",
-      "goods/birthday-candles-letter-set-colors-3.jpg"
+      "goods/birthday-candles-letter-set-colors-1.webp",
+      "goods/birthday-candles-letter-set-colors-2.webp",
+      "goods/birthday-candles-letter-set-colors-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.226Z",
     "updatedAt": "2024-10-30T22:38:58.226Z",
@@ -2978,9 +2978,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/birthday-candles-letter-set-gold-1.jpg",
-      "goods/birthday-candles-letter-set-gold-2.jpg",
-      "goods/birthday-candles-letter-set-gold-3.jpg"
+      "goods/birthday-candles-letter-set-gold-1.webp",
+      "goods/birthday-candles-letter-set-gold-2.webp",
+      "goods/birthday-candles-letter-set-gold-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.232Z",
     "updatedAt": "2024-10-30T22:38:58.232Z",
@@ -3000,9 +3000,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/birthday-candles-set-colors-1.jpg",
-      "goods/birthday-candles-set-colors-2.jpg",
-      "goods/birthday-candles-set-colors-3.jpg"
+      "goods/birthday-candles-set-colors-1.webp",
+      "goods/birthday-candles-set-colors-2.webp",
+      "goods/birthday-candles-set-colors-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.237Z",
     "updatedAt": "2024-10-30T22:38:58.237Z",
@@ -3022,9 +3022,9 @@
     "popularAnalyses": false,
     "bestsellers": false,
     "images": [
-      "goods/birthday-candles-set-colors-strips-1.jpg",
-      "goods/birthday-candles-set-colors-strips-2.jpg",
-      "goods/birthday-candles-set-colors-strips-3.jpg"
+      "goods/birthday-candles-set-colors-strips-1.webp",
+      "goods/birthday-candles-set-colors-strips-2.webp",
+      "goods/birthday-candles-set-colors-strips-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.242Z",
     "updatedAt": "2024-10-30T22:38:58.242Z",
@@ -3044,9 +3044,9 @@
     "popularAnalyses": true,
     "bestsellers": false,
     "images": [
-      "goods/birthday-celebration set-pink-1.jpg",
-      "goods/birthday-celebration set-pink-2.jpg",
-      "goods/birthday-celebration set-pink-3.jpg"
+      "goods/birthday-celebration set-pink-1.webp",
+      "goods/birthday-celebration set-pink-2.webp",
+      "goods/birthday-celebration set-pink-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.247Z",
     "updatedAt": "2024-10-30T22:38:58.247Z",
@@ -3066,9 +3066,9 @@
     "popularAnalyses": false,
     "bestsellers": true,
     "images": [
-      "goods/birthday-festive set-purple-1.jpg",
-      "goods/birthday-festive set-purple-2.jpg",
-      "goods/birthday-festive set-purple-3.jpg"
+      "goods/birthday-festive set-purple-1.webp",
+      "goods/birthday-festive set-purple-2.webp",
+      "goods/birthday-festive set-purple-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.253Z",
     "updatedAt": "2024-10-30T22:38:58.253Z",
@@ -3088,9 +3088,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/birthday-garland-color-1.jpg",
-      "goods/birthday-garland-color-2.jpg",
-      "goods/birthday-garland-color-3.jpg"
+      "goods/birthday-garland-color-1.webp",
+      "goods/birthday-garland-color-2.webp",
+      "goods/birthday-garland-color-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.259Z",
     "updatedAt": "2024-10-30T22:38:58.259Z",
@@ -3110,9 +3110,9 @@
     "popularAnalyses": true,
     "bestsellers": true,
     "images": [
-      "goods/birthday-garland-green-1.jpg",
-      "goods/birthday-garland-green-2.jpg",
-      "goods/birthday-garland-green-3.jpg"
+      "goods/birthday-garland-green-1.webp",
+      "goods/birthday-garland-green-2.webp",
+      "goods/birthday-garland-green-3.webp"
     ],
     "createdAt": "2024-10-30T22:38:58.265Z",
     "updatedAt": "2024-10-30T22:38:58.265Z",
