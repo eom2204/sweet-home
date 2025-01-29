@@ -6,6 +6,7 @@ import LoginPage from '../pages/LoginPage';
 import CategoryPage from '../pages/CategoryPage';
 import ProductPage from '../pages/ProductPage';
 
+
 // Array of children routes
 export const childrenRoutes = [
     { path: '/', element: <HomePage /> },

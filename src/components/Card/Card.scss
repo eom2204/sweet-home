@@ -8,8 +8,10 @@
   position: relative;
 
   img {
-    width: 202px;
+    //width: 202px;
     height: 248px;
+    object-fit: cover;
+    width: 100%;
   }
 }
 

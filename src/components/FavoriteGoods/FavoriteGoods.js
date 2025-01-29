@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {addFavorite, removeFavorite} from "../../app/redux/slices/favoritesSlice";
+import {addFavorite, removeFavorite, syncFavoritesWithBackend} from "../../app/redux/slices/favoritesSlice";
 import {AccessKey} from "../../utils/AccessKey"; // to get the token
 import {isAuthenticated} from "../../services/authService";
 import './FavoriteGoods.scss';
@@ -23,24 +23,14 @@ function FavoriteGoods({itemId}) {
 
     // Toggle the heart state on click
     const toggleHeart = async () => {
-        // const token = AccessKey.get(); // Check if the user is authenticated
-        // if (!token) {
-        //     alert('You need to log in to like this item.');
-        //     return;
-        // }
-        //
-        // // Check if the token is valid using the utility function
-        // const isValid = await isAuthenticated();
-        // if (!isValid) {
-        //     alert('Your session has expired. Please log in again.');
-        //     return;
-        // }
-        //
+
         // Dispatch actions to Redux based on the heart's state
         if (isHeartActive) {
-            dispatch(removeFavorite(itemId)); // Remove from favorites
+            dispatch(removeFavorite(itemId)); // Remove from favorites in Redux
+            dispatch(syncFavoritesWithBackend(favoriteItems.filter(id => id !== itemId))); // Sync with backend
         } else {
-            dispatch(addFavorite(itemId)); // Add to favorites
+            dispatch(addFavorite(itemId)); // Add to favorites in Redux
+            dispatch(syncFavoritesWithBackend([...favoriteItems, itemId])); // Sync with backend
         }
 
         setIsHeartActive((prev) => !prev); // Toggle the local heart state

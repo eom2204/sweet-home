@@ -25,12 +25,11 @@ const ProfileLayout = () => {
             <Wrapper>
                 <Box sx={{display: 'flex'}}>
                     {/* Sidebar */}
-                    <Drawer
-                        variant="permanent"
+                    <Box
                         sx={{
-                            width: 240,
+                            maxWidth: 240,
                             flexShrink: 0,
-                            [`& .MuiDrawer-paper`]: {width: 240, boxSizing: 'border-box'},
+                            // [`& .MuiDrawer-paper`]: {width: 240, boxSizing: 'border-box'},
                         }}
                     >
                         <List>
@@ -40,7 +39,7 @@ const ProfileLayout = () => {
                             <ListItem button component={NavLink} to="/profile" activeClassName="Mui-selected">
                                 <ListItemText primary="My Contacts"/>
                             </ListItem>
-                            <ListItem button component={NavLink} to="/profile/favourites"
+                            <ListItem button component={NavLink} to="/profile/favorites"
                                       activeClassName="Mui-selected">
                                 <ListItemText primary="Wish List"/>
                             </ListItem>
@@ -51,7 +50,7 @@ const ProfileLayout = () => {
                                 <ListItemText primary="Exit"/>
                             </ListItem>
                         </List>
-                    </Drawer>
+                    </Box>
 
                     {/* Main Content */}
                     <Box component="main" sx={{flexGrow: 1, p: 3}}>

@@ -1,19 +1,23 @@
-import {useEffect} from "react";
+import {useEffect, useRef} from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import {useTheme} from "@mui/styles";
 import {useMediaQuery} from "@mui/system";
 import {fetchGoods} from "../../app/redux/slices/productsSlice";
 import Button from '../Button/Button';
 import WrapperSection from "../WrapperSection/WrapperSection";
+import Card from "../Card/Card";
+import {ReactComponent as LeftArrowIcon} from '../../assets/icons/slider_arrow_left.svg';
+import {ReactComponent as RightArrowIcon} from '../../assets/icons/slider_arrow_right.svg';
 import './NewArrivals.scss';
+import Grid from "@mui/material/Grid2";
 
 
 const NewArrivals = () => {
-    const imagePath = process.env.REACT_APP_IMAGE_PATH;
+    const sliderRef = useRef(null); // Create a reference for the slider
 
     // Access goods data from Redux store
     const dispatch = useDispatch();
@@ -22,6 +26,7 @@ const NewArrivals = () => {
     // Settings for the carousel
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // Checks if screen is smaller than 600px
+    const isMediumScreen = useMediaQuery(theme.breakpoints.down("lg"));
 
     useEffect(() => {
         if (status === 'idle') {
@@ -29,7 +34,7 @@ const NewArrivals = () => {
         }
     }, [status, dispatch]);
 
-    if (status === 'loading') return <div>Loading...</div>;
+    if (status === 'loading') return <div>Loading New Arrivals...</div>;
     if (status === 'failed') return <div>Error: {error}</div>;
 
     // Check if goods is defined and is an array
@@ -40,14 +45,28 @@ const NewArrivals = () => {
     // filter the 10 newest products by arrival date
     const newArrivals = [...goods].sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)).slice(0, 10);
 
+    const CustomPrevArrow = () => (
+        <button onClick={() => sliderRef.current.slickPrev()}
+                className="custom-prev">
+            <LeftArrowIcon></LeftArrowIcon>
+        </button>
+    );
+
+    const CustomNextArrow = () => (
+        <button onClick={() => sliderRef.current.slickNext()}
+                className="custom-next">
+            <RightArrowIcon></RightArrowIcon>
+        </button>
+    );
+
     const settings = {
         dots: false,
         infinite: false,
-        slidesToShow: isSmallScreen ? 2 : 4,
+        slidesToShow: isMediumScreen ? 3 : 4,
         slidesToScroll: 1,
-        prevArrow: <button className="slick-prev">◀</button>,
-        nextArrow: <button className="slick-next">▶</button>,
-        adaptiveHeight: true,
+        prevArrow: <CustomPrevArrow />,
+        nextArrow: <CustomNextArrow />,
+        adaptiveHeight: false,
     };
 
     return (
@@ -59,70 +78,49 @@ const NewArrivals = () => {
                     flexDirection: 'column',
                     marginTop: isSmallScreen ? '44px' : '120px',
                     marginBottom: isSmallScreen ? '44px' : '120px',
-                    //justifyContent: 'space-between',
-                    //alignItems: isSmallScreen ? 'center' : 'flex-start',
-                    // gap: '62px',
-                    //textAlign: 'center',
                 }}
             >
-                <Typography variant='h3' component='h2' sx={{ marginBottom: {xs: '24px', sm: '24px', md: '44px' }}}>
+                <Typography variant='h3' component='h2' sx={{marginBottom: {xs: '24px', sm: '24px', md: '44px'}}}>
                     New Arrivals
                 </Typography>
 
-
-                {/* Right Side: Carousel */}
-                <Box
-                    sx={{
-                        overflow: 'hidden',
-                        position: 'relative',
-                        width: '100%',
-                    }}
-                >
-
-                    <Slider {...settings}>
-                        {newArrivals.map((product) => (
-                            <Card
-                                key={product.id}
-                                sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column', // Ensure row alignment
-                                    width: '100%',
-                                    maxWidth: '202px',
-                                    boxShadow: 'none',
-                                    background: 'transparent',
-                                    textAlign: 'center',
-                                }}
-                            >
-                                <CardMedia
-                                    component="img"
-                                    sx={{ width: '100%',
-                                        objectFit: 'cover',
-                                        //maxWidth: '202px',
-                                        height: '248px',
-                                        cursor: 'pointer',
-                                        marginBottom: '8px',}}
-                                    image={`${imagePath}${product.images?.[0]}`}
-                                    alt={product.name}
-                                />
-                                <CardContent
-                                    sx={{
-                                        flex: 1,
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        justifyContent: 'center',
-                                        padding: 0,
-                                    }}
-                                >
-                                    <Typography variant="h6" fontWeight="bold">{product.name}</Typography>
-                                    <Typography variant="body2">
-                                        {product.group}
-                                    </Typography>
-                                    <Typography variant="subtitle1">${product.price}</Typography>
-                                </CardContent>
-                            </Card>
+                {isSmallScreen ?
+                    <Grid container spacing={1} justifyContent="space-between">
+                        {newArrivals.map((product, index) => (index < 4 ?
+                                (<Grid item key={product.id} sx={{width: '47%'}}>
+                                    <Card product={product}/>
+                                </Grid>) : null
                         ))}
-                    </Slider>
-                </Box>
+                    </Grid>
+                    : <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            width: '100%',
+                            maxWidth: '1272px',
+                            margin: '0 auto',
+                        }}
+                    >
+
+                        <Box
+                            sx={{
+                                flexGrow: 1,
+                                overflow: 'hidden',
+                                margin: '0 auto',
+                                padding: {md: '0 88px', lg: '0 128px'},
+                            }}
+                        >
+                            <Slider {...settings} ref={sliderRef} sx={{margin: '0 auto', pr: 0}}>
+                                {newArrivals.map((product) => (
+                                    <div style={{margin: '0 auto'}}>
+                                        <Card key={product.id} product={product}></Card>
+                                    </div>
+                                ))}
+                            </Slider>
+                        </Box>
+
+                    </Box>}
                 <Button type="submit" text="SEE MORE" className="arrivals__button"></Button>
             </Box>
         </WrapperSection>

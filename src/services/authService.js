@@ -6,7 +6,7 @@ import { AccessKey } from '../utils/AccessKey';
 // Handle login
 export const login = async (email, password) => {
     try {
-        const response = await axios.post('/api/user/login', { email, password });
+        const response = await axios.post('https://sweet-home-api-black.vercel.app/api/user/login', { email, password });
         const { token } = response.data;
 
         // Store the JWT token in the cookies
@@ -22,7 +22,7 @@ export const login = async (email, password) => {
 //(email, username, password, role)?
 export const register = async (email, username, password) => {
     try {
-        const response = await axios.post('/api/user/registration', {email, username, password});
+        const response = await axios.post('https://sweet-home-api-black.vercel.app/api/user/registration', {email, username, password});
         const { token } = response.data;
 
         // Store the JWT token in the cookies
@@ -48,7 +48,7 @@ export const getToken = () => {
 // Function to check if the provided token is valid
 export const validateToken = async (token) => {
     try {
-        const response = await axios.post('/api/user/auth', {}, {
+        const response = await axios.post('https://sweet-home-api-black.vercel.app/api/user/auth', {}, {
             headers: {
                 Authorization: `Bearer ${token}`, // Send token in Authorization header
             },
