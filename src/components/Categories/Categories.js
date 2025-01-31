@@ -160,6 +160,7 @@ function Categories({
             ))}
         </ul>
       )}
+      <div></div>
     </div>
   );
 }
