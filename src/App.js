@@ -53,7 +53,7 @@ function App() {
       ),
       children: [
         { path: "", element: <ProfilePage /> },
-        { path: "favourites", element: <FavouritesPage /> },
+        { path: "favorites", element: <FavouritesPage /> },
         { path: "cart", element: <CartPage /> },
       ],
     },
