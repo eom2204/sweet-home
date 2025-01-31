@@ -8,6 +8,13 @@
   line-height: 29.64px;
   letter-spacing: 1px;
   text-align: center;
+  margin-top: 120px;
+  margin-bottom: 120px;
+
+  @media screen and (max-width: $mobile-end) {
+    margin-top: 44px;
+    margin-bottom: 44px;
+  }
 
   &__title {
     margin-bottom: 44px;

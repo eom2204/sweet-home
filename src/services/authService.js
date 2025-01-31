@@ -6,7 +6,7 @@ import { AccessKey } from '../utils/AccessKey';
 // Handle login
 export const login = async (email, password) => {
     try {
-        const response = await axios.post('/api/user/login', { email, password });
+        const response = await axios.post('https://sweet-home-api-black.vercel.app/api/user/login', { email, password });
         const { token } = response.data;
 
         // Store the JWT token in the cookies
@@ -22,7 +22,7 @@ export const login = async (email, password) => {
 //(email, username, password, role)?
 export const register = async (email, username, password) => {
     try {
-        const response = await axios.post('/api/user/registration', {email, username, password});
+        const response = await axios.post('https://sweet-home-api-black.vercel.app/api/user/registration', {email, username, password});
         const { token } = response.data;
 
         // Store the JWT token in the cookies
@@ -37,4 +37,41 @@ export const register = async (email, username, password) => {
 // Handle logout by removing the token
 export const logout = () => {
     AccessKey.remove();
+};
+
+
+// Function to get the token from cookies:
+export const getToken = () => {
+    return AccessKey.get();
+}
+
+// Function to check if the provided token is valid
+export const validateToken = async (token) => {
+    try {
+        const response = await axios.post('https://sweet-home-api-black.vercel.app/api/user/auth', {}, {
+            headers: {
+                Authorization: `Bearer ${token}`, // Send token in Authorization header
+            },
+        });
+
+        if (response.status === 200 && response.data.valid) {
+            return true;  // Token is valid
+        } else {
+            return false;  // Token is invalid
+        }
+    } catch (error) {
+        console.error('Token validation failed:', error);
+        return false;  // Token validation failed
+    }
+};
+
+// Function to check if the user is authenticated (token exists and is valid), if the token exists and then validates it using the validateToken function
+export const isAuthenticated = async () => {
+    const token = getToken();
+    if (!token) {
+        return false;  // No token, user is not authenticated
+    }
+
+    // Validate token with backend
+    return await validateToken(token);
 };

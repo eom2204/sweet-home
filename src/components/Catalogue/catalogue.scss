@@ -2,18 +2,28 @@
 
 .container {
   margin: 24px 87px 128px 80px;
-  display: grid;
-  grid-template-columns: 314px 1fr;
-  gap: 40px;
-  position: relative;
+  display: flex;
+  flex-direction: row;
 }
 
 .aside-list {
-  width: 100%;
+  width: 314px;
+  height: auto;
+}
+
+.list-element {
+  font-family: Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29.64px;
+  letter-spacing: 1px;
+  text-align: left;
+  margin-bottom: 16px;
 }
 
 .main-section {
   margin-top: 60px;
+  margin-left: 111px;
   width: 100%;
 }
 
@@ -41,10 +51,4 @@
   grid-row-gap: 32px;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 16px;
-}
-
-.pagination-section {
-  margin-top: 48px;
-  grid-column: 1 / -1;
-  width: 100%;
 }

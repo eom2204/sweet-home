@@ -5,9 +5,17 @@
 }
 
 .card-image {
-  width: 202px;
-  height: 248px;
+  position: relative;
+
+  img {
+    //width: 202px;
+    height: 248px;
+    object-fit: cover;
+    width: 100%;
+  }
 }
+
+
 
 .card-content {
   text-align: center;

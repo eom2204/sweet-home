@@ -69,9 +69,12 @@ function Banner() {
 
     return (
         <Slider {...settings}>
-            {banners.map((banner) => (
+            {banners.map((banner, index) => (
                 <div className="banner" key={banner.id}>
-                    <h3 className="banner__title" dangerouslySetInnerHTML={{__html: banner.title}}></h3>
+                    <h3
+                        className={`banner__title ${index === 3 ? 'banner__title--special' : ''}`}
+                        dangerouslySetInnerHTML={{__html: banner.title}}
+                    ></h3>
                     <img className="banner__image"
                          src={`${imagePath}${banner.img}`}
                          alt="banner"

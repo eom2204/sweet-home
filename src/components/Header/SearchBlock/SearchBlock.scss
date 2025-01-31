@@ -3,14 +3,21 @@
 
 .search {
   position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
 
   @media screen and (max-width: $tablet-end) {
+    margin: 0 0 20px;
+  }
+
+  @media screen and (max-width: $mobile-end) {
     margin: 0 16px 20px;
   }
 
   &__list {
 
     &-wrapper {
+      background-color: $color-background-black;
       padding: 20px;
       position: absolute;
       top: 120%;
@@ -48,7 +55,7 @@
     position: relative;
     width: 300px;
 
-    @media screen and (max-width: $large-screen--start) {
+    @media screen and (max-width: $large-screen) {
       width: 200px;
     }
 

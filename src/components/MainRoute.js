@@ -8,6 +8,7 @@ import ProductPage from "../pages/ProductPage";
 import NotFound from "../pages/NotFound";
 import ErrorPage from "../pages/ErrorPage";
 
+
 // Array of children routes
 export const childrenRoutes = [
   {

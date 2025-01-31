@@ -5,7 +5,7 @@ import {styled} from "@mui/system";
 
 // Styled Box for white circle background around arrows
 const ArrowButton = styled(IconButton)({
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
+    backgroundColor: 'rgba(255, 230, 168, 1)',
     borderRadius: '50%',
     width: '44px',
     height: '44px',
@@ -17,7 +17,7 @@ function CustomPagination({count, page, onChange}) {
 
     return (
 
-            <Box display="flex" justifyContent="center" alignItems="center" gap={1}>
+            <Box display="flex" flexGrow="2" justifyContent="center" alignItems="center" gap={1}>
                 {/* Custom Left Arrow with Persistent Circular Background */}
                 <ArrowButton
                     onClick={() => onChange(null, Math.max(page - 1, 1))}

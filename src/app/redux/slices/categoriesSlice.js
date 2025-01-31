@@ -5,12 +5,11 @@ export const fetchCategories = createAsyncThunk('categories/fetchCategories', as
     try {
         const response = await fetch('/api/category');
         // Check if the response is OK
-        if (!response.ok) {
-            throw new Error('Failed to fetch categories');
+        if (!response.data) {
+            throw new Error('Failed to fetch goods');
         }
 
-        const data = await response.json();
-        return data;
+        return response.data;
     } catch (error) {
         console.error('Error fetching categories, using local data:', error);
         // If there is an error, return local data as fallback

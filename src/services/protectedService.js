@@ -12,14 +12,21 @@ export const getProtectedData = async () => {
     }
 
     try {
-        const response = await axios.get('/api/user/auth', {
+        const response = await axios.get('https://sweet-home-api-black.vercel.app/api/user/auth', {
             headers: {
                 Authorization: `Bearer ${token}`, // Add token in Authorization header
             },
         });
         return response.data;
     } catch (error) {
-        console.error('Protected Route Error:', error);
-        throw error;
+        if (error.response && error.response.status === 401) {
+            // Token expired or invalid
+            console.error('Token expired or unauthorized. Redirecting to login.');
+            AccessKey.remove(); // Clear the token
+            window.location.href = '/login'; // Redirect to login
+        } else {
+            console.error('Protected Route Error:', error);
+            throw error;
+        }
     }
 };

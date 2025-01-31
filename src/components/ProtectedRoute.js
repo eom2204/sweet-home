@@ -1,5 +1,5 @@
 import {Navigate} from 'react-router-dom';
-import {AccessKey} from "../utils/AccessKey"; // Use Navigate instead of Redirect in React Router v6
+import {AccessKey} from "../utils/AccessKey";
 
 const ProtectedRoute = ({children}) => {
     const token = AccessKey.get();  // Get the token from cookies

@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://sweet-home-api.onrender.com/api/$1"
+    }
+  ]
+}

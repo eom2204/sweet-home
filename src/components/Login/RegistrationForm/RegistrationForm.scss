@@ -1,0 +1,100 @@
+@import '../../../styles/variables';
+
+.registration {
+
+  &__input {
+    background-color: transparent;
+    border-radius: 16px;
+    display: block;
+    height: 40px;
+    margin-bottom: 32px;
+    padding-left: 10px;
+    width: 100%;
+
+    font-family: $font-primary;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.76px;
+    letter-spacing: 1px;
+    color: $color-text-black;
+
+
+    &-div {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      &--surname {
+        flex-grow: 1;
+        -webkit-flex-grow: 1;
+      }
+
+      &--surname {
+        flex-grow: 2;
+        -webkit-flex-grow: 2;
+      }
+    }
+  }
+
+  &__checkbox {
+    font-family: $font-primary;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 14.82px;
+    letter-spacing: 1px;
+    text-align: left;
+    position: relative;
+    cursor: pointer;
+
+    &--item {
+      display: block;
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    &--text {
+      padding-left: 33px;
+    }
+
+    &--input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    &--checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 18px;
+      width: 18px;
+      background-color: transparent;
+      border: 2px solid rgba(34, 33, 51, 1);
+      transition: background-color 0.3s ease;
+    }
+
+    &--checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    &--input:checked + &--checkmark:after {
+      display: block;
+    }
+
+    &--checkmark:after {
+      background-color: $color-background-main;
+      left: 8px;
+      top: -5px;
+      width: 3px;
+      height: 14px;
+      border: solid rgba(34, 33, 51, 1);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      box-shadow: 3px 0 0 0 $color-background-main;
+      z-index: 2;
+    }
+  }
+
+}
