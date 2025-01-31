@@ -9,12 +9,14 @@ import ErrorPage from "./pages/ErrorPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminRoute from "./components/AdminRoute";
 import ProfileLayout from "./components/ProfileLayout";
-import FavouritesPage from "./pages/FavouritesPage";
+import FavouritesPage from "./pages/FavoritesPage/FavouritesPage";
+import FavoritesHandler from "./components/FavoritesHandler";
 import CartPage from "./pages/CartPage";
 import NotFound from "./pages/NotFound";
 import { childrenRoutes } from "./components/MainRoute";
 
 import "./App.scss";
+
 
 function App() {
   const theme = createTheme({
@@ -59,6 +61,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <FavoritesHandler/>
       <RouterProvider router={router} />
     </ThemeProvider>
   );
