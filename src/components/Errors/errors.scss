@@ -1,0 +1,140 @@
+@import "../../styles/variables";
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.notFoundContainer {
+  display: flex;
+  position: relative;
+  margin: 0px 100px 0 100px;
+  text-align: center;
+}
+
+.notFoundTextSection {
+  position: absolute;
+  right: 0;
+  max-width: 482px;
+}
+
+.oops {
+  font-family: Helvetica;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 39.52px;
+  letter-spacing: -2px;
+  text-align: center;
+  height: 80px;
+}
+
+.dots {
+  position: absolute;
+  left: 191px;
+}
+
+.dots2 {
+  position: absolute;
+  top: 250px;
+  right: 191px;
+}
+
+.dots3 {
+  position: absolute;
+  z-index: 1;
+  left: 387px;
+}
+
+.errorHeader {
+  font-family: Inter;
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 118.56px;
+  letter-spacing: 1px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ce3e1b;
+  margin-bottom: 80px;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.notFoundHeader {
+  font-family: Helvetica;
+  font-size: 200px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #ce3e1b;
+  width: 385px;
+  height: 247px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  width: 482px;
+}
+
+.zero {
+  margin-top: auto;
+}
+
+.errorText {
+  width: 376px;
+  padding: 0 20px;
+  font-family: Helvetica;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 39.52px;
+  letter-spacing: -2px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #1d1d1d;
+  margin-bottom: 80px;
+}
+
+.text404 {
+  font-family: Helvetica;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 39.52px;
+  letter-spacing: -2px;
+  text-align: center;
+  max-width: 482px;
+  margin-bottom: 32px;
+}
+
+.goHomeLink {
+  display: inline-block;
+  width: 376px;
+  height: 40px;
+  background-color: #ce3e1b;
+  color: white;
+  padding: 10px 60px;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.ellipsOne {
+  position: absolute;
+  top: 110px;
+  left: 222px;
+}
+
+.ellipsTwo {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+}
+
+.image {
+  z-index: 2;
+}

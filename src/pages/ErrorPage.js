@@ -1,14 +1,9 @@
-import {Link} from "react-router-dom";
+import GlobalError from "../components/Errors/GlobalError";
+import NotFound from "../components/Errors/NotFound";
 
-function ErrorPage() {
-
-    return (
-        <>
-            <h1>Error Page</h1>
-            <h2>Page not found</h2>
-            <p>Please go to <Link to={'/'}>Home Page</Link></p>
-        </>
-    )
-}
+const ErrorPage = ({}) => {
+  // return <GlobalError />;
+  return <NotFound />;
+};
 
 export default ErrorPage;

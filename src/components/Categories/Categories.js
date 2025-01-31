@@ -65,22 +65,63 @@ function Categories() {
 
     const imagePath = process.env.REACT_APP_IMAGE_PATH;
 
-    return (
-        <div className="categories">
-            <WrapperSection>
-                {splitArray(categories).map((row, i) => (
-                    <div key={i} className={row.length === 3 ? cl.row : cl.underRow}>
-                        {row.map((item, idx) => (
-                            <div key={idx} className={cl.imageWrapper}>
-                                <Link to={`/${item.name}`}>
-                                    <img src={`${imagePath}${item.image}`} alt={item.title} className="categories__img"/>
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
-                ))}
-            </WrapperSection>
-        </div>)
+
+  return (
+    <div className="categories">
+      {displayMode === "split" ? (
+        categoriesToDisplay.map((row, i) => (
+          <div key={i} className={row.length === 3 ? cl.row : cl.underRow}>
+            {row.map((item, idx) => (
+              <div key={idx} className={cl.imageWrapper}>
+                <Link to={`/${item.name}`}>
+                  <img
+                    src={`${imagePath}${item.image}`}
+                    alt={item.title}
+                    className="categories__img"
+                  />
+                </Link>
+              </div>
+            ))}
+          </div>
+        ))
+      ) : (
+        <ul>
+          {categories
+            .slice()
+            .sort((a, b) => a.id - b.id)
+            .map((category) => (
+              <li key={category.id}>
+                <div
+                  className={`${cl.listElement} ${
+                    selectedCategory === category.id ? "active" : ""
+                  }`}
+                  onClick={() => handleCategoryClick(category.id)}
+                >
+                  {category.name}
+                </div>
+                {selectedCategory === category.id && category.groups && (
+                  <ul className={cl.groupList}>
+                    {category.groups.map((group) => (
+                      <li key={group.id}>
+                        <div
+                          className={`${cl.groupListElement} ${
+                            selectedGroup === group.id ? "active" : ""
+                          }`}
+                          onClick={() => handleGroupClick(group.id)}
+                        >
+                          {group.name}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+        </ul>
+      )}
+      <div></div>
+    </div>
+  );
 }
 
 export default Categories;
