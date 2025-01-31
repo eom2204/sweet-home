@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { syncFavoritesWithBackend } from '../app/redux/slices/favoritesSlice';
+import {fetchFavoriteGoods, syncFavoritesWithBackend} from '../app/redux/slices/favoritesSlice';
 
 
 const FavoritesHandler = () => {

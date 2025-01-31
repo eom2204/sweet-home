@@ -1,11 +1,23 @@
+import {useEffect} from "react";
 import {NavLink, Outlet, useNavigate} from 'react-router-dom';
-import {Box, Drawer, List, ListItem, ListItemText} from '@mui/material';
+import {useDispatch} from "react-redux";
+import {initializeFavorites} from "../app/redux/slices/favoritesSlice";
+import {Box, List, ListItem, ListItemText} from '@mui/material';
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Wrapper from "./Wrapper/Wrapper";
+import Breadcrumb from "./Breadcrumb/Breadcrumb";
+
 
 const ProfileLayout = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        // Initialize favorites after user login
+        dispatch(initializeFavorites());
+    }, [dispatch]);
+
 
     const handleDeleteAccount = () => {
         // Logic for deleting the account
@@ -19,17 +31,18 @@ const ProfileLayout = () => {
         navigate('/login');
     };
 
+
     return (
         <>
             <Header/>
             <Wrapper>
+                <Breadcrumb></Breadcrumb>
                 <Box sx={{display: 'flex'}}>
                     {/* Sidebar */}
                     <Box
                         sx={{
                             maxWidth: 240,
                             flexShrink: 0,
-                            // [`& .MuiDrawer-paper`]: {width: 240, boxSizing: 'border-box'},
                         }}
                     >
                         <List>
@@ -55,7 +68,7 @@ const ProfileLayout = () => {
                     {/* Main Content */}
                     <Box component="main" sx={{flexGrow: 1, p: 3}}>
                         {/* This will render the nested routes like /profile/cart, /profile/favourites */}
-                        <h2>Profile Section</h2>
+                        {/*<h2>Profile Section</h2>*/}
                         <Outlet/>
                     </Box>
                 </Box>

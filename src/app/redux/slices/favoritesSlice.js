@@ -1,7 +1,7 @@
 // slice to handle the favorites state (favoriteCount to track the count.
 // Functions to add/remove favorites and update the count)
 
-import {createSlice} from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import axios from "axios";
 import {getToken} from "../../../services/authService";
 
@@ -51,7 +51,7 @@ export const initializeFavorites = () => async (dispatch, getState) => {
 
         // Fetch user info and basket data
         const response = await axios.get('https://sweet-home-api-black.vercel.app/api/user/info', {
-            headers: { Authorization: `Bearer ${userToken}` },
+            headers: {Authorization: `Bearer ${userToken}`},
         });
 
         const favoriteGoods = response.data?.basket?.goodsIds || [];
@@ -66,13 +66,43 @@ export const initializeFavorites = () => async (dispatch, getState) => {
     }
 };
 
+// Thunk to fetch favorite goods
+export const fetchFavoriteGoods = createAsyncThunk(
+    "favorites/fetchFavoriteGoods",
+    async (favorites, {getState, rejectWithValue}) => {
+        try {
+            const userToken = getToken();
+            if (!userToken) throw new Error("No authentication token found. Please log in.");
 
-// Thunk to send favorites to backend
+            // 🔹 Step 1: Fetch user info to get `basketId`
+            const userInfoResponse = await axios.get("https://sweet-home-api-black.vercel.app/api/user/info", {
+                headers: {Authorization: `Bearer ${userToken}`},
+            });
+
+            const basketId = userInfoResponse.data?.basketId;
+            if (!basketId) throw new Error("No basket found for this user");
+
+            // 🔹 Step 2: Get favorite items from Redux state
+            const favoriteItems = getState().favorites.favoriteItems; // Get current Redux favorite items
+
+            // 🔹 Step 3: Send favorite goods to the backend
+            await axios.post("https://sweet-home-api-black.vercel.app/api/basket/add-goods", {
+                id: basketId,
+                goodsIds: favoriteItems, // Send Redux state to backend
+            });
+
+            return favoriteItems; // Sync Redux state with backend response
+        } catch (error) {
+            return rejectWithValue(error.message || "Failed to fetch and sync favorite goods.");
+        }
+    }
+);
+
+//Thunk to send favorites to backend
 export const syncFavoritesWithBackend = (favorites) => async (dispatch, getState) => {
     try {
         // Retrieve the token from cookies
         const userToken = getToken();
-
         if (!userToken) {
             throw new Error('No authentication token found. Please log in.');
         }
@@ -89,7 +119,7 @@ export const syncFavoritesWithBackend = (favorites) => async (dispatch, getState
             },
         });
 
-        const id = basketResponse.data?.id;
+        const id = basketResponse?.data?.basketId;
         if (!id) {
             throw new Error('No basketId found in the response. Please ensure the user has a valid basket.');
         }
@@ -112,21 +142,27 @@ export const syncFavoritesWithBackend = (favorites) => async (dispatch, getState
     } catch (error) {
         console.error('Error syncing goodsIds with backend:', error);
     }
-
-    //     // Send favorites to backend with basketId
-    //     const response = await axios.post('/api/basket/add-selected-goods', {id: id, selectedGoods: favorites},
-    //         );
-    //     console.log('Favorites synced successfully:', response.data);
-    // } catch (error) {
-    //     console.error('Error syncing favorites with backend:', error);
-    // }
-
 };
+
+//     // Send favorites to backend with basketId
+//     const response = await axios.post('/api/basket/add-selected-goods', {id: id, selectedGoods: favorites},
+//     );
+//     console.log('Favorites synced successfully:', response.data);
+// }
+// catch
+// (error)
+// {
+//     console.error('Error syncing favorites with backend:', error);
+// }
+// ;
+//
+// }
+// ;
 
 // Enhanced removeFavorite to sync instantly
 export const removeFavoriteAndSync = (itemId) => (dispatch) => {
     dispatch(removeFavorite(itemId)); // Remove from Redux instantly
-    dispatch(syncFavoritesWithBackend()); // Sync backend
+    dispatch(fetchFavoriteGoods()); // Sync backend
 };
 
 // Export the reducer
