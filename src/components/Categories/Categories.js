@@ -1,70 +1,111 @@
-import {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {Link} from "react-router-dom";
-import {makeStyles} from "@mui/styles";
-import {fetchCategories} from "../../app/redux/slices/categoriesSlice";
-import WrapperSection from "../WrapperSection/WrapperSection";
-import './Categories.scss';
-
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { makeStyles } from "@mui/styles";
+import { fetchCategories } from "../../app/redux/slices/categoriesSlice";
+import "./Categories.scss";
 
 const useStyles = makeStyles((theme) => ({
-    row: {
-        display: 'grid',
-        gridTemplateColumns: '1fr 2fr 1.5fr',
-        gap: '25px',
-        marginBottom: '25px',
-        maxHeight: '160px',
-        height: 'auto',
-        [theme.breakpoints.down('md')]: {
-            gap: '16px',
-            marginBottom: '16px',
-        },
+  row: {
+    display: "grid",
+    gridTemplateColumns: "1fr 2fr 1.5fr",
+    gap: "25px",
+    marginBottom: "25px",
+    maxHeight: "160px",
+    height: "auto",
+    [theme.breakpoints.down("md")]: {
+      gap: "16px",
+      marginBottom: "16px",
     },
-    underRow: {
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '25px',
-        marginBottom: {xs: '16px', sm: '16px', md: '25px'},
-        maxHeight: '160px',
-        height: 'auto',
-        [theme.breakpoints.down('md')]: { // Apply for screens smaller than "md"
-            gap: '16px',
-            marginBottom: '16px',
-        },
+  },
+  underRow: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "25px",
+    marginBottom: { xs: "16px", sm: "16px", md: "25px" },
+    maxHeight: "160px",
+    height: "auto",
+    [theme.breakpoints.down("md")]: {
+      gap: "16px",
+      marginBottom: "16px",
+    },
+  },
+  listElement: {
+    fontFamily: "Helvetica",
+    fontSize: "24px",
+    fontWeight: "400",
+    lineHeight: "29.64px",
+    letterSpacing: "1px",
+    textAlign: "left",
+    marginBottom: "16px",
+    cursor: "pointer",
+  },
+  groupList: {
+    listStyle: "none",
+    marginBottom: "16px",
+  },
+  groupListElement: {
+    fontFamily: "Helvetica",
+    fontSize: "16px",
+    fontWeight: "300",
+    lineHeight: "20px",
+    letterSpacing: "1px",
+    textAlign: "left",
+    cursor: "pointer",
+  },
+}));
+
+function splitArray(arr) {
+  return arr.reduce((acu, _, index) => {
+    if (index % 5 === 0) {
+      acu.push(arr.slice(index, index + 3));
+    } else if (index % 5 === 3) {
+      acu.push(arr.slice(index, index + 2));
     }
-}))
+    return acu;
+  }, []);
+}
 
-function Categories() {
-    const cl = useStyles();
+function Categories({
+  displayMode = "split",
+  setSelectedCategory,
+  setSelectedGroup,
+}) {
+  const cl = useStyles();
+  const dispatch = useDispatch();
+  const { categories, status, error } = useSelector(
+    (state) => state.categories
+  );
 
-    const dispatch = useDispatch();
-    const {categories, status, error} = useSelector((state) => state.categories); // Listening state
+  const [selectedCategory, setSelectedLocalCategory] = useState(null);
+  const [selectedGroup, setSelectedLocalGroup] = useState(null);
 
-
-    useEffect(() => {
-        if (status === 'idle') {
-            dispatch(fetchCategories());
-        }
-    }, [status, dispatch]);
-
-    if (status === 'loading') return <div>Loading...</div>;
-    if (status === 'failed') return <div>Error: {error}</div>;
-
-
-    // Grid 3 in a row and 2 in a row
-    function splitArray(arr) {
-        return arr.reduce((acu, _, index) => {
-            if (index % 5 === 0) {
-                acu.push(arr.slice(index, index + 3));
-            } else if (index % 5 === 3) {
-                acu.push(arr.slice(index, index + 2));
-            }
-            return acu;
-        }, []);
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchCategories());
     }
+  }, [status, dispatch]);
 
-    const imagePath = process.env.REACT_APP_IMAGE_PATH;
+  if (status === "loading") return <div>Loading...</div>;
+  if (status === "failed") return <div>Error: {error}</div>;
 
+  const handleCategoryClick = (categoryId) => {
+    const newCategory = categoryId === selectedCategory ? null : categoryId;
+    setSelectedLocalCategory(newCategory);
+    setSelectedCategory(newCategory);
+    setSelectedGroup(null); // Reset selected group when category changes
+  };
+
+  const handleGroupClick = (groupId) => {
+    const newGroup = groupId === selectedGroup ? null : groupId;
+    setSelectedLocalGroup(newGroup);
+    setSelectedGroup(newGroup);
+  };
+
+  const imagePath = process.env.REACT_APP_IMAGE_PATH;
+
+  const categoriesToDisplay =
+    displayMode === "split" ? splitArray(categories) : [categories]; // Conditionally split the array
 
   return (
     <div className="categories">
