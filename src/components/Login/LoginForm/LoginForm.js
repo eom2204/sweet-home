@@ -44,7 +44,7 @@ function LoginForm() {
                        required
                 />
 
-                <div className="login__forgot">
+                <div>
                     <a href="">Forgot my password</a>
                 </div>
 

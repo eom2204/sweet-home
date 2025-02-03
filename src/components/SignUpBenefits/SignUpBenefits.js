@@ -24,7 +24,8 @@ function SignUpBenefits() {
                         <path d="M22 6L12 13L2 6" stroke="#222133" strokeWidth="2" strokeLinecap="round"
                               strokeLinejoin="round"/>
                     </svg>
-                    <Typography variant="subtitle1" sx={{marginLeft: "22px"}}>Subscribe to the newsletters and get a discount on your first order</Typography>
+                    <Typography variant="subtitle1" sx={{marginLeft: "22px"}}>Підпишись на розсилку та отримай знижку на перше
+                        замовлення</Typography>
                 </Box>
                 <Box sx={{display: 'flex', marginBottom: "45px", width: '100%'}}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -50,7 +50,7 @@ export const initializeFavorites = () => async (dispatch, getState) => {
         if (!userToken) throw new Error("No authentication token found.");
 
         // Fetch user info and basket data
-        const response = await axios.get('/api/user/info', {
+        const response = await axios.get('https://sweet-home-api-black.vercel.app/api/user/info', {
             headers: {Authorization: `Bearer ${userToken}`},
         });
 
@@ -75,7 +75,7 @@ export const fetchFavoriteGoods = createAsyncThunk(
             if (!userToken) throw new Error("No authentication token found. Please log in.");
 
             // 🔹 Step 1: Fetch user info to get `basketId`
-            const userInfoResponse = await axios.get("/api/user/info", {
+            const userInfoResponse = await axios.get("https://sweet-home-api-black.vercel.app/api/user/info", {
                 headers: {Authorization: `Bearer ${userToken}`},
             });
 
@@ -86,7 +86,7 @@ export const fetchFavoriteGoods = createAsyncThunk(
             const favoriteItems = getState().favorites.favoriteItems; // Get current Redux favorite items
 
             // 🔹 Step 3: Send favorite goods to the backend
-            await axios.post("/api/basket/add-goods", {
+            await axios.post("https://sweet-home-api-black.vercel.app/api/basket/add-goods", {
                 id: basketId,
                 goodsIds: favoriteItems, // Send Redux state to backend
             });
@@ -113,7 +113,7 @@ export const syncFavoritesWithBackend = (favorites) => async (dispatch, getState
         console.log('Favorites being sent to backend:', updatedFavorites);
 
         // Fetch user id
-        const basketResponse = await axios.get('/api/user/info', {
+        const basketResponse = await axios.get('https://sweet-home-api-black.vercel.app/api/user/info', {
             headers: {
                 Authorization: `Bearer ${userToken}`, // Include token in headers
             },
@@ -127,15 +127,37 @@ export const syncFavoritesWithBackend = (favorites) => async (dispatch, getState
         console.log('Retrieved basketId:', id);
 
         // Send updated favorites to BE
-        const response = await axios.post('/api/basket/add-goods',
+        const response = await axios.post('https://sweet-home-api-black.vercel.app/api/basket/add-goods',
             {id, goodsIds: updatedFavorites},
         );
         console.log('goodsIds synced successfully:', response.data);
 
+        // Update the Redux store with the backend data
+        // const updatedFavorites = response.data?.goodsIds || [];
+        // const currentFavorites = getState().favorites.favoriteItems;
+        //
+        // if (JSON.stringify(currentFavorites) !== JSON.stringify(updatedFavorites)) {
+        //     dispatch(setFavorites(updatedFavorites));
+        // }
     } catch (error) {
         console.error('Error syncing goodsIds with backend:', error);
     }
 };
+
+//     // Send favorites to backend with basketId
+//     const response = await axios.post('/api/basket/add-selected-goods', {id: id, selectedGoods: favorites},
+//     );
+//     console.log('Favorites synced successfully:', response.data);
+// }
+// catch
+// (error)
+// {
+//     console.error('Error syncing favorites with backend:', error);
+// }
+// ;
+//
+// }
+// ;
 
 // Enhanced removeFavorite to sync instantly
 export const removeFavoriteAndSync = (itemId) => (dispatch) => {

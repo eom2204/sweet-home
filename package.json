@@ -2,7 +2,7 @@
   "name": "online_store",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://sweet-home-api-black.vercel.app",
+  "proxy": "https://sweet-home-api.onrender.com",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
