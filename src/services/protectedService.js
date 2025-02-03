@@ -12,7 +12,7 @@ export const getProtectedData = async () => {
     }
 
     try {
-        const response = await axios.get('https://sweet-home-api-black.vercel.app/api/user/auth', {
+        const response = await axios.get('/api/user/auth', {
             headers: {
                 Authorization: `Bearer ${token}`, // Add token in Authorization header
             },

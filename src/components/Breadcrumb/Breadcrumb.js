@@ -1,6 +1,6 @@
+import { Link, useLocation, useParams } from "react-router-dom";
 import "./Breadcrumb.scss";
 
-import { Link, useLocation, useParams } from "react-router-dom";
 
 const Breadcrumb = () => {
   const location = useLocation(); // Get the current URL path
@@ -12,15 +12,17 @@ const Breadcrumb = () => {
     <nav>
       <ol className="breadcrumb">
         <li>
-          <Link to="/">Home &gt;</Link>
+          <Link to="/">Home</Link>
+          {pathnames.length > 0 && " > "}
         </li>
         {pathnames.map((value, index) => {
           // Create the link for each part of the path
           const to = `/${pathnames.slice(0, index + 1).join("/")}`;
+          const isLast = index + 1 === pathnames.length;
 
           return (
             <li key={to}>
-              {index + 1 === pathnames.length && categorySlug ? (
+              {isLast && categorySlug ? (
                 <span>{categorySlug}</span> // Active category slug
               ) : (
                 <Link to={to}>
@@ -28,6 +30,7 @@ const Breadcrumb = () => {
                   {/* Capitalize */}
                 </Link>
               )}
+              {!isLast && " > "}
             </li>
           );
         })}
