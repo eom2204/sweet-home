@@ -1,0 +1,10 @@
+@import "../../styles/_variables.scss";
+
+.profile {
+
+  &_menu-item {
+    color: $color-background-black;
+    padding-left: 0;
+  }
+}
+

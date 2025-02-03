@@ -1,12 +1,15 @@
 import Login from "../components/Login/Login";
 import Breadcrumb from "../components/Breadcrumb/Breadcrumb";
+import WrapperSection from "../components/WrapperSection/WrapperSection";
 
 function LoginPage() {
 
     return (
         <>
-            <Breadcrumb />
-            <Login/>
+            <WrapperSection>
+                <Breadcrumb />
+                <Login/>
+            </WrapperSection>
         </>
     )
 }
