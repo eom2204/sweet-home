@@ -45,17 +45,12 @@ const ProfileLayout = () => {
                             }}
                         >
                             <List>
-                                {/*<NavLink to="/profile/cart" className={({isActive})=>`${isActive && 'active'} main-nav__list-link`} end>My Orders</NavLink>*/}
-
-                                {/*<NavLink to="/profile" className={({isActive})=>`${isActive && 'active'} main-nav__list-link`}>My Contacts</NavLink>*/}
-
-                                {/*<NavLink to="/profile/favorites" className={({isActive})=>`${isActive && 'active'} main-nav__list-link`}>Wish List</NavLink>*/}
-
-
-                                <ListItem button component={NavLink} to="/profile/cart" activeClassName="Mui-selected" className="profile_menu-item">
+                                <ListItem button component={NavLink} to="/profile/cart" activeClassName="Mui-selected"
+                                          className="profile_menu-item">
                                     <ListItemText primary="My Orders"/>
                                 </ListItem>
-                                <ListItem button component={NavLink} to="/profile" activeClassName="Mui-selected" className="profile_menu-item">
+                                <ListItem button component={NavLink} to="/profile" activeClassName="Mui-selected"
+                                          className="profile_menu-item">
                                     <ListItemText primary="My Contacts"/>
                                 </ListItem>
                                 <ListItem button component={NavLink} to="/profile/favorites"

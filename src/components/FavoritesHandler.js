@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {fetchFavoriteGoods, syncFavoritesWithBackend} from '../app/redux/slices/favoritesSlice';
+import { syncFavoritesWithBackend } from '../app/redux/slices/favoritesSlice';
 
 
 const FavoritesHandler = () => {
@@ -18,3 +18,6 @@ const FavoritesHandler = () => {
 };
 
 export default FavoritesHandler;
+
+//FavoritesHandler will automatically sync the updated favoriteItems array
+// with the backend whenever it changes.

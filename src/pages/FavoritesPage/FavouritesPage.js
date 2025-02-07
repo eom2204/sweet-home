@@ -30,7 +30,7 @@ function FavouritesPage() {
             }
         };
         fetchFavorites();
-    }, [dispatch]); // ✅ Re-run when `dispatch` changes
+    }, [dispatch]); // Re-run when `dispatch` changes
 
 
     useEffect(() => {
@@ -53,6 +53,7 @@ function FavouritesPage() {
 
 
     return (
+
         <Container className="favorite-goods-page">
             {favoriteGoods.length === 0 ?
                 (<p>No favorite goods selected.</p>
