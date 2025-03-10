@@ -46,10 +46,6 @@ function Bestsellers() {
         navigate(`/product/${productId}`);
     };
 
-    // const handleCategoryClick = () => {
-    //     navigate(`/category/${bestsellers.categoryId}`);
-    // };
-
     //Pagination
     const itemsPerPage = isSmallScreen ? 2 : 3;
     const pageCount = Math.ceil(bestsellers.length / itemsPerPage);

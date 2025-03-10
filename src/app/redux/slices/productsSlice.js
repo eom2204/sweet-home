@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 // Thunk to fetch products from backend
 export const fetchGoods = createAsyncThunk("products/fetchGoods", async () => {
@@ -8,13 +8,12 @@ export const fetchGoods = createAsyncThunk("products/fetchGoods", async () => {
     if (!response.ok) {
       throw new Error("Failed to fetch goods");
     }
-    const data = await response.json();
-    return data;
+
+    return await response.json();
   } catch (error) {
     console.error("Error fetching goods, using local data:", error);
     // If there is an error, return local data as fallback
-    const localData = require("../../../data/goods.json");
-    return localData; // Return local categories as fallback
+    return require("../../../data/goods.json"); // Return local categories as fallback
   }
 });
 

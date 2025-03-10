@@ -1,8 +1,7 @@
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {
-    addFavorite, fetchFavoriteGoods, removeFavorite,
-    removeFavoriteAndSync,
+    addFavorite, removeFavoriteAndSync, syncFavoritesWithBackend,
 } from "../../app/redux/slices/favoritesSlice";
 import './FavoriteGoods.scss';
 
@@ -27,13 +26,11 @@ function FavoriteGoods({itemId}) {
 
         // Dispatch actions to Redux based on the heart's state
         if (isHeartActive) {
-            //dispatch(removeFavorite(itemId));
             dispatch(removeFavoriteAndSync(itemId)); // Removes from Redux & Backend
         } else {
             dispatch(addFavorite(itemId)); // Add to favorites in Redux
-            //dispatch(fetchFavoriteGoods([...favoriteItems, itemId])); // Sync with backend
+            dispatch(syncFavoritesWithBackend(favoriteItems));
         }
-
         setIsHeartActive((prev) => !prev); // Toggle the local heart state
     };
 
