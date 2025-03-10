@@ -1,16 +1,23 @@
 import {Link} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import BurgerMenu from "./BurgerMenu/BurgerMenu";
 import MainNavigation from "./MainNavigation/MainNavigation";
 import SearchBlock from "./SearchBlock/SearchBlock";
 import logo_main from "../../assets/logo_main.svg";
-import './Header.scss';
 import WrapperSection from "../WrapperSection/WrapperSection";
+import {useEffect} from "react";
+import {initializeFavorites} from "../../app/redux/slices/favoritesSlice";
+import './Header.scss';
 
 
 function Header() {
-
+    const dispatch = useDispatch();
     const favoriteCount = useSelector(state => state.favorites.favoriteCount);
+
+    useEffect(() => {
+        // Initialize favorites after user login
+        dispatch(initializeFavorites());
+    }, [dispatch]);
 
     return (
 

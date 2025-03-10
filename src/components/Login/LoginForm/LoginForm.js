@@ -1,13 +1,15 @@
 import {useState} from "react";
+import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {login} from "../../../services/authService";
+import {initializeFavorites} from "../../../app/redux/slices/favoritesSlice";
 import Button from "../../Button/Button";
 import {Box} from "@mui/material";
 import './LoginForm.scss';
 
 
 function LoginForm() {
-
+    const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -17,6 +19,7 @@ function LoginForm() {
         e.preventDefault();
         try {
             await login(email, password); // Call login function from service
+            dispatch(initializeFavorites());
             navigate('/profile'); // Redirect to profile page on success
         } catch (error) {
             setError('Login failed. Please try again.');

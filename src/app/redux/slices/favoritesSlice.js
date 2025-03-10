@@ -1,13 +1,14 @@
 // slice to handle the favorites state (favoriteCount to track the count.
 // Functions to add/remove favorites and update the count)
 
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 import axios from "axios";
 import {getToken} from "../../../services/authService";
 
 const initialState = {
     favoriteCount: 0,
     favoriteItems: [], // Array to store IDs or items added to favorites
+    initialized: false,  // A flag to track initialization
 };
 
 const favoritesSlice = createSlice({
@@ -17,8 +18,6 @@ const favoritesSlice = createSlice({
         // Add a favorite item
         addFavorite: (state, action) => {
             const itemId = action.payload; // In Redux Toolkit, the payload property of an action contains the data passed to the reducer when the action is dispatched.
-
-            console.log('Item ID:', itemId); // Debugging
 
             if (!state.favoriteItems.includes(itemId)) {
                 state.favoriteItems.push(itemId);
@@ -36,21 +35,28 @@ const favoritesSlice = createSlice({
             state.favoriteItems = action.payload;
             state.favoriteCount = action.payload.length;
         },
+
+        setInitialized: (state) => {
+            return { ...state, initialized: true };  // Ensure Redux state change
+        },
     },
 });
 
 // Export actions
-export const {addFavorite, removeFavorite, setFavorites} = favoritesSlice.actions;
+export const {addFavorite, removeFavorite, setFavorites, setInitialized} = favoritesSlice.actions;
 
 
 // Thunk to initialize favorites after user login
 export const initializeFavorites = () => async (dispatch, getState) => {
+
     try {
         const userToken = getToken();
-        if (!userToken) throw new Error("No authentication token found.");
+        if (!userToken) {
+            throw new Error("No authentication token found. Please log in.");
+        }
 
         // Fetch user info and basket data
-        const response = await axios.get('/api/user/info', {
+        const response = await axios.get('https://sweet-home-api-black.vercel.app/api/user/info', {
             headers: {Authorization: `Bearer ${userToken}`},
         });
 
@@ -61,59 +67,27 @@ export const initializeFavorites = () => async (dispatch, getState) => {
         if (JSON.stringify(currentFavorites) !== JSON.stringify(favoriteGoods)) {
             dispatch(setFavorites(favoriteGoods));
         }
+        dispatch(setInitialized()); // Mark initialization as complete
     } catch (error) {
         console.error("Error initializing favorites:", error);
     }
 };
 
-// Thunk to fetch favorite goods
-export const fetchFavoriteGoods = createAsyncThunk(
-    "favorites/fetchFavoriteGoods",
-    async (favorites, {getState, rejectWithValue}) => {
-        try {
-            const userToken = getToken();
-            if (!userToken) throw new Error("No authentication token found. Please log in.");
-
-            // 🔹 Step 1: Fetch user info to get `basketId`
-            const userInfoResponse = await axios.get("/api/user/info", {
-                headers: {Authorization: `Bearer ${userToken}`},
-            });
-
-            const basketId = userInfoResponse.data?.basketId;
-            if (!basketId) throw new Error("No basket found for this user");
-
-            // 🔹 Step 2: Get favorite items from Redux state
-            const favoriteItems = getState().favorites.favoriteItems; // Get current Redux favorite items
-
-            // 🔹 Step 3: Send favorite goods to the backend
-            await axios.post("/api/basket/add-goods", {
-                id: basketId,
-                goodsIds: favoriteItems, // Send Redux state to backend
-            });
-
-            return favoriteItems; // Sync Redux state with backend response
-        } catch (error) {
-            return rejectWithValue(error.message || "Failed to fetch and sync favorite goods.");
-        }
-    }
-);
 
 //Thunk to send favorites to backend
-export const syncFavoritesWithBackend = (favorites) => async (dispatch, getState) => {
+export const syncFavoritesWithBackend = () => async (dispatch, getState) => {
     try {
         // Retrieve the token from cookies
         const userToken = getToken();
         if (!userToken) {
-            throw new Error('No authentication token found. Please log in.');
+            throw new Error("No authentication token found. Please log in.");
         }
 
         const state = getState();
         const updatedFavorites = state.favorites.favoriteItems; // Get latest Redux state
 
-        console.log('Favorites being sent to backend:', updatedFavorites);
-
         // Fetch user id
-        const basketResponse = await axios.get('/api/user/info', {
+        const basketResponse = await axios.get('https://sweet-home-api-black.vercel.app/api/user/info', {
             headers: {
                 Authorization: `Bearer ${userToken}`, // Include token in headers
             },
@@ -124,13 +98,10 @@ export const syncFavoritesWithBackend = (favorites) => async (dispatch, getState
             throw new Error('No basketId found in the response. Please ensure the user has a valid basket.');
         }
 
-        console.log('Retrieved basketId:', id);
-
         // Send updated favorites to BE
-        const response = await axios.post('/api/basket/add-goods',
+        const response = await axios.post('https://sweet-home-api-black.vercel.app/api/basket/add-goods',
             {id, goodsIds: updatedFavorites},
         );
-        console.log('goodsIds synced successfully:', response.data);
 
     } catch (error) {
         console.error('Error syncing goodsIds with backend:', error);
@@ -140,7 +111,7 @@ export const syncFavoritesWithBackend = (favorites) => async (dispatch, getState
 // Enhanced removeFavorite to sync instantly
 export const removeFavoriteAndSync = (itemId) => (dispatch) => {
     dispatch(removeFavorite(itemId)); // Remove from Redux instantly
-    dispatch(fetchFavoriteGoods()); // Sync backend
+    dispatch(syncFavoritesWithBackend()); // Sync backend
 };
 
 // Export the reducer

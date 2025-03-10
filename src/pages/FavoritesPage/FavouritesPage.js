@@ -1,11 +1,10 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchGoods} from "../../app/redux/slices/productsSlice";
 import {Container} from "@mui/system";
 import Grid from "@mui/material/Grid2";
 import Card from "../../components/Card/Card";
-import {useDispatch, useSelector} from "react-redux";
-import {fetchGoods} from "../../app/redux/slices/productsSlice";
 import "./FavoritesPage.scss";
-import {syncFavoritesWithBackend} from "../../app/redux/slices/favoritesSlice";
 
 
 function FavouritesPage() {
@@ -13,24 +12,6 @@ function FavouritesPage() {
     const allGoods = useSelector((state) => state.goods.goods);
     const goodsStatus = useSelector((state) => state.goods.status); // Fetch status for goods
     const favoriteGoodsIds = useSelector((state) => state.favorites.favoriteItems);
-
-    const [loading, setLoading] = useState(true); // State to track loading status
-    const [error, setError] = useState(null); // State to track errors
-
-
-    useEffect(() => {
-        const fetchFavorites = async () => {
-            try {
-                setLoading(true);
-                dispatch(syncFavoritesWithBackend());
-            } catch (err) {
-                setError(err.message || "Failed to fetch favorite goods.");
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchFavorites();
-    }, [dispatch]); // ✅ Re-run when `dispatch` changes
 
 
     useEffect(() => {
@@ -43,16 +24,17 @@ function FavouritesPage() {
     // Filter goods based on updated Redux favorite IDs
     const favoriteGoods = allGoods.filter((good) => favoriteGoodsIds.includes(good.id));
 
-    if (loading || goodsStatus === "loading") {
+    if (goodsStatus === "loading") {
         return <div>Loading your favorite goods...</div>;
     }
 
-    if (error || goodsStatus === "failed") {
+    if (goodsStatus === "failed") {
         return <div>Error: {error || "Failed to load goods"}</div>;
     }
 
 
     return (
+
         <Container className="favorite-goods-page">
             {favoriteGoods.length === 0 ?
                 (<p>No favorite goods selected.</p>

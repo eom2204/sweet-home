@@ -7,6 +7,11 @@ import CategoryPage from "../pages/CategoryPage";
 import ProductPage from "../pages/ProductPage";
 import NotFound from "../pages/NotFound";
 import ErrorPage from "../pages/ErrorPage";
+import ProtectedRoute from "./ProtectedRoute";
+import ProfileLayout from "./ProfileLayout/ProfileLayout";
+import ProfilePage from "../pages/ProfilePage";
+import FavouritesPage from "../pages/FavoritesPage/FavouritesPage";
+import CartPage from "../pages/CartPage";
 
 
 // Array of children routes
@@ -26,6 +31,17 @@ export const childrenRoutes = [
     path: "/error",
     element: <ErrorPage />,
   },
-
-  ,
+  {
+    path: "/profile",
+    element: (
+        <ProtectedRoute>
+          <ProfileLayout />
+        </ProtectedRoute>
+    ),
+    children: [
+      { path: "", element: <ProfilePage /> },
+      { path: "favorites", element: <FavouritesPage /> },
+      { path: "cart", element: <CartPage /> },
+    ],
+  },
 ];
