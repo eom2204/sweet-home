@@ -29,7 +29,7 @@ function FavouritesPage() {
     }
 
     if (goodsStatus === "failed") {
-        return <div>Error: {error || "Failed to load goods"}</div>;
+        return <div>Error: {"Failed to load goods"}</div>;
     }
 
 
