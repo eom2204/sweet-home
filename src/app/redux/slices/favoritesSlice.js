@@ -56,7 +56,7 @@ export const initializeFavorites = () => async (dispatch, getState) => {
         }
 
         // Fetch user info and basket data
-        const response = await axios.get('https://sweet-home-api-black.vercel.app/api/user/info', {
+        const response = await axios.get('/api/user/info', {
             headers: {Authorization: `Bearer ${userToken}`},
         });
 
@@ -87,7 +87,7 @@ export const syncFavoritesWithBackend = () => async (dispatch, getState) => {
         const updatedFavorites = state.favorites.favoriteItems; // Get latest Redux state
 
         // Fetch user id
-        const basketResponse = await axios.get('https://sweet-home-api-black.vercel.app/api/user/info', {
+        const basketResponse = await axios.get('/api/user/info', {
             headers: {
                 Authorization: `Bearer ${userToken}`, // Include token in headers
             },
@@ -99,7 +99,7 @@ export const syncFavoritesWithBackend = () => async (dispatch, getState) => {
         }
 
         // Send updated favorites to BE
-        const response = await axios.post('https://sweet-home-api-black.vercel.app/api/basket/add-goods',
+        const response = await axios.post('/api/basket/add-goods',
             {id, goodsIds: updatedFavorites},
         );
 
