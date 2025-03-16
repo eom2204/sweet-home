@@ -68,26 +68,26 @@
       gap: 20px;
     }
 
-    &-favorite {
+    &--favorite, &--cart {
       position: relative;
     }
 
-    &_favorite-counter {
-      right: -8px;
-      top: -5px;
+    &--counter {
+      position: absolute;
+      right: -2px;
+      bottom: -1px;
 
       align-items: center;
       background-color: $color-background-adv;
       border-radius: 100%;
-      color: $color-element-white;
+      color: $color-text-white;
       display: flex;
       font-size: 12px;
       font-weight: 300;
       line-height: 14.4px;
-      height: 16px;
+      height: 14px;
       justify-content: center;
-      position: absolute;
-      width: 16px;
+      width: 14px;
     }
   }
 

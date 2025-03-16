@@ -52,7 +52,7 @@ function Header() {
                                     </g>
                                 </svg>
                             </Link>
-                            <Link aria-label="Open favorite" className="header__icons-favorite "
+                            <Link aria-label="Open favorite" className="header__icons--favorite"
                                   to="/profile/favorites">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -63,9 +63,9 @@ function Header() {
                                               strokeLinejoin="round"/>
                                     </g>
                                 </svg>
-                                <span className="header__icons_favorite-counter">{favoriteCount}</span>
+                                <span className="header__icons--counter">{favoriteCount}</span>
                             </Link>
-                            <Link aria-label="Open cart" className="header-icons__cart cart-icon" to="/profile/cart">
+                            <Link aria-label="Open cart" className="header__icons--cart" to="/profile/cart">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <g id="Feather / other / shop / shopping cart">
@@ -83,7 +83,7 @@ function Header() {
                                               strokeLinejoin="round"/>
                                     </g>
                                 </svg>
-                                <span className="header__icons_cart-counter">0</span>
+                                <span className="header__icons--counter">0</span>
                             </Link>
                             <BurgerMenu/>
                         </div>
