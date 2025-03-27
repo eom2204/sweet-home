@@ -5,6 +5,8 @@ import {createSlice} from '@reduxjs/toolkit';
 import axios from "axios";
 import {getToken} from "../../../services/authService";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const initialState = {
     favoriteCount: 0,
     favoriteItems: [], // Array to store IDs or items added to favorites
@@ -56,7 +58,7 @@ export const initializeFavorites = () => async (dispatch, getState) => {
         }
 
         // Fetch user info and basket data
-        const response = await axios.get('/api/user/info', {
+        const response = await axios.get(`${API_URL}/api/user/info`, {
             headers: {Authorization: `Bearer ${userToken}`},
         });
 
@@ -87,7 +89,7 @@ export const syncFavoritesWithBackend = () => async (dispatch, getState) => {
         const updatedFavorites = state.favorites.favoriteItems; // Get latest Redux state
 
         // Fetch user id
-        const basketResponse = await axios.get('/api/user/info', {
+        const basketResponse = await axios.get(`${API_URL}/api/user/info`, {
             headers: {
                 Authorization: `Bearer ${userToken}`, // Include token in headers
             },
@@ -99,7 +101,7 @@ export const syncFavoritesWithBackend = () => async (dispatch, getState) => {
         }
 
         // Send updated favorites to BE
-        const response = await axios.post('/api/basket/add-goods',
+        const response = await axios.post(`${API_URL}/api/basket/add-goods`,
             {id, goodsIds: updatedFavorites},
         );
 

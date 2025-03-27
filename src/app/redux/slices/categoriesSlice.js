@@ -1,9 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 // Thunk to fetch categories from backend
 export const fetchCategories = createAsyncThunk('categories/fetchCategories', async () => {
     try {
-        const response = await fetch('/api/category');
+        const response = await fetch(`${API_URL}/api/category`);
         // Check if the response is OK
         if (!response.data) {
             throw new Error('Failed to fetch goods');
