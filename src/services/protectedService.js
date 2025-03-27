@@ -4,6 +4,8 @@
 import axios from 'axios';
 import { AccessKey } from '../utils/AccessKey';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 // Function to retrieve protected data
 export const getProtectedData = async () => {
     const token = AccessKey.get();  // Get the token from the cookies
@@ -12,7 +14,7 @@ export const getProtectedData = async () => {
     }
 
     try {
-        const response = await axios.get('/api/user/auth', {
+        const response = await axios.get(`${API_URL}/api/user/auth`, {
             headers: {
                 Authorization: `Bearer ${token}`, // Add token in Authorization header
             },
