@@ -1,6 +1,7 @@
 import React from "react";
 import FavoriteGoods from "../FavoriteGoods/FavoriteGoods";
 import "./Card.scss";
+import CartGoods from "../CartGoods/CartGoods";
 
 const Card = ({ product }) => {
   const { name, price, images, group, discount } = product;
@@ -14,6 +15,7 @@ const Card = ({ product }) => {
       <div className="card">
           <div className="card-image">
               <img src={`${imagePath}${images[0]}`} alt={name} loading={"lazy"}/>
+              <CartGoods itemId={product.id}/>
               <FavoriteGoods itemId={product.id}/>
           </div>
           <div className="card-content">

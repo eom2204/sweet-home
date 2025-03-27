@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.cart {
+  &__icon-heart {
+    position: absolute;
+    left: 10px;
+    top: 3px;
+    display: block;
+    cursor: pointer;
+    transition: stroke 200ms ease-in-out;
+    z-index: 2;
+
+    &:hover &--color {
+      stroke: $color-text-white;
+    }
+
+    &.active &--color {
+      fill: $color-background-adv;
+      stroke: $color-background-adv;
+    }
+
+  }
+}

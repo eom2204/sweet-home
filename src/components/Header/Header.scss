@@ -70,6 +70,8 @@
 
     &--favorite, &--cart {
       position: relative;
+      background-color: transparent;
+      border: none;
     }
 
     &--counter {
