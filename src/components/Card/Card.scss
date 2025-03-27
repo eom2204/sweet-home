@@ -1,21 +1,18 @@
 .card {
   display: flex;
   flex-direction: column;
-  max-width: 202px;
+  width: 202px;
 }
 
 .card-image {
   position: relative;
 
   img {
-    //width: 202px;
+    width: 202px;
     height: 248px;
     object-fit: cover;
-    width: 100%;
   }
 }
-
-
 
 .card-content {
   text-align: center;

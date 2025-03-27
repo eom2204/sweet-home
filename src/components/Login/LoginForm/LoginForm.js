@@ -6,6 +6,7 @@ import {initializeFavorites} from "../../../app/redux/slices/favoritesSlice";
 import Button from "../../Button/Button";
 import {Box} from "@mui/material";
 import './LoginForm.scss';
+import {initializeCart} from "../../../app/redux/slices/cartSlice";
 
 
 function LoginForm() {
@@ -20,6 +21,7 @@ function LoginForm() {
         try {
             await login(email, password); // Call login function from service
             dispatch(initializeFavorites());
+            dispatch(initializeCart());
             navigate('/profile'); // Redirect to profile page on success
         } catch (error) {
             setError('Login failed. Please try again.');

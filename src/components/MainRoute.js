@@ -11,7 +11,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import ProfileLayout from "./ProfileLayout/ProfileLayout";
 import ProfilePage from "../pages/ProfilePage";
 import FavouritesPage from "../pages/FavoritesPage/FavouritesPage";
-import CartPage from "../pages/CartPage";
+
 
 
 // Array of children routes
@@ -41,7 +41,7 @@ export const childrenRoutes = [
     children: [
       { path: "", element: <ProfilePage /> },
       { path: "favorites", element: <FavouritesPage /> },
-      { path: "cart", element: <CartPage /> },
+
     ],
   },
 ];
