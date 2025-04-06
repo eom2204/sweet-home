@@ -1,5 +1,4 @@
 import './CartGoodsCounter.scss';
-import {useState} from "react";
 
 
 function CartGoodsCounter ({goodsCounter, onChange}) {

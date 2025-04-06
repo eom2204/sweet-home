@@ -3,9 +3,38 @@
 
 .cart {
 
-  &_product-name {
-    margin-left: 20px;
-    max-width: 118px;
+  &_product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    &-image {
+      height: 248px;
+      width: 202px;
+      cursor: pointer;
+    }
+
+    &-name {
+      margin-left: 20px;
+      max-width: 118px;
+    }
+
+    &-price {
+      font-family: Helvetica;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 120%;
+      letter-spacing: 1px;
+      text-align: center;
+      margin-top: 36px;
+    }
+
+    &-delete {
+      position: absolute;
+      right: -14px;
+      bottom: 5px;
+    }
   }
 
   &_price {

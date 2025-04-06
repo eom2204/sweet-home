@@ -14,6 +14,7 @@ import Card from "../Card/Card";
 import Button from '../Button/Button';
 import CartGoodsCounter from "./CartGoodsCounter";
 import './CartPopUp.scss';
+import {useNavigate} from "react-router-dom";
 
 
 const BootstrapDialog = styled(Dialog)(({theme}) => ({
@@ -30,10 +31,12 @@ const BootstrapDialog = styled(Dialog)(({theme}) => ({
 
 function CartPopUp({open, handleClose}) {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const allGoods = useSelector((state) => state.goods.goods);
     const goodsStatus = useSelector((state) => state.goods.status); // Fetch status for goods
     const cartGoodsIds = useSelector((state) => state.cart.cartItems);
     const [quantity, setQuantity] = useState({}); // quantity per product ID
+    const imagePath = process.env.REACT_APP_IMAGE_PATH;
 
     useEffect(() => {
 //         // Fetch all goods if not already loaded
@@ -44,6 +47,8 @@ function CartPopUp({open, handleClose}) {
 
     // Filter goods based on updated Redux favorite IDs
     const cartGoods = allGoods.filter((good) => cartGoodsIds.includes(good.id));
+
+    console.log(cartGoods);
 
     const cartGoodsPrice = Math.round(
         cartGoods.reduce(
@@ -57,6 +62,10 @@ function CartPopUp({open, handleClose}) {
             [productId]: newQuantity
         }));
     }
+
+    const handleProductClick = (productId) => {
+        navigate(`/product/${productId}`);
+    };
 
 
     return (
@@ -99,7 +108,31 @@ function CartPopUp({open, handleClose}) {
                                                     padding: '24px',
                                                     width: '878px'
                                                 }}>
-                                                    <Card product={product}></Card>
+                                                    {/*<Card product={product}></Card>*/}
+                                                    <div className='cart_product'>
+                                                        <img src={`${imagePath}${product.images?.[0]}`}
+                                                             alt={product.name}
+                                                             className='cart_product-image'
+                                                             onClick={() => handleProductClick(product.id)}
+                                                        />
+                                                        <p className='cart_product-price'>{product.price}$</p>
+                                                        <svg className='cart_product-delete' width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M2 4H3.33333H14" stroke="#222133" strokeWidth="2"
+                                                                  strokeLinecap="round" strokeLinejoin="round"/>
+                                                            <path
+                                                                d="M5.33301 3.99967V2.66634C5.33301 2.31272 5.47348 1.97358 5.72353 1.72353C5.97358 1.47348 6.31272 1.33301 6.66634 1.33301H9.33301C9.68663 1.33301 10.0258 1.47348 10.2758 1.72353C10.5259 1.97358 10.6663 2.31272 10.6663 2.66634V3.99967M12.6663 3.99967V13.333C12.6663 13.6866 12.5259 14.0258 12.2758 14.2758C12.0258 14.5259 11.6866 14.6663 11.333 14.6663H4.66634C4.31272 14.6663 3.97358 14.5259 3.72353 14.2758C3.47348 14.0258 3.33301 13.6866 3.33301 13.333V3.99967H12.6663Z"
+                                                                stroke="#222133" strokeWidth="2" strokeLinecap="round"
+                                                                strokeLinejoin="round"/>
+                                                            <path d="M6.66699 7.33301V11.333" stroke="#222133"
+                                                                  strokeWidth="2" strokeLinecap="round"
+                                                                  strokeLinejoin="round"/>
+                                                            <path d="M9.33301 7.33301V11.333" stroke="#222133"
+                                                                  strokeWidth="2" strokeLinecap="round"
+                                                                  strokeLinejoin="round"/>
+                                                        </svg>
+
+                                                    </div>
                                                     <div className='cart_product-name'>{product.name}</div>
 
                                                     <CartGoodsCounter goodsCounter={quantity[product.id] || 1}
@@ -121,7 +154,7 @@ function CartPopUp({open, handleClose}) {
                             padding: '24px',
                             marginLeft: '5px'
                         }}>
-                            <Box sx={{
+                        <Box sx={{
                                 display: 'flex',
                                 justifyContent: 'space-between',
                                 borderBottom: '1px solid black',
