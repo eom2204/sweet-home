@@ -1,17 +1,18 @@
 import * as React from 'react';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import {fetchGoods} from "../../app/redux/slices/productsSlice";
 import {styled} from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import {useDispatch, useSelector} from "react-redux";
 import Grid from "@mui/material/Grid2";
-import Card from "../Card/Card";
-import {fetchGoods} from "../../app/redux/slices/productsSlice";
 import {Box} from "@mui/material";
+import Card from "../Card/Card";
 import Button from '../Button/Button';
+import CartGoodsCounter from "./CartGoodsCounter";
 import './CartPopUp.scss';
 
 
@@ -22,6 +23,9 @@ const BootstrapDialog = styled(Dialog)(({theme}) => ({
     '& .MuiDialogActions-root': {
         padding: theme.spacing(1),
     },
+    '& .MuiDialog-paper': {
+        backgroundColor: '#F6F3EC',
+    },
 }));
 
 function CartPopUp({open, handleClose}) {
@@ -29,6 +33,7 @@ function CartPopUp({open, handleClose}) {
     const allGoods = useSelector((state) => state.goods.goods);
     const goodsStatus = useSelector((state) => state.goods.status); // Fetch status for goods
     const cartGoodsIds = useSelector((state) => state.cart.cartItems);
+    const [quantity, setQuantity] = useState({}); // quantity per product ID
 
     useEffect(() => {
 //         // Fetch all goods if not already loaded
@@ -40,14 +45,29 @@ function CartPopUp({open, handleClose}) {
     // Filter goods based on updated Redux favorite IDs
     const cartGoods = allGoods.filter((good) => cartGoodsIds.includes(good.id));
 
+    const cartGoodsPrice = Math.round(
+        cartGoods.reduce(
+            (acc, good) => acc + good.price * (quantity[good.id] || 1), 0
+        ).toFixed(2)
+    );
+
+    const handleQuantityChange = (productId, newQuantity) => {
+        setQuantity(prev => ({
+            ...prev,
+            [productId]: newQuantity
+        }));
+    }
+
+
     return (
         <React.Fragment>
             <BootstrapDialog
-                fullWidth = 'true'
+                className='cart'
+                fullWidth='true'
                 onClose={handleClose}
                 aria-labelledby="customized-dialog-title"
                 open={open}
-                maxWidth= '1250px'
+                maxWidth='1250px'
             >
                 <DialogTitle sx={{margin: '24px', textAlign: 'left', p: 0}} id="customized-dialog-title">
                     Cart
@@ -73,9 +93,18 @@ function CartPopUp({open, handleClose}) {
                                     <Grid container spacing={1} direction="column">
                                         {cartGoods.map((product) => (
                                             <Grid item key={product.id}>
-                                                <Box sx={{display: 'flex', borderBottom: '1px solid black', padding: '24px', width: '878px'}}>
+                                                <Box sx={{
+                                                    display: 'flex',
+                                                    borderBottom: '1px solid black',
+                                                    padding: '24px',
+                                                    width: '878px'
+                                                }}>
                                                     <Card product={product}></Card>
                                                     <div className='cart_product-name'>{product.name}</div>
+
+                                                    <CartGoodsCounter goodsCounter={quantity[product.id] || 1}
+                                                                      onChange={(newQty) => handleQuantityChange(product.id, newQty)}
+                                                    />
                                                 </Box>
                                             </Grid>
                                         ))}
@@ -83,16 +112,34 @@ function CartPopUp({open, handleClose}) {
                                 )}
                         </Box>
 
-                        <Box sx={{display: 'flex', flexDirection: 'column', maxWidth: '315px', minWidth: '315px', width: '30%', padding: '24px', marginLeft: '5px'}}>
-                            <Box sx={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid black'}}>
-                                <div>Order price</div>
-                                <div>0</div>
+                        <Box sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            maxWidth: '315px',
+                            minWidth: '315px',
+                            width: '30%',
+                            padding: '24px',
+                            marginLeft: '5px'
+                        }}>
+                            <Box sx={{
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                borderBottom: '1px solid black',
+                                marginBottom: '12px'
+                            }}>
+                                <div className='cart_price'>Order price</div>
+                                <div>{cartGoodsPrice}$</div>
                             </Box>
-                            <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
-                                <div>Total price</div>
-                                <div>0</div>
+                            <Box sx={{
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                marginTop: '30px',
+                                marginBottom: '32px'
+                            }}>
+                                <div className='cart_total-price'>Total price</div>
+                                <div>{cartGoodsPrice}$</div>
                             </Box>
-                            <Button text={'Checkout'} />
+                            <Button text={'Checkout'}/>
                         </Box>
                     </Box>
                 </DialogContent>
