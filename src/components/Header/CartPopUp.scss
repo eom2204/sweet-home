@@ -1,3 +1,5 @@
+@import '../../styles/_variables.scss';
+
 
 .cart {
 
@@ -5,4 +7,21 @@
     margin-left: 20px;
     max-width: 118px;
   }
+
+  &_price {
+    font-family: Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 124%;
+    letter-spacing: 1px;
+  }
+
+  &_total-price {
+    font-family: Helvetica;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 1px;
+  }
+
 }

@@ -1,0 +1,18 @@
+.goods-counter {
+
+  &_btn {
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 44px;
+    width: 44px;
+  }
+
+  &_number {
+    font-family: Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 124%;
+    letter-spacing: 1px;
+  }
+}
