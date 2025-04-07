@@ -13,7 +13,6 @@ import ProfilePage from "../pages/ProfilePage";
 import FavouritesPage from "../pages/FavoritesPage/FavouritesPage";
 
 
-
 // Array of children routes
 export const childrenRoutes = [
   {
@@ -26,7 +25,7 @@ export const childrenRoutes = [
   { path: "/delivery", element: <DeliveryPage /> },
   { path: "/login", element: <LoginPage /> },
   { path: "/:categorySlug", element: <CategoryPage /> },
-  { path: "/:categorySlug/:productName", element: <ProductPage /> },
+  { path: "/catalogue/:categorySlug/:id", element: <ProductPage /> },
   {
     path: "/error",
     element: <ErrorPage />,
@@ -34,9 +33,9 @@ export const childrenRoutes = [
   {
     path: "/profile",
     element: (
-        <ProtectedRoute>
-          <ProfileLayout />
-        </ProtectedRoute>
+      <ProtectedRoute>
+        <ProfileLayout />
+      </ProtectedRoute>
     ),
     children: [
       { path: "", element: <ProfilePage /> },

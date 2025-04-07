@@ -1,12 +1,16 @@
 import { Link, useLocation, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./Breadcrumb.scss";
-
 
 const Breadcrumb = () => {
   const location = useLocation(); // Get the current URL path
-  const { categorySlug } = useParams(); // Get dynamic params like categorySlug
+  const { id } = useParams(); // Get the product id from URL params
+
+  const goods = useSelector((state) => state.goods.goods); // Access the goods list from Redux store
 
   const pathnames = location.pathname.split("/").filter((x) => x); // Break the path into segments
+
+  const product = goods.find((item) => item.id === Number(id));
 
   return (
     <nav>
@@ -16,18 +20,16 @@ const Breadcrumb = () => {
           {pathnames.length > 0 && " > "}
         </li>
         {pathnames.map((value, index) => {
-          // Create the link for each part of the path
           const to = `/${pathnames.slice(0, index + 1).join("/")}`;
           const isLast = index + 1 === pathnames.length;
 
           return (
             <li key={to}>
-              {isLast && categorySlug ? (
-                <span>{categorySlug}</span> // Active category slug
+              {isLast && product ? (
+                <span>{product.name}</span>
               ) : (
                 <Link to={to}>
                   {value.charAt(0).toUpperCase() + value.slice(1)}{" "}
-                  {/* Capitalize */}
                 </Link>
               )}
               {!isLast && " > "}
