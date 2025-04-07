@@ -1,9 +1,7 @@
+import Product from "../components/Product/Product";
 
 function ProductPage() {
-
-    return (
-        <h1>Product. Under construction.</h1>
-    )
+  return <Product />;
 }
 
 export default ProductPage;

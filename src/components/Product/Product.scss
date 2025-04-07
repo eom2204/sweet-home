@@ -1,0 +1,146 @@
+@import "../../styles/variables";
+
+.wrapper-section {
+  margin-left: 84px;
+  margin-right: 84px;
+
+  @media screen and (max-width: $large-screen) {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  @media screen and (max-width: $mobile-end) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.article-section {
+  display: flex;
+  flex-direction: row;
+  gap: 42px;
+}
+
+.photo-section {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.small-photo-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.image {
+  width: 95px;
+  height: 116px;
+}
+
+.main-image {
+  width: 600px;
+  height: 800px;
+}
+
+.production-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.description-header {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 124%;
+  letter-spacing: 1px;
+  margin-top: 16px;
+}
+
+.description-color {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 124%;
+  letter-spacing: 1px;
+  margin-top: 16px;
+}
+
+.buttons-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.add-button {
+  margin-top: 46px;
+}
+
+.favorite-goods-section {
+  margin-top: 50px;
+  margin-left: 26px;
+  background-color: #414223;
+  max-width: 40px;
+  max-height: 40px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 100px;
+  position: relative;
+}
+
+.favorite-goods-btn {
+  top: 8px;
+  right: 6px;
+}
+
+.free-shopping {
+  background-color: #422f21;
+  color: white;
+  width: 297px;
+  height: 40px;
+  gap: 10px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.information-section {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.information-text {
+  display: flex;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 124%;
+  letter-spacing: 1px;
+  align-items: center;
+}
+
+.random-section {
+  margin-top: 148px;
+}
+
+.random-section-header {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 124%;
+  letter-spacing: 1px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 48px;
+}
+
+.card-section {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin: 0 auto;
+  justify-content: center;
+}

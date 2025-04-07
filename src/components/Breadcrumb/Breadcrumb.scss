@@ -26,5 +26,14 @@
 }
 
 .breadcrumb li span {
-  font-weight: bold;
+  text-decoration: none;
+  color: $color-background-black;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.76px;
+  letter-spacing: 1px;
+  text-align: right;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
