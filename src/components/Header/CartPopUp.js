@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 import {fetchGoods} from "../../app/redux/slices/productsSlice";
 import {styled} from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
@@ -10,11 +11,9 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Grid from "@mui/material/Grid2";
 import {Box} from "@mui/material";
-import Card from "../Card/Card";
 import Button from '../Button/Button';
 import CartGoodsCounter from "./CartGoodsCounter";
 import './CartPopUp.scss';
-import {useNavigate} from "react-router-dom";
 
 
 const BootstrapDialog = styled(Dialog)(({theme}) => ({
@@ -26,6 +25,9 @@ const BootstrapDialog = styled(Dialog)(({theme}) => ({
     },
     '& .MuiDialog-paper': {
         backgroundColor: '#F6F3EC',
+        maxWidth: '1251px',
+        marginTop: '180px',
+        maxHeight: 'calc(100% - 200px)',
     },
 }));
 
@@ -94,51 +96,59 @@ function CartPopUp({open, handleClose}) {
                     <CloseIcon/>
                 </IconButton>
                 <DialogContent>
-                    <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
-                        <Box sx={{maxWidth: '878px', width: '70%'}}>
+                    <Box sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        flexDirection: {xs: 'column', sm: 'column', md: 'row'}
+                    }}>
+                        <Box
+                            sx={{
+                                maxWidth: {xs: '100%', md: '878px'},
+                                width: {xs: '100%', md: '70%'},
+                            }}>
                             {cartGoods.length === 0 ?
                                 (<p>Please add goods to your cart.</p>
                                 ) : (
                                     <Grid container spacing={1} direction="column">
                                         {cartGoods.map((product) => (
-                                            <Grid item key={product.id}>
-                                                <Box sx={{
-                                                    display: 'flex',
-                                                    borderBottom: '1px solid black',
-                                                    padding: '24px',
-                                                    width: '878px'
-                                                }}>
-                                                    {/*<Card product={product}></Card>*/}
-                                                    <div className='cart_product'>
-                                                        <img src={`${imagePath}${product.images?.[0]}`}
-                                                             alt={product.name}
-                                                             className='cart_product-image'
-                                                             onClick={() => handleProductClick(product.id)}
-                                                        />
-                                                        <p className='cart_product-price'>{product.price}$</p>
-                                                        <svg className='cart_product-delete' width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M2 4H3.33333H14" stroke="#222133" strokeWidth="2"
-                                                                  strokeLinecap="round" strokeLinejoin="round"/>
-                                                            <path
-                                                                d="M5.33301 3.99967V2.66634C5.33301 2.31272 5.47348 1.97358 5.72353 1.72353C5.97358 1.47348 6.31272 1.33301 6.66634 1.33301H9.33301C9.68663 1.33301 10.0258 1.47348 10.2758 1.72353C10.5259 1.97358 10.6663 2.31272 10.6663 2.66634V3.99967M12.6663 3.99967V13.333C12.6663 13.6866 12.5259 14.0258 12.2758 14.2758C12.0258 14.5259 11.6866 14.6663 11.333 14.6663H4.66634C4.31272 14.6663 3.97358 14.5259 3.72353 14.2758C3.47348 14.0258 3.33301 13.6866 3.33301 13.333V3.99967H12.6663Z"
-                                                                stroke="#222133" strokeWidth="2" strokeLinecap="round"
-                                                                strokeLinejoin="round"/>
-                                                            <path d="M6.66699 7.33301V11.333" stroke="#222133"
-                                                                  strokeWidth="2" strokeLinecap="round"
-                                                                  strokeLinejoin="round"/>
-                                                            <path d="M9.33301 7.33301V11.333" stroke="#222133"
-                                                                  strokeWidth="2" strokeLinecap="round"
-                                                                  strokeLinejoin="round"/>
-                                                        </svg>
-
-                                                    </div>
-                                                    <div className='cart_product-name'>{product.name}</div>
-
-                                                    <CartGoodsCounter goodsCounter={quantity[product.id] || 1}
-                                                                      onChange={(newQty) => handleQuantityChange(product.id, newQty)}
+                                            <Grid item key={product.id}
+                                                  sx={{
+                                                      display: 'flex',
+                                                      flexDirection: {xs: 'column', sm: 'row'},
+                                                      borderBottom: '1px solid black',
+                                                      padding: '24px',
+                                                  }}>
+                                                {/*<Card product={product}></Card>*/}
+                                                <div className='cart_product'>
+                                                    <img src={`${imagePath}${product.images?.[0]}`}
+                                                         alt={product.name}
+                                                         className='cart_product-image'
+                                                         onClick={() => handleProductClick(product.id)}
                                                     />
-                                                </Box>
+                                                    <p className='cart_product-price'>{product.price}$</p>
+                                                    <svg className='cart_product-delete' width="16" height="16"
+                                                         viewBox="0 0 16 16" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M2 4H3.33333H14" stroke="#222133" strokeWidth="2"
+                                                              strokeLinecap="round" strokeLinejoin="round"/>
+                                                        <path
+                                                            d="M5.33301 3.99967V2.66634C5.33301 2.31272 5.47348 1.97358 5.72353 1.72353C5.97358 1.47348 6.31272 1.33301 6.66634 1.33301H9.33301C9.68663 1.33301 10.0258 1.47348 10.2758 1.72353C10.5259 1.97358 10.6663 2.31272 10.6663 2.66634V3.99967M12.6663 3.99967V13.333C12.6663 13.6866 12.5259 14.0258 12.2758 14.2758C12.0258 14.5259 11.6866 14.6663 11.333 14.6663H4.66634C4.31272 14.6663 3.97358 14.5259 3.72353 14.2758C3.47348 14.0258 3.33301 13.6866 3.33301 13.333V3.99967H12.6663Z"
+                                                            stroke="#222133" strokeWidth="2" strokeLinecap="round"
+                                                            strokeLinejoin="round"/>
+                                                        <path d="M6.66699 7.33301V11.333" stroke="#222133"
+                                                              strokeWidth="2" strokeLinecap="round"
+                                                              strokeLinejoin="round"/>
+                                                        <path d="M9.33301 7.33301V11.333" stroke="#222133"
+                                                              strokeWidth="2" strokeLinecap="round"
+                                                              strokeLinejoin="round"/>
+                                                    </svg>
+
+                                                </div>
+                                                <div className='cart_product-name'>{product.name}</div>
+
+                                                <CartGoodsCounter goodsCounter={quantity[product.id] || 1}
+                                                                  onChange={(newQty) => handleQuantityChange(product.id, newQty)}
+                                                />
                                             </Grid>
                                         ))}
                                     </Grid>
@@ -148,17 +158,17 @@ function CartPopUp({open, handleClose}) {
                         <Box sx={{
                             display: 'flex',
                             flexDirection: 'column',
-                            maxWidth: '315px',
-                            minWidth: '315px',
-                            width: '30%',
+                            maxWidth: {xs: '100%', md: '315px'},
+                            minWidth: {xs: '100%', md: '315px'},
+                            width: {xs: '100%', md: '30%'},
                             padding: '24px',
-                            marginLeft: '5px'
+                            marginLeft: {xs: 0, md: '5px'},
                         }}>
-                        <Box sx={{
+                            <Box sx={{
                                 display: 'flex',
                                 justifyContent: 'space-between',
                                 borderBottom: '1px solid black',
-                                marginBottom: '12px'
+                                paddingBottom: '12px'
                             }}>
                                 <div className='cart_price'>Order price</div>
                                 <div>{cartGoodsPrice}$</div>
@@ -172,7 +182,12 @@ function CartPopUp({open, handleClose}) {
                                 <div className='cart_total-price'>Total price</div>
                                 <div>{cartGoodsPrice}$</div>
                             </Box>
-                            <Button text={'Checkout'}/>
+                            <Button
+                                className='cart_button'
+                                type='submit'
+                                //onClick={props.onClick}
+                                text='Checkout'
+                            />
                         </Box>
                     </Box>
                 </DialogContent>

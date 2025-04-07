@@ -1,11 +1,18 @@
 .goods-counter {
-  display: flex;
-  justify-content: space-between;
+
+  &_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
 
   &_btn {
     background-color: transparent;
     border: 1px solid black;
     border-radius: 10px;
+    font-size: 16px;
     height: 44px;
     width: 44px;
   }

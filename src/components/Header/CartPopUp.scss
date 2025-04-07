@@ -17,7 +17,12 @@
 
     &-name {
       margin-left: 20px;
+      margin-right: 20px;
       max-width: 118px;
+
+      @media screen and (max-width: $mobile-end) {
+        margin: 12px auto;
+      }
     }
 
     &-price {
@@ -28,6 +33,10 @@
       letter-spacing: 1px;
       text-align: center;
       margin-top: 36px;
+
+      @media screen and (max-width: $mobile-end) {
+        margin: 10px;
+      }
     }
 
     &-delete {
@@ -51,6 +60,12 @@
     font-size: 20px;
     line-height: 120%;
     letter-spacing: 1px;
+  }
+
+  &_button {
+    @media screen and (max-width: $mobile-end) {
+      font-size: 20px;
+    }
   }
 
 }
