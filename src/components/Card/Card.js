@@ -18,18 +18,16 @@ const Card = ({ product }) => {
   };
 
   return (
-
     <div className="card" onClick={handleCardClick}>
       <div className="card-image">
         <img src={`${imagePath}${images[0]}`} alt={name} loading={"lazy"} />
-        <CartGoods itemId={product.id}/>
+        <CartGoods itemId={product.id} />
         <FavoriteGoods itemId={product.id} />
       </div>
       <div className="card-content">
         <h3 className="card-title">{name}</h3>
         <p className="card-category">{group}</p>
         <div className="card-price">
-
           <span
             className={`card-price-current ${discount > 0 ? "discounted" : ""}`}
           >
