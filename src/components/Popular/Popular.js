@@ -1,11 +1,11 @@
 import {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
+import {fetchGoods} from "../../app/redux/slices/productsSlice";
 import {Box, Typography, useMediaQuery} from '@mui/material';
 import Grid from "@mui/material/Grid2";
 import {Container} from "@mui/system";
 import {useTheme} from "@mui/styles";
-import {fetchGoods} from "../../app/redux/slices/productsSlice";
 import CustomPagination from "../CustomPagination";
 import FavoriteGoods from "../FavoriteGoods/FavoriteGoods";
 import WrapperSection from "../WrapperSection/WrapperSection";

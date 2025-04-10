@@ -1,0 +1,98 @@
+@import '../../styles/_variables.scss';
+
+
+.cart {
+
+  &_product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    &-image {
+      height: 248px;
+      width: 202px;
+      cursor: pointer;
+    }
+
+    &-name {
+      margin-left: 20px;
+      margin-right: 20px;
+      max-width: 118px;
+
+      @media screen and (max-width: $mobile-end) {
+        margin: 12px auto;
+      }
+    }
+
+    &-price {
+      font-family: Helvetica;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 120%;
+      letter-spacing: 1px;
+      text-align: center;
+      margin-top: 36px;
+
+      @media screen and (max-width: $mobile-end) {
+        margin: 10px;
+      }
+    }
+
+    &-delete {
+      display: inline-block;
+      position: absolute;
+      right: -21px;
+      bottom: 2px;
+
+      //&--tooltip {
+      //    visibility: hidden;
+      //    opacity: 0;
+      //    position: absolute;
+      //    top: 50%;
+      //    left: 120%; /* push right of icon */
+      //    transform: translateY(-50%);
+      //    background-color: #333;
+      //    color: #fff;
+      //    padding: 4px 8px;
+      //    font-size: 12px;
+      //    border-radius: 4px;
+      //    white-space: nowrap;
+      //    transition: opacity 0.2s ease;
+      //    z-index: 10;
+      //}
+
+      &:hover {
+        fill: $color-background-adv;
+      }
+
+      //&--btn:hover &--tooltip {
+      //  visibility: visible;
+      //  opacity: 1;
+      //}
+    }
+  }
+
+  &_price {
+    font-family: Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 124%;
+    letter-spacing: 1px;
+  }
+
+  &_total-price {
+    font-family: Helvetica;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 1px;
+  }
+
+  &_button {
+    @media screen and (max-width: $mobile-end) {
+      font-size: 20px;
+    }
+  }
+
+}

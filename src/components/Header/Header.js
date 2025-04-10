@@ -5,19 +5,33 @@ import MainNavigation from "./MainNavigation/MainNavigation";
 import SearchBlock from "./SearchBlock/SearchBlock";
 import logo_main from "../../assets/logo_main.svg";
 import WrapperSection from "../WrapperSection/WrapperSection";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {initializeFavorites} from "../../app/redux/slices/favoritesSlice";
+import {initializeCart} from "../../app/redux/slices/cartSlice";
 import './Header.scss';
+import CartPopUp from "./CartPopUp";
 
 
 function Header() {
     const dispatch = useDispatch();
     const favoriteCount = useSelector(state => state.favorites.favoriteCount);
+    const cartCount = useSelector(state => state.cart.cartCount)
+    const [isCartPopUpOpen, setIsCartPopUpOpen] = useState(false);
 
     useEffect(() => {
         // Initialize favorites after user login
         dispatch(initializeFavorites());
+        dispatch(initializeCart());
     }, [dispatch]);
+
+    const handleCartClick = () => {
+        setIsCartPopUpOpen(true);
+    }
+
+    const handleClose = () => {
+        setIsCartPopUpOpen(false); // Close modal
+    };
+
 
     return (
 
@@ -65,7 +79,7 @@ function Header() {
                                 </svg>
                                 <span className="header__icons--counter">{favoriteCount}</span>
                             </Link>
-                            <Link aria-label="Open cart" className="header__icons--cart" to="/profile/cart">
+                            <button aria-label="Open cart" className="header__icons--cart" onClick={handleCartClick}>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <g id="Feather / other / shop / shopping cart">
@@ -83,8 +97,11 @@ function Header() {
                                               strokeLinejoin="round"/>
                                     </g>
                                 </svg>
-                                <span className="header__icons--counter">0</span>
-                            </Link>
+                                <span className="header__icons--counter">{cartCount}</span>
+                            </button>
+
+                            <CartPopUp open={isCartPopUpOpen} handleClose={handleClose} />
+
                             <BurgerMenu/>
                         </div>
                     </div>
