@@ -2,12 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGoods } from "../../app/redux/slices/productsSlice";
+import {
+  addToCart,
+  removeFromCartAndSync,
+  syncCartWithBackend,
+} from "../../app/redux/slices/cartSlice";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import Button from "../Button/Button";
 import Card from "../Card/Card";
 import FavoriteGoods from "../FavoriteGoods/FavoriteGoods";
 
 import "./Product.scss";
+
 const Product = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -19,13 +25,14 @@ const Product = () => {
     error: goodsError,
   } = useSelector((state) => state.goods);
 
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const [isInCart, setIsInCart] = useState(false);
+
   useEffect(() => {
     if (goodsStatus === "idle") {
       dispatch(fetchGoods());
     }
   }, [goodsStatus, dispatch]);
-
-  console.log(goods);
 
   const product = goods.find((item) => item.id === Number(id));
 
@@ -36,6 +43,10 @@ const Product = () => {
       setSelectedImage(product.images[0]);
     }
   }, [product]);
+
+  useEffect(() => {
+    setIsInCart(cartItems.includes(product?.id));
+  }, [cartItems, product]);
 
   if (goodsStatus === "loading") {
     return <div>Loading...</div>;
@@ -54,15 +65,22 @@ const Product = () => {
   }
 
   const handleAddToCart = () => {
-    // Add your add to cart logic here
-    console.log("Added to cart:", product.name);
+    if (isInCart) {
+      dispatch(removeFromCartAndSync(product.id));
+    } else {
+      dispatch(addToCart(product.id));
+      dispatch(syncCartWithBackend(cartItems));
+    }
+    setIsInCart((prev) => !prev);
   };
 
   const buttonText = (
     <>
       <img src="/shoppingCart.svg" className="cart-icon" alt="shoppingCart" />
-      <span className="button-text">&nbsp;Add to cart&nbsp;</span>
-      <span className="button-price">{` ${product.price}`}</span>
+      <span className="button-text">
+        &nbsp;{isInCart ? "Remove from cart" : "Add to cart"}&nbsp;
+      </span>
+      <span className="button-price">{` ${product.price}$`}</span>
     </>
   );
 
@@ -118,7 +136,7 @@ const Product = () => {
               type="button"
               className="add-button"
               text={buttonText}
-              onClick={handleAddToCart()}
+              onClick={handleAddToCart}
             ></Button>
             <div className="favorite-goods-section">
               <FavoriteGoods

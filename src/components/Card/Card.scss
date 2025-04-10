@@ -3,7 +3,7 @@
   flex-direction: column;
   max-width: 202px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 8px;
+  padding-bottom: 12px;
 
   &:hover {
     transform: scale(1.05);
@@ -15,7 +15,6 @@
     color: inherit;
     display: block;
   }
-
 }
 
 .card-image {
