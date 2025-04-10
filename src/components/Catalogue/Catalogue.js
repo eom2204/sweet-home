@@ -1,7 +1,6 @@
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { fetchGoods } from "../../app/redux/slices/productsSlice";
 import "./catalogue.scss";
 import Card from "../Card/Card.js";
@@ -79,9 +78,7 @@ function Catalogue() {
         </div>
         <div className="cards-section">
           {currentItems.map((product) => (
-            <Link to={`/catalogue/${product.categoryId}/${product.id}`}>
-              <Card key={product.id} product={product} />
-            </Link>
+            <Card key={product.id} product={product} />
           ))}
         </div>
         <section className="pagination-section">
