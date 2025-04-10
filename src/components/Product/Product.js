@@ -11,6 +11,7 @@ import "./Product.scss";
 const Product = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const imagePath = process.env.REACT_APP_IMAGE_PATH;
 
   const {
     goods,
@@ -28,11 +29,13 @@ const Product = () => {
 
   const product = goods.find((item) => item.id === Number(id));
 
-  console.log(goods);
+  const [selectedImage, setSelectedImage] = useState("");
 
-  const [selectedImage, setSelectedImage] = useState(
-    product?.images?.[0] || ""
-  );
+  useEffect(() => {
+    if (product?.images?.[0]) {
+      setSelectedImage(product.images[0]);
+    }
+  }, [product]);
 
   if (goodsStatus === "loading") {
     return <div>Loading...</div>;
@@ -57,9 +60,9 @@ const Product = () => {
 
   const buttonText = (
     <>
-      <img src="/shoppingCart.svg" className="cart-icon"></img>
-      <span className="button-text"> Add to cart </span>
-      <span className="button-price">{product.price}$</span>
+      <img src="/shoppingCart.svg" className="cart-icon" alt="shoppingCart" />
+      <span className="button-text">&nbsp;Add to cart&nbsp;</span>
+      <span className="button-price">{` ${product.price}`}</span>
     </>
   );
 
@@ -82,7 +85,7 @@ const Product = () => {
                 product.images.map((image, index) => (
                   <li key={index} onClick={() => setSelectedImage(image)}>
                     <img
-                      src={image}
+                      src={`${imagePath}${image}`}
                       alt={`Product ${product.name} - ${index}`}
                       className="image"
                     />
@@ -95,7 +98,7 @@ const Product = () => {
           </div>
           <div>
             <img
-              src={selectedImage}
+              src={`${imagePath}${selectedImage}`}
               alt={`Main - ${product.name}`}
               className="main-image"
             />
@@ -110,7 +113,6 @@ const Product = () => {
           )}
           <p className="description-header">{product.name}</p>
           <p className="description-header">{product.price}$</p>
-          <p className="description-color">color: </p>
           <div className="buttons-section">
             <Button
               type="button"
@@ -147,6 +149,25 @@ const Product = () => {
             </p>
           </div>
         </div>
+      </article>
+
+      <article className="low-description-section">
+        <p className="low-description-text">
+          <span className="description-name">Room: </span>
+          <span className="product-description">{product.category}</span>
+        </p>
+        <p className="low-description-text">
+          <span className="description-name">Product: </span>
+          <span className="product-description">{product.group}</span>
+        </p>
+        <p className="low-description-text">
+          <span className="description-name">Brand: </span>
+          <span className="product-description">
+            {product.brand
+              ? product.brand.charAt(0).toUpperCase() + product.brand.slice(1)
+              : ""}
+          </span>
+        </p>
       </article>
 
       {/* CAN MAKE RANDOM SECTION COMPONENT */}
