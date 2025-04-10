@@ -51,6 +51,19 @@
   grid-row-gap: 32px;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 16px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+    display: block;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+  }
 }
 
 .pagination-section {
