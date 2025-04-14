@@ -1,4 +1,3 @@
-import { styled } from "@mui/system";
 import Banner from "../components/Banner/Banner";
 import Brands from "../components/Brands/Brands";
 import Bestsellers from "../components/Bestsellers/Bestsellers";

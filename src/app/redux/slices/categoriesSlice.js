@@ -2,21 +2,26 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-// Thunk to fetch categories from backend
+// Thunk to fetch data dynamically based on the page
 export const fetchCategories = createAsyncThunk(
   "categories/fetchCategories",
-  async () => {
+  async (page) => {
     try {
-      const response = await fetch(`${API_URL}/api/goods`);
+      // Determine the API endpoint based on the page
+      const endpoint = page === "catalogue" ? "/api/goods" : "/api/category";
+      const response = await fetch(`${API_URL}${endpoint}`);
       if (!response.ok) {
-        throw new Error("Failed to fetch goods");
+        throw new Error(`Failed to fetch data for ${page}`);
       }
       const data = await response.json(); // Parse JSON response
       return data;
     } catch (error) {
-      console.error("Error fetching categories, using local data:", error);
+      console.error(
+        `Error fetching data for ${page}, using local data:`,
+        error
+      );
       const localData = require("../../../data/categories.json");
-      return localData; // Return local categories as fallback
+      return localData; // Return local data as fallback
     }
   }
 );

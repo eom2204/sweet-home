@@ -7,6 +7,7 @@ import {
   removeFromCartAndSync,
   syncCartWithBackend,
 } from "../../app/redux/slices/cartSlice";
+import { fetchCategories } from "../../app/redux/slices/categoriesSlice";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import Button from "../Button/Button";
 import Card from "../Card/Card";
@@ -25,6 +26,8 @@ const Product = () => {
     error: goodsError,
   } = useSelector((state) => state.goods);
 
+  const { status, error } = useSelector((state) => state.categories);
+
   const cartItems = useSelector((state) => state.cart.cartItems);
   const [isInCart, setIsInCart] = useState(false);
 
@@ -33,6 +36,12 @@ const Product = () => {
       dispatch(fetchGoods());
     }
   }, [goodsStatus, dispatch]);
+
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchCategories("product")); // Pass the page context
+    }
+  }, [status, dispatch]);
 
   const product = goods.find((item) => item.id === Number(id));
 
@@ -48,12 +57,16 @@ const Product = () => {
     setIsInCart(cartItems.includes(product?.id));
   }, [cartItems, product]);
 
-  if (goodsStatus === "loading") {
+  if (goodsStatus === "loading" || status === "loading") {
     return <div>Loading...</div>;
   }
 
   if (goodsStatus === "failed") {
     return <div>Error: {goodsError}</div>;
+  }
+
+  if (status === "failed") {
+    return <div>Error: {error}</div>;
   }
 
   if (!product) {
