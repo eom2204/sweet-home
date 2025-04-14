@@ -57,6 +57,13 @@ const Product = () => {
     setIsInCart(cartItems.includes(product?.id));
   }, [cartItems, product]);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [id]);
+
   if (goodsStatus === "loading" || status === "loading") {
     return <div>Loading...</div>;
   }
