@@ -2,6 +2,7 @@ import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchGoods } from "../../app/redux/slices/productsSlice";
+import { fetchCategories } from "../../app/redux/slices/categoriesSlice";
 import "./catalogue.scss";
 import Card from "../Card/Card.js";
 import CustomPagination from "../CustomPagination.js";
@@ -20,14 +21,25 @@ function Catalogue() {
     error: goodsError,
   } = useSelector((state) => state.goods);
 
+  const { status, error } = useSelector((state) => state.categories);
+
   useEffect(() => {
     if (goodsStatus === "idle") {
       dispatch(fetchGoods());
     }
   }, [goodsStatus, dispatch]);
 
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchCategories("catalogue")); // Pass the page context
+    }
+  }, [status, dispatch]);
+
   if (goodsStatus === "loading") return <div>Loading...</div>;
   if (goodsStatus === "failed") return <div>Error: {goodsError}</div>;
+
+  if (status === "loading") return <div>Loading...</div>;
+  if (status === "failed") return <div>Error: {error}</div>;
 
   const filteredGoods = selectedGroup
     ? goods.filter((product) => product.groupId === selectedGroup)
