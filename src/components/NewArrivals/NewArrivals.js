@@ -14,9 +14,11 @@ import {ReactComponent as LeftArrowIcon} from '../../assets/icons/slider_arrow_l
 import {ReactComponent as RightArrowIcon} from '../../assets/icons/slider_arrow_right.svg';
 import './NewArrivals.scss';
 import Grid from "@mui/material/Grid2";
+import {useNavigate} from "react-router-dom";
 
 
 const NewArrivals = () => {
+    const navigate = useNavigate();
     const sliderRef = useRef(null); // Create a reference for the slider
 
     // Access goods data from Redux store
@@ -68,6 +70,10 @@ const NewArrivals = () => {
         nextArrow: <CustomNextArrow />,
         adaptiveHeight: false,
     };
+
+    const handleButtonClick = () => {
+        navigate('/catalogue')
+    }
 
     return (
         <WrapperSection>
@@ -121,7 +127,7 @@ const NewArrivals = () => {
                         </Box>
 
                     </Box>}
-                <Button type="submit" text="SEE MORE" className="arrivals__button"></Button>
+                <Button type="submit" text="SEE MORE" className="arrivals__button" onClick={handleButtonClick}></Button>
             </Box>
         </WrapperSection>
     );
