@@ -117,7 +117,8 @@ function Categories({
                         <div key={i} className={row.length === 3 ? cl.row : cl.underRow}>
                             {row.map((item, idx) => (
                                 <div key={idx} className={cl.imageWrapper}>
-                                    <Link to={`/${item.name}`}>
+                                    <Link to={`/catalogue`}>
+                                        {/*${item.name}*/}
                                         <img
                                             src={`${imagePath}${item.image}`}
                                             alt={item.title}
