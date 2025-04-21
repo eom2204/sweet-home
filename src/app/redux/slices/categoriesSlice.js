@@ -7,9 +7,7 @@ export const fetchCategories = createAsyncThunk(
   "categories/fetchCategories",
   async (page) => {
     try {
-      // Determine the API endpoint based on the page
-      const endpoint = page === "catalogue" ? "/api/goods" : "/api/category";
-      const response = await fetch(`${API_URL}${endpoint}`);
+      const response = await fetch(`${API_URL}/api/category`);
       if (!response.ok) {
         throw new Error(`Failed to fetch data for ${page}`);
       }
