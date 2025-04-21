@@ -31,7 +31,7 @@ function Catalogue() {
 
   useEffect(() => {
     if (status === "idle") {
-      dispatch(fetchCategories("catalogue")); // Pass the page context
+      dispatch(fetchCategories("categories")); // Pass the page context
     }
   }, [status, dispatch]);
 
