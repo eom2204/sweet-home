@@ -75,6 +75,7 @@ function Categories({
                     }) {
     const cl = useStyles();
     const dispatch = useDispatch();
+
     const {categories, status, error} = useSelector(
         (state) => state.categories
     );
@@ -117,8 +118,7 @@ function Categories({
                         <div key={i} className={row.length === 3 ? cl.row : cl.underRow}>
                             {row.map((item, idx) => (
                                 <div key={idx} className={cl.imageWrapper}>
-                                    <Link to={`/catalogue`}>
-                                        {/*${item.name}*/}
+                                    <Link to={`${item.name}`}>
                                         <img
                                             src={`${imagePath}${item.image}`}
                                             alt={item.title}
