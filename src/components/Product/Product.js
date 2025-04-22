@@ -12,11 +12,11 @@ import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import Button from "../Button/Button";
 import Card from "../Card/Card";
 import FavoriteGoods from "../FavoriteGoods/FavoriteGoods";
-
+import { generateSlug } from "../../utils/generateSlus.js";
 import "./Product.scss";
 
 const Product = () => {
-  const { id } = useParams();
+  const { categorySlug, productSlug } = useParams();
   const dispatch = useDispatch();
   const imagePath = process.env.REACT_APP_IMAGE_PATH;
 
@@ -39,11 +39,26 @@ const Product = () => {
 
   useEffect(() => {
     if (status === "idle") {
-      dispatch(fetchCategories("product")); // Pass the page context
+      dispatch(fetchCategories("product"));
     }
   }, [status, dispatch]);
 
-  const product = goods.find((item) => item.id === Number(id));
+  // Проверка дубликатов имен
+  useEffect(() => {
+    if (goods.length > 0) {
+      const nameCounts = goods.reduce((acc, item) => {
+        acc[item.name] = (acc[item.name] || 0) + 1;
+        return acc;
+      }, {});
+      const duplicates = Object.entries(nameCounts).filter(
+        ([name, count]) => count > 1
+      );
+      console.log("Product - Duplicate names:", duplicates);
+    }
+  }, [goods]);
+
+  // Поиск продукта по productSlug
+  const product = goods.find((item) => generateSlug(item.name) === productSlug);
 
   const [selectedImage, setSelectedImage] = useState("");
 
@@ -54,7 +69,7 @@ const Product = () => {
   }, [product]);
 
   useEffect(() => {
-    setIsInCart(cartItems.includes(product?.id));
+    setIsInCart(product && cartItems.includes(product.id));
   }, [cartItems, product]);
 
   useEffect(() => {
@@ -62,7 +77,14 @@ const Product = () => {
       top: 0,
       behavior: "smooth",
     });
-  }, [id]);
+  }, [productSlug]);
+
+  // Отладка
+  console.log("Product - categorySlug:", categorySlug);
+  console.log("Product - productSlug:", productSlug);
+  console.log("Product - Goods length:", goods.length);
+  console.log("Product - Product:", product);
+  console.log("Product - Images:", product?.images);
 
   if (goodsStatus === "loading" || status === "loading") {
     return <div>Loading...</div>;
@@ -80,10 +102,6 @@ const Product = () => {
     return <div>Product not found</div>;
   }
 
-  if (product.createdAt > Date.now(-30)) {
-    return;
-  }
-
   const handleAddToCart = () => {
     if (isInCart) {
       dispatch(removeFromCartAndSync(product.id));
@@ -98,7 +116,7 @@ const Product = () => {
     <>
       <img src="/shoppingCart.svg" className="cart-icon" alt="shoppingCart" />
       <span className="button-text">
-        &nbsp;{isInCart ? "Remove from cart" : "Add to cart"}&nbsp;
+         {isInCart ? "Remove from cart" : "Add to cart"} 
       </span>
       <span className="button-price">{` ${product.price}$`}</span>
     </>
@@ -114,18 +132,22 @@ const Product = () => {
     <section className="wrapper-section">
       <Breadcrumb />
 
-      {/* make component "Photo Section" */}
       <article className="article-section">
         <div className="photo-section">
           <div className="small-photo-section">
             <ul>
-              {Array.isArray(product.images) ? (
+              {Array.isArray(product.images) && product.images.length > 0 ? (
                 product.images.map((image, index) => (
                   <li key={index} onClick={() => setSelectedImage(image)}>
                     <img
                       src={`${imagePath}${image}`}
                       alt={`Product ${product.name} - ${index}`}
                       className="image"
+                      onError={() =>
+                        console.error(
+                          `Failed to load image: ${imagePath}${image}`
+                        )
+                      }
                     />
                   </li>
                 ))
@@ -139,11 +161,14 @@ const Product = () => {
               src={`${imagePath}${selectedImage}`}
               alt={`Main - ${product.name}`}
               className="main-image"
+              onError={() =>
+                console.error(
+                  `Failed to load main image: ${imagePath}${selectedImage}`
+                )
+              }
             />
           </div>
         </div>
-
-        {/* MAKE DESCRIPTION COMPONENT */}
 
         <div className="description-section">
           {product.createdAt > Date.now() - 30 * 24 * 60 * 60 * 1000 && (
@@ -174,7 +199,7 @@ const Product = () => {
                 width="24px"
                 height="24px"
               />
-              &nbsp;Shipping
+               Shipping
             </p>
             <p className="information-text">
               <img
@@ -183,7 +208,7 @@ const Product = () => {
                 width="24px"
                 height="24px"
               />
-              &nbsp;You can return the product within 30 days
+               You can return the product within 30 days
             </p>
           </div>
         </div>
@@ -208,7 +233,6 @@ const Product = () => {
         </p>
       </article>
 
-      {/* CAN MAKE RANDOM SECTION COMPONENT */}
       <article className="random-section">
         <p className="random-section-header">You'll love it too</p>
         <div className="card-section">
