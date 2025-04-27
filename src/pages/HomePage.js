@@ -4,7 +4,7 @@ import Bestsellers from "../components/Bestsellers/Bestsellers";
 import NewArrivals from "../components/NewArrivals/NewArrivals";
 import AboutUs from "../components/AboutUs/AboutUs";
 import Popular from "../components/Popular/Popular";
-import Categories from "../components/Categories/Categories";
+import CategoriesHome from "../components/CategoriesHome/CategoriesHome";
 
 // const ContentWrapper = styled('div')(({ theme }) => ({
 //     marginX: '5.25rem',
@@ -19,19 +19,19 @@ import Categories from "../components/Categories/Categories";
 // }));
 
 function HomePage() {
-  return (
-    <>
-      <Banner />
-      {/*<ContentWrapper>*/}
-      <Categories />
-      <NewArrivals />
-      <AboutUs />
-      <Popular />
-      <Brands />
-      <Bestsellers />
-      {/*</ContentWrapper>*/}
-    </>
-  );
+    return (
+        <>
+            <Banner/>
+            {/*<ContentWrapper>*/}
+            <CategoriesHome/>
+            <NewArrivals/>
+            <AboutUs/>
+            <Popular/>
+            <Brands/>
+            <Bestsellers/>
+            {/*</ContentWrapper>*/}
+        </>
+    );
 }
 
 export default HomePage;
