@@ -9,11 +9,15 @@ import CustomPagination from "../CustomPagination.js";
 import Categories from "../Categories/Categories.js";
 import { fetchCategories } from "../../app/redux/slices/categoriesSlice.js";
 import { generateSlug } from "../../utils/generateSlus.js";
+import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
 
 function Catalogue() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [priceValue, setPriceValue] = useState(null);
+  const [addingValue, setAddingValue] = useState(null);
+
   const { categorySlug } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
@@ -32,7 +36,6 @@ function Catalogue() {
   } = useSelector((state) => state.categories);
 
   const categorySlugToId = useMemo(() => {
-    console.log("Raw Categories:", categories);
     const map = categories.reduce((map, cat) => {
       if (cat.name && typeof cat.name === "string") {
         const slug = generateSlug(cat.name);
@@ -41,12 +44,9 @@ function Catalogue() {
           const encodedSlug = cat.name.replace(/\s+/g, "%20");
           map[encodedSlug] = cat.id;
         }
-      } else {
-        console.warn("Category missing name:", cat);
       }
       return map;
     }, {});
-    console.log("categorySlugToId:", map);
     return map;
   }, [categories]);
 
@@ -57,12 +57,9 @@ function Catalogue() {
         if (slug) {
           map[cat.id] = slug;
         }
-      } else {
-        console.warn("Category missing id or name:", cat);
       }
       return map;
     }, {});
-    console.log("categoryIdToSlug:", map);
     return map;
   }, [categories]);
 
@@ -78,19 +75,14 @@ function Catalogue() {
     }
   }, [categoriesStatus, dispatch]);
 
-  // Установка selectedCategory после успешной загрузки категорий
   useEffect(() => {
-    console.log("categorySlug:", categorySlug);
     if (categoriesStatus === "succeeded" && categorySlug) {
-      const normalizedSlug = decodeURIComponent(categorySlug); // Декодируем %20
+      const normalizedSlug = decodeURIComponent(categorySlug);
       const id =
         categorySlugToId[normalizedSlug] ||
         categorySlugToId[generateSlug(normalizedSlug)];
-      console.log("Setting selectedCategory to:", id);
       setSelectedCategory(id || null);
-      // Перенаправляем на правильный slug, если используется некорректный формат
       if (id && normalizedSlug !== categoryIdToSlug[id]) {
-        console.log("Redirecting to correct slug:", categoryIdToSlug[id]);
         navigate(`/catalogue/${categoryIdToSlug[id]}`, { replace: true });
       }
     } else if (!categorySlug) {
@@ -104,23 +96,17 @@ function Catalogue() {
     navigate,
   ]);
 
-  // Навигация при изменении selectedCategory
   useEffect(() => {
-    console.log("Selected Category:", selectedCategory);
     if (selectedCategory) {
       const slug = categoryIdToSlug[selectedCategory];
-      console.log("Slug:", slug);
       if (slug && location.pathname !== `/catalogue/${slug}`) {
-        console.log("Navigating to /catalogue/", slug);
         navigate(`/catalogue/${slug}`);
       }
     } else if (!categorySlug && location.pathname !== "/catalogue") {
-      console.log("Navigating to /catalogue");
       navigate("/catalogue");
     }
   }, [selectedCategory, categoryIdToSlug, location, navigate, categorySlug]);
 
-  // Обработка состояний загрузки и ошибок
   if (categoriesStatus === "loading") return <div>Загрузка категорий...</div>;
   if (categoriesStatus === "failed")
     return <div>Ошибка загрузки категорий: {categoriesError}</div>;
@@ -128,30 +114,37 @@ function Catalogue() {
   if (goodsStatus === "failed")
     return <div>Ошибка загрузки товаров: {goodsError}</div>;
 
-  // Обработка несуществующей категории
   if (categorySlug && !selectedCategory && categoriesStatus === "succeeded") {
     return <div>Категория не найдена</div>;
   }
 
-  const filteredGoods = selectedGroup
+  // Фильтрация товаров по категории или группе
+  let filteredGoods = selectedGroup
     ? goods.filter((product) => product.groupId === selectedGroup)
     : selectedCategory
-    ? goods.filter((product) => {
-        console.log(
-          "product.categoryId:",
-          typeof product.categoryId,
-          product.categoryId
-        );
-        console.log(
-          "selectedCategory:",
-          typeof selectedCategory,
-          selectedCategory
-        );
-        return product.categoryId === selectedCategory;
-      })
+    ? goods.filter((product) => product.categoryId === selectedCategory)
     : goods;
 
-  console.log("Filtered goods length:", filteredGoods.length);
+  // Сортировка
+  filteredGoods = [...filteredGoods].sort((a, b) => {
+    // Сортировка по цене
+    if (priceValue === "lowest") {
+      if (a.price < b.price) return -1;
+      if (a.price > b.price) return 1;
+    } else if (priceValue === "higest") {
+      if (a.price > b.price) return -1;
+      if (a.price < b.price) return 1;
+    }
+
+    // Сортировка по дате
+    if (addingValue === "newest") {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    } else if (addingValue === "oldest") {
+      return new Date(a.createdAt) - new Date(b.createdAt);
+    }
+
+    return 0;
+  });
 
   const itemsPerPage = 24;
   const totalItems = filteredGoods.length;
@@ -166,6 +159,16 @@ function Catalogue() {
     setCurrentPage(value);
   };
 
+  const handlePriceValueChange = (event) => {
+    setPriceValue(event.target.value);
+    setCurrentPage(1);
+  };
+
+  const handleAddingValueChange = (event) => {
+    setAddingValue(event.target.value);
+    setCurrentPage(1);
+  };
+
   return (
     <section className="container">
       <aside className="aside-list">
@@ -177,28 +180,57 @@ function Catalogue() {
         />
       </aside>
       <section className="main-section">
-        <div className="select-section">
-          <select name="sort" id="sort" className="select">
-            <option value="sort">Sort by</option>
-            <option value="value2">value2</option>
-            <option value="value3">value3</option>
-          </select>
-          <select name="price" id="price" className="select">
-            <option value="price">Price</option>
-            <option value="maximum">max</option>
-            <option value="minimum">min</option>
-          </select>
-          <select name="colors" id="colors" className="select">
-            <option value="colors">Colors</option>
-            <option value="red">red</option>
-            <option value="black">black</option>
-          </select>
-        </div>
+        <FormControl variant="standard" sx={{ m: 1, minWidth: 100 }}>
+          <InputLabel id="price-select-label">Price</InputLabel>
+          <Select
+            labelId="price-select-label"
+            value={priceValue}
+            onChange={handlePriceValueChange}
+            sx={{
+              "&::before": {
+                borderBottom: "none",
+              },
+              "&:hover:not(.Mui-disabled):before": {
+                borderBottom: "none",
+              },
+              "&::after": {
+                borderBottom: "none",
+              },
+            }}
+          >
+            <MenuItem value={"higest"}>Highest</MenuItem>
+            <MenuItem value={"lowest"}>Lowest</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl variant="standard" sx={{ m: 1, minWidth: 100 }}>
+          <InputLabel id="adding-select-label">Addings</InputLabel>
+          <Select
+            labelId="adding-select-label"
+            value={addingValue}
+            onChange={handleAddingValueChange}
+            sx={{
+              "&::before": {
+                borderBottom: "none",
+              },
+              "&:hover:not(.Mui-disabled):before": {
+                borderBottom: "none",
+              },
+              "&::after": {
+                borderBottom: "none",
+              },
+            }}
+          >
+            <MenuItem value={"newest"}>Newest</MenuItem>
+            <MenuItem value={"oldest"}>Oldest</MenuItem>
+          </Select>
+        </FormControl>
+
         <div className="cards-section">
           {currentItems.map((product) => (
             <Card key={product.id} product={product} />
           ))}
         </div>
+
         <section className="pagination-section">
           {totalPages > 1 && (
             <CustomPagination
