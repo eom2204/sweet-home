@@ -6,7 +6,7 @@ import "./Card.scss";
 import { generateSlug } from "../../utils/generateSlus.js";
 
 const Card = ({ product }) => {
-  const { id, name, price, images, group, discount, category } = product;
+  const { name, price, images, group, discount, category } = product;
 
   const navigate = useNavigate();
   const imagePath = process.env.REACT_APP_IMAGE_PATH;
@@ -14,16 +14,18 @@ const Card = ({ product }) => {
   const categorySlug = category ? generateSlug(category) : "unknown";
   const productSlug = name ? generateSlug(name) : "unknown";
 
-  // Отладка
-  console.log("Card - Product data:", { id, name, category });
-  console.log("Card - Category Slug:", categorySlug);
-  console.log("Card - Product Slug:", productSlug);
-  console.log(
-    "Card - Navigating to:",
-    `/catalogue/${categorySlug}/${productSlug}`
-  );
+  const handleCardClick = (e) => {
+    // Проверяем, был ли клик по иконкам, и останавливаем распространение
+    const clickedOnCartIcon = e.target.closest(".cart-icon");
+    const clickedOnFavoriteIcon = e.target.closest(".favorite-icon");
 
-  const handleCardClick = () => {
+    if (clickedOnCartIcon || clickedOnFavoriteIcon) {
+      e.stopPropagation();
+      e.preventDefault();
+      return;
+    }
+
+    // Если клик не был на иконках, переходим на страницу товара
     navigate(`/catalogue/${categorySlug}/${productSlug}`);
   };
 
@@ -34,8 +36,8 @@ const Card = ({ product }) => {
     <div className="card" onClick={handleCardClick}>
       <div className="card-image">
         <img src={`${imagePath}${images[0]}`} alt={name} loading="lazy" />
-        <CartGoods itemId={product.id} />
-        <FavoriteGoods itemId={product.id} />
+        <CartGoods itemId={product.id} className="cart-icon" />
+        <FavoriteGoods itemId={product.id} className="favorite-icon" />
       </div>
       <div className="card-content">
         <h3 className="card-title">{name}</h3>
