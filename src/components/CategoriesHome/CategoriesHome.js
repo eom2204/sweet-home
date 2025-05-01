@@ -81,9 +81,12 @@ function CategoriesHome() {
                     <div key={i} className={row.length === 3 ? cl.row : cl.underRow}>
                         {row.map((item, idx) => (
                             <div key={idx} className={cl.imageWrapper}>
-                                <Link to={`/catalogue/${generateSlug(item.name)}`}>
-                                    <img src={`${imagePath}${item.image}`} alt={item.title}
-                                         className="categories__img"/>
+                                <Link
+                                    to={`/catalogue/${generateSlug(item.name)}`}>
+                                    <img
+                                        src={`${imagePath}${item.image}`}
+                                        alt={item.title}
+                                        className="categories__img"/>
                                 </Link>
                             </div>
                         ))}

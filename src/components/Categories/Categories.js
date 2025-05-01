@@ -36,6 +36,7 @@ function Categories({
                         displayMode,
                         setSelectedCategory,
                         setSelectedGroup,
+                        selectedCategory,
                     }) {
     const cl = useStyles();
     const dispatch = useDispatch();
@@ -44,7 +45,7 @@ function Categories({
         (state) => state.categories
     );
 
-    const [selectedCategory, setSelectedLocalCategory] = useState(null);
+
     const [selectedGroup, setSelectedLocalGroup] = useState(null);
 
     useEffect(() => {
@@ -58,7 +59,6 @@ function Categories({
 
     const handleCategoryClick = (categoryId) => {
         const newCategory = categoryId === selectedCategory ? null : categoryId;
-        setSelectedLocalCategory(newCategory);
         setSelectedCategory(newCategory);
         setSelectedGroup(null); // Reset selected group when category changes
     };
