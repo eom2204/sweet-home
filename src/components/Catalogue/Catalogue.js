@@ -177,6 +177,7 @@ function Catalogue() {
           displayMode="list"
           setSelectedCategory={setSelectedCategory}
           setSelectedGroup={setSelectedGroup}
+          selectedCategory={selectedCategory}
         />
       </aside>
       <section className="main-section">
