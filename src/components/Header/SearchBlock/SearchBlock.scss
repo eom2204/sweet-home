@@ -1,10 +1,10 @@
 @import "../../../styles/variables";
 
-
 .search {
   position: relative;
   margin-left: 10px;
   margin-right: 10px;
+  color: $color-text-white;
 
   @media screen and (max-width: $tablet-end) {
     margin: 0 0 20px;
@@ -14,25 +14,57 @@
     margin: 0 16px 20px;
   }
 
-  &__list {
+  &__field {
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-background-black;
+    padding: 20px;
+    position: fixed;
+    top: 120px;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
 
-    &-wrapper {
-      background-color: $color-background-black;
-      padding: 20px;
-      position: absolute;
-      top: 120%;
-      left: 0;
-      z-index: 100;
-      width: 100%;
+    font-family: Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 124%;
+    letter-spacing: 1px;
+    text-align: center;
+
+
+    &__cards {
+      display: flex;
+      justify-content: space-around;
+      width: 65%;
+      max-width: 520px;
+      margin-right: 20px;
+
+      &-img {
+        width: 168px;
+        height: 206px;
+        margin-right: 8px;
+      }
+
+      &-name {
+        margin-top: 8px;
+        margin-bottom: 7px;
+      }
     }
 
-    &-item {
-      margin-bottom: 5px;
-      cursor: pointer;
-    }
+    &__list {
+      margin-left: 20px;
+      width: 35%;
+      text-align: left;
 
-    &-link {
-      text-decoration: none;
+      &-item {
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+
+      &-link {
+        text-decoration: none;
+      }
     }
   }
 

@@ -1,15 +1,16 @@
+import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
+import {initializeFavorites} from "../../app/redux/slices/favoritesSlice";
+import {initializeCart} from "../../app/redux/slices/cartSlice";
+import logo_main from "../../assets/logo_main.svg";
+import WrapperSection from "../WrapperSection/WrapperSection";
 import BurgerMenu from "./BurgerMenu/BurgerMenu";
 import MainNavigation from "./MainNavigation/MainNavigation";
 import SearchBlock from "./SearchBlock/SearchBlock";
-import logo_main from "../../assets/logo_main.svg";
-import WrapperSection from "../WrapperSection/WrapperSection";
-import {useEffect, useState} from "react";
-import {initializeFavorites} from "../../app/redux/slices/favoritesSlice";
-import {initializeCart} from "../../app/redux/slices/cartSlice";
-import './Header.scss';
 import CartPopUp from "./CartPopUp";
+import './Header.scss';
+
 
 
 function Header() {
