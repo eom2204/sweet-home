@@ -1,10 +1,10 @@
 @import "../../../styles/variables";
 
-
 .search {
   position: relative;
   margin-left: 10px;
   margin-right: 10px;
+  color: $color-text-white;
 
   @media screen and (max-width: $tablet-end) {
     margin: 0 0 20px;
@@ -14,25 +14,67 @@
     margin: 0 16px 20px;
   }
 
-  &__list {
+  &__field {
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-background-black;
+    padding: 20px 84px 50px;
+    position: fixed;
+    top: 120px;
+    left: 0;
+    z-index: 99;
+    width: 100vw;
 
-    &-wrapper {
-      background-color: $color-background-black;
-      padding: 20px;
-      position: absolute;
-      top: 120%;
-      left: 0;
-      z-index: 100;
-      width: 100%;
+    font-family: Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 124%;
+    letter-spacing: 1px;
+    text-align: center;
+
+    @media screen and (max-width: $large-screen) {
+      padding-left: 30px;
+      padding-right: 30px;
     }
 
-    &-item {
-      margin-bottom: 5px;
-      cursor: pointer;
+    @media screen and (max-width: $mobile-end) {
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
-    &-link {
-      text-decoration: none;
+
+    &__cards {
+      display: flex;
+      justify-content: space-around;
+      width: 65%;
+      max-width: 520px;
+      margin-right: 20px;
+
+      &-img {
+        width: 168px;
+        height: 206px;
+        margin-right: 8px;
+      }
+
+      &-name {
+        margin-top: 8px;
+        margin-bottom: 7px;
+      }
+    }
+
+    &__list {
+      margin-left: 20px;
+      width: 35%;
+      text-align: left;
+
+      &-item {
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+
+      &-link {
+        text-decoration: none;
+      }
     }
   }
 
@@ -61,25 +103,13 @@
 
     @media screen and (max-width: $tablet-end) {
       width: 100%;
-
     }
   }
 
-  &__clear-btn {
-    align-items: center;
-    background: transparent;
+  &__close-btn {
+    background-color: transparent;
     border: none;
-    border-radius: 0 16px 16px 0;
     cursor: pointer;
-    height: 100%;
-    justify-content: center;
-    padding: 5px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 35px;
   }
 }
 
