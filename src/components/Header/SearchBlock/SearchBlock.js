@@ -4,16 +4,20 @@ import {useSelector} from "react-redux";
 import debounce from "lodash.debounce";
 import {useNavigate} from "react-router-dom";
 import './SearchBlock.scss';
+import {generateSlug} from "../../../utils/generateSlus";
 
 
 const SearchBlock = () => {
     // Access goods data from Redux store
     const {goods, status, error} = useSelector((state) => state.goods);
+
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredItems, setFilteredItems] = useState(goods);
     const [showSearchField, setShowSearchField] = useState(false);
     const navigate = useNavigate();
     const imagePath = process.env.REACT_APP_IMAGE_PATH;
+
+    console.log(goods);
 
     // Debounced filtering logic
     const debouncedFilter = debounce((query) => {
@@ -31,19 +35,14 @@ const SearchBlock = () => {
         debouncedFilter(query); // Apply debounced filtering
     };
 
-    const handleRedirect = (item) => {
-        const {category, name} = item; // these keys exist in `goods` data
-        navigate(`/${category}/${name}`);
-    };
-
     const handleSearchClose = () => {
         setShowSearchField(false);
         setSearchTerm('');
         setFilteredItems(goods); // Reset the filtered list
     };
 
-    const handleImageClick = (productId) => {
-        navigate(`/product/${productId}`);
+    const handleRedirect = (product) => {
+        navigate(`/catalogue/${generateSlug(product.category)}/${generateSlug(product.name)}`);
     };
 
 
@@ -80,7 +79,10 @@ const SearchBlock = () => {
                                         src={`${imagePath}${product.images?.[0]}`}
                                         alt={product.name}
                                         className='search__field__cards-img'
-                                        onClick={() => handleImageClick(product.id)}
+                                        onClick={() => {
+                                            handleRedirect(product);
+                                            handleSearchClose()
+                                        }}
                                     />
                                     <p className='search__field__cards-name'>{product.name}</p>
                                     <p className='search__field__cards-price'>{product.price}$</p>
