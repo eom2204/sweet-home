@@ -56,13 +56,13 @@
 
   &__icons {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     cursor: pointer;
     gap: 27px;
     -webkit-user-select: none;
     user-select: none;
-    z-index: 1;
+
 
     @media screen and (max-width: $large-screen) {
       gap: 20px;
