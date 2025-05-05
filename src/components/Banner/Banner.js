@@ -69,7 +69,7 @@ function Banner() {
 
     return (
         <Slider {...settings}>
-            {banners.map((banner, index) => (
+            {banners.slice(0, 4).map((banner, index) => (
                 <div className="banner" key={banner.id}>
                     <h3
                         className={`banner__title ${index === 3 ? 'banner__title--special' : ''}`}
