@@ -3,12 +3,19 @@
 
 .slick-track {
   display: flex;
-  //gap: 16px;
+  overflow: visible;
+    //gap: 16px;
 }
 
 .slick-slide {
   margin: 0; // Remove any default margin or padding
+  overflow: visible; // prevent clipping inside each slide
   width: calc((100% - (3 * 16px)) / 4); // 3 gaps for 4 images
+}
+
+.card-slide-wrapper {
+  margin: 0 auto;
+  padding: 10px 0 30px;
 }
 
 .custom-prev, .custom-next {
@@ -45,9 +52,9 @@
 .arrivals__button {
   background: $color-button-secondary;
   max-width: 248px;
-  margin: 44px auto 0;
+  margin: 14px auto 0;
 
   @media screen and ($tablet-end) {
-    margin-top: 20px;
+    margin-top: 5px;
   }
 }

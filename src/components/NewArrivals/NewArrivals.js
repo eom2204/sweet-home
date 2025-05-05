@@ -12,9 +12,9 @@ import WrapperSection from "../WrapperSection/WrapperSection";
 import Card from "../Card/Card";
 import {ReactComponent as LeftArrowIcon} from '../../assets/icons/slider_arrow_left.svg';
 import {ReactComponent as RightArrowIcon} from '../../assets/icons/slider_arrow_right.svg';
-import './NewArrivals.scss';
 import Grid from "@mui/material/Grid2";
 import {useNavigate} from "react-router-dom";
+import './NewArrivals.scss';
 
 
 const NewArrivals = () => {
@@ -91,7 +91,7 @@ const NewArrivals = () => {
                 </Typography>
 
                 {isSmallScreen ?
-                    <Grid container spacing={1} justifyContent="space-between">
+                    <Grid container spacing={2} justifyContent="space-between">
                         {newArrivals.map((product, index) => (index < 4 ?
                                 (<Grid item key={product.id} sx={{width: '47%'}}>
                                     <Card product={product}/>
@@ -119,7 +119,7 @@ const NewArrivals = () => {
                         >
                             <Slider {...settings} ref={sliderRef} sx={{margin: '0 auto', pr: 0}}>
                                 {newArrivals.map((product) => (
-                                    <div style={{margin: '0 auto'}}>
+                                    <div className='card-slide-wrapper'>
                                         <Card key={product.id} product={product}></Card>
                                     </div>
                                 ))}
