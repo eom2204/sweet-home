@@ -9,8 +9,8 @@ import {Container} from "@mui/system";
 import CustomPagination from "../CustomPagination";
 import FavoriteGoods from "../FavoriteGoods/FavoriteGoods";
 import WrapperSection from "../WrapperSection/WrapperSection";
-
 import './Bestsellers.scss';
+import Card from "../Card/Card";
 
 
 function Bestsellers() {
@@ -65,7 +65,7 @@ function Bestsellers() {
             <WrapperSection>
                 <Box sx={{
                     display: 'flex',
-                    gap: '55px',
+                    gap: {md: '10px', lg: '55px'},
                     alignItems: "stretch",
                 }}>
                     {/* Left: Category Image */}
@@ -83,6 +83,7 @@ function Bestsellers() {
                              style={{width: '100%', objectFit: "cover", height: '100%', maxWidth: '523px', maxHeight: '462px'}}
                         />
                     </Box>
+
 
                     {/* Right: Product Carousel */}
                     <Box sx={{textAlign: 'center', width: {xs: "100%", sm: "100%", md: "60%"}, marginY: '0'}}>
@@ -110,26 +111,7 @@ function Bestsellers() {
                                         marginBottom: '8px',
                                         position: 'relative'
                                     }}>
-                                        <img src={`${imagePath}${product.images?.[0]}`}
-                                             alt={product.name}
-                                             style={{
-                                                 height: '100%',
-                                                 width: '100%',
-                                                 cursor: 'pointer',
-                                                 objectFit: 'cover',
-                                             }}
-                                             onClick={() => handleProductClick(product.id)}/>
-
-                                        <FavoriteGoods itemId={product.id} />
-                                    </Box>
-
-                                    {/* Product Details */}
-                                    <Box marginBottom="0">
-                                        <Typography variant="h6" fontWeight="bold">{product.name}</Typography>
-                                        <Typography variant="body2">{product.group}</Typography>
-                                        <Typography variant="subtitle1">
-                                            ${product.price}
-                                        </Typography>
+                                        <Card product={product}></Card>
                                     </Box>
                                 </Grid>
                             ))}
