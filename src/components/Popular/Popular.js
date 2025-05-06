@@ -2,13 +2,14 @@ import {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchGoods} from "../../app/redux/slices/productsSlice";
+import {generateSlug} from "../../utils/generateSlus";
 import {Box, Typography, useMediaQuery} from '@mui/material';
 import Grid from "@mui/material/Grid2";
 import {Container} from "@mui/system";
 import {useTheme} from "@mui/styles";
 import CustomPagination from "../CustomPagination";
-import FavoriteGoods from "../FavoriteGoods/FavoriteGoods";
 import WrapperSection from "../WrapperSection/WrapperSection";
+import Card from "../Card/Card";
 import './Popular.scss';
 
 
@@ -40,8 +41,8 @@ function Popular() {
     // Filter for food items that are bestsellers
     const popularGoods = goods.filter(item => item.popularAnalyses);
 
-    const handleProductClick = (productId) => {
-        navigate(`/product/${productId}`);
+    const handleImageClick = (product) => {
+        navigate(`/catalogue/${generateSlug(product.category)}/${generateSlug(product.name)}`);
     };
 
     //Pagination
@@ -63,7 +64,7 @@ function Popular() {
         <Container className='popular' sx={{maxWidth: {lg: 'none'}}}>
             <WrapperSection>
                 <Box sx={{
-                    display: 'flex', gap: '55px', alignItems: "stretch"
+                    display: 'flex', gap: {md: '10px', lg: '55px'}, alignItems: "stretch"
                 }}>
                     {/* Left: Category Image */}
                     <Box
@@ -77,8 +78,11 @@ function Popular() {
                             cursor: 'pointer',
                             display: {xs: "none", sm: "none", md: "flex"}
                         }}>
-                        <img src={`${imagePath}${popularGoods?.[0]?.images?.[0]}`} alt="popular goods"
+                        <img
+                            src={`${imagePath}${popularGoods?.[0]?.images?.[0]}`}
+                             alt="popular goods"
                              style={{width: '100%', objectFit: "cover", height: '100%', maxWidth: '523px'}}
+                            onClick={() => handleImageClick(popularGoods?.[0])}
                         />
                     </Box>
 
@@ -100,32 +104,7 @@ function Popular() {
                         <Grid container spacing={2} justifyContent="space-between">
                             {paginatedItems.map((product) => (
                                 <Grid item key={product.id} sx={{width: {xs: "47%", sm: "47%", md: "31%"}}}>
-                                    <Box sx={{
-                                        maxWidth: '202px',
-                                        height: '248px',
-                                        marginBottom: '8px',
-                                        position: 'relative'
-                                    }}>
-                                        <img src={`${imagePath}${product.images?.[0]}`}
-                                             alt={product.name}
-                                             style={{
-                                                 height: '100%',
-                                                 width: '100%',
-                                                 cursor: 'pointer',
-                                                 objectFit: 'cover',
-                                             }}
-                                             onClick={() => handleProductClick(product.id)}
-                                        />
-                                        <FavoriteGoods itemId={product.id}/>
-                                    </Box>
-
-                                    <Box>
-                                        <Typography variant="h6" fontWeight="bold">{product.name}</Typography>
-                                        <Typography variant="body2">
-                                            {product.group}
-                                        </Typography>
-                                        <Typography variant="subtitle1">${product.price}</Typography>
-                                    </Box>
+                                      <Card product={product}></Card>
                                 </Grid>
                             ))}
                         </Grid>
