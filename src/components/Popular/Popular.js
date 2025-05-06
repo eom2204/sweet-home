@@ -2,16 +2,15 @@ import {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchGoods} from "../../app/redux/slices/productsSlice";
+import {generateSlug} from "../../utils/generateSlus";
 import {Box, Typography, useMediaQuery} from '@mui/material';
 import Grid from "@mui/material/Grid2";
 import {Container} from "@mui/system";
 import {useTheme} from "@mui/styles";
 import CustomPagination from "../CustomPagination";
-import FavoriteGoods from "../FavoriteGoods/FavoriteGoods";
 import WrapperSection from "../WrapperSection/WrapperSection";
 import Card from "../Card/Card";
 import './Popular.scss';
-import {generateSlug} from "../../utils/generateSlus";
 
 
 function Popular() {

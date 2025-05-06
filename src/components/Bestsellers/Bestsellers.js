@@ -2,15 +2,15 @@ import {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchGoods} from "../../app/redux/slices/productsSlice";
+import {generateSlug} from "../../utils/generateSlus";
 import {Box, Typography, useMediaQuery} from '@mui/material';
 import {useTheme} from "@mui/styles";
 import Grid from '@mui/material/Grid2';
 import {Container} from "@mui/system";
 import CustomPagination from "../CustomPagination";
-import FavoriteGoods from "../FavoriteGoods/FavoriteGoods";
 import WrapperSection from "../WrapperSection/WrapperSection";
-import './Bestsellers.scss';
 import Card from "../Card/Card";
+import './Bestsellers.scss';
 
 
 function Bestsellers() {
@@ -42,8 +42,8 @@ function Bestsellers() {
     // Filter for food items that are bestsellers
     const bestsellers = goods.filter(item => item.bestsellers);
 
-    const handleProductClick = (productId) => {
-        navigate(`/product/${productId}`);
+    const handleImageClick = (product) => {
+        navigate(`/catalogue/${generateSlug(product.category)}/${generateSlug(product.name)}`);
     };
 
     //Pagination
@@ -79,8 +79,11 @@ function Bestsellers() {
                             cursor: 'pointer',
                             display: {xs: "none", sm: "none", md: "flex"}
                         }}>
-                        <img src={`${imagePath}${bestsellers?.[0]?.images?.[0]}`} alt="bestsellers"
-                             style={{width: '100%', objectFit: "cover", height: '100%', maxWidth: '523px', maxHeight: '462px'}}
+                        <img
+                            src={`${imagePath}${bestsellers?.[0]?.images?.[0]}`}
+                            alt="bestsellers"
+                            style={{width: '100%', objectFit: "cover", height: '100%', maxWidth: '523px', maxHeight: '462px'}}
+                            onClick={() => handleImageClick(bestsellers?.[0])}
                         />
                     </Box>
 
