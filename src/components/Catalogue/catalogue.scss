@@ -3,7 +3,7 @@
 .container {
   margin: 24px 87px 128px 80px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .aside-list {
@@ -22,9 +22,12 @@
 }
 
 .main-section {
-  margin-top: 60px;
   margin-left: 111px;
   width: 100%;
+}
+
+.mainCatalogueSection {
+  display: flex;
 }
 
 .select-section {
