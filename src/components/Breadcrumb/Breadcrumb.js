@@ -10,23 +10,19 @@ const Breadcrumb = () => {
   const categories = useSelector((state) => state.categories.categories);
   const pathnames = location.pathname.split("/").filter(Boolean);
   const product = productSlug
-    ? goods.find((item) => generateSlug(item.name) === productSlug)
+    ? goods.find((item) => item.name && generateSlug(item.name) === productSlug)
     : null;
 
-  // Создаем маппинг slug -> name для категорий
   const slugToCategoryName = categories.reduce((map, cat) => {
     if (cat.name && typeof cat.name === "string") {
-      const slug = cat.name
-        .toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, "")
-        .replace(/\s+/g, "-")
-        .replace(/-+/g, "-");
-      map[slug] = cat.name;
+      const slug = generateSlug(cat.name);
+      if (slug) {
+        map[slug] = cat.name;
+      }
     }
     return map;
   }, {});
 
-  // Форматирование текста
   const formatText = (text) => {
     try {
       const decoded = decodeURIComponent(text);
@@ -42,60 +38,51 @@ const Breadcrumb = () => {
     }
   };
 
-  // Определяем сегменты
-  const isProductPage = !!productSlug && product;
   const breadcrumbSegments = [];
 
-  if (pathnames[0] === "catalogue") {
-    breadcrumbSegments.push({ value: "catalogue", to: "/catalogue" });
-  }
-
-  if (isProductPage && pathnames[1]) {
-    const categorySlug = pathnames[1];
-    if (slugToCategoryName[categorySlug]) {
-      breadcrumbSegments.push({
-        value: categorySlug,
-        to: `/catalogue/${categorySlug}`,
-      });
-    }
+  if (pathnames.length >= 1 && pathnames[0] === "catalogue") {
     breadcrumbSegments.push({
-      value: product.name,
-      to: location.pathname,
-      isLast: true,
+      text: "Catalogue",
+      to: "/catalogue",
+      isLast: pathnames.length === 1,
     });
-  }
+    if (pathnames.length >= 2) {
+      const categorySlugFromPath = pathnames[1];
 
-  // Отладка
-  console.log("Breadcrumb - Pathnames:", pathnames);
-  console.log("Breadcrumb - isProductPage:", isProductPage);
-  console.log("Breadcrumb - slugToCategoryName:", slugToCategoryName);
-  console.log("Breadcrumb - productSlug:", productSlug);
-  console.log("Breadcrumb - Product:", product);
-  console.log("Breadcrumb - BreadcrumbSegments:", breadcrumbSegments);
+      const categoryName =
+        slugToCategoryName[categorySlugFromPath] ||
+        formatText(categorySlugFromPath);
+
+      breadcrumbSegments.push({
+        text: categoryName,
+        to: `/catalogue/${categorySlugFromPath}`,
+        isLast: pathnames.length === 2 && !product,
+      });
+
+      if (pathnames.length >= 3 && product) {
+        breadcrumbSegments.push({
+          text: product.name,
+          to: location.pathname,
+          isLast: true,
+        });
+      }
+    }
+  }
 
   return (
-    <nav>
+    <nav aria-label="breadcrumb">
       <ol className="breadcrumb">
         <li>
           <Link to="/">Home</Link>
           {breadcrumbSegments.length > 0 && " > "}
         </li>
-        {breadcrumbSegments.map(({ value, to, isLast }, index) => {
-          const displayText =
-            slugToCategoryName[value] ||
-            (isLast ? formatText(value) : formatText(value));
 
-          return (
-            <li key={`${to}-${index}`}>
-              {isLast ? (
-                <span>{displayText}</span>
-              ) : (
-                <Link to={to}>{displayText}</Link>
-              )}
-              {index + 1 < breadcrumbSegments.length && " > "}
-            </li>
-          );
-        })}
+        {breadcrumbSegments.map(({ text, to, isLast }, index) => (
+          <li key={`${to}-${index}`}>
+            {isLast ? <span>{text}</span> : <Link to={to}>{text}</Link>}
+            {index < breadcrumbSegments.length - 1 && " > "}
+          </li>
+        ))}
       </ol>
     </nav>
   );

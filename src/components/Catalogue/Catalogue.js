@@ -171,77 +171,79 @@ function Catalogue() {
 
   return (
     <section className="container">
-      <aside className="aside-list">
-        <Breadcrumb />
-        <Categories
-          displayMode="list"
-          setSelectedCategory={setSelectedCategory}
-          setSelectedGroup={setSelectedGroup}
-          selectedCategory={selectedCategory}
-        />
-      </aside>
-      <section className="main-section">
-        <FormControl variant="standard" sx={{ m: 1, minWidth: 100 }}>
-          <InputLabel id="price-select-label">Price</InputLabel>
-          <Select
-            labelId="price-select-label"
-            value={priceValue}
-            onChange={handlePriceValueChange}
-            sx={{
-              "&::before": {
-                borderBottom: "none",
-              },
-              "&:hover:not(.Mui-disabled):before": {
-                borderBottom: "none",
-              },
-              "&::after": {
-                borderBottom: "none",
-              },
-            }}
-          >
-            <MenuItem value={"higest"}>Highest</MenuItem>
-            <MenuItem value={"lowest"}>Lowest</MenuItem>
-          </Select>
-        </FormControl>
-        <FormControl variant="standard" sx={{ m: 1, minWidth: 100 }}>
-          <InputLabel id="adding-select-label">Addings</InputLabel>
-          <Select
-            labelId="adding-select-label"
-            value={addingValue}
-            onChange={handleAddingValueChange}
-            sx={{
-              "&::before": {
-                borderBottom: "none",
-              },
-              "&:hover:not(.Mui-disabled):before": {
-                borderBottom: "none",
-              },
-              "&::after": {
-                borderBottom: "none",
-              },
-            }}
-          >
-            <MenuItem value={"newest"}>Newest</MenuItem>
-            <MenuItem value={"oldest"}>Oldest</MenuItem>
-          </Select>
-        </FormControl>
+      <Breadcrumb />
+      <div className="mainCatalogueSection">
+        <aside className="aside-list">
+          <Categories
+            displayMode="list"
+            setSelectedCategory={setSelectedCategory}
+            setSelectedGroup={setSelectedGroup}
+            selectedCategory={selectedCategory}
+          />
+        </aside>
+        <section className="main-section">
+          <FormControl variant="standard" sx={{ m: 1, minWidth: 100 }}>
+            <InputLabel id="price-select-label">Price</InputLabel>
+            <Select
+              labelId="price-select-label"
+              value={priceValue}
+              onChange={handlePriceValueChange}
+              sx={{
+                "&::before": {
+                  borderBottom: "none",
+                },
+                "&:hover:not(.Mui-disabled):before": {
+                  borderBottom: "none",
+                },
+                "&::after": {
+                  borderBottom: "none",
+                },
+              }}
+            >
+              <MenuItem value={"higest"}>Highest</MenuItem>
+              <MenuItem value={"lowest"}>Lowest</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl variant="standard" sx={{ m: 1, minWidth: 100 }}>
+            <InputLabel id="adding-select-label">Addings</InputLabel>
+            <Select
+              labelId="adding-select-label"
+              value={addingValue}
+              onChange={handleAddingValueChange}
+              sx={{
+                "&::before": {
+                  borderBottom: "none",
+                },
+                "&:hover:not(.Mui-disabled):before": {
+                  borderBottom: "none",
+                },
+                "&::after": {
+                  borderBottom: "none",
+                },
+              }}
+            >
+              <MenuItem value={"newest"}>Newest</MenuItem>
+              <MenuItem value={"oldest"}>Oldest</MenuItem>
+            </Select>
+          </FormControl>
 
-        <div className="cards-section">
-          {currentItems.map((product) => (
-            <Card key={product.id} product={product} />
-          ))}
-        </div>
+          <div className="cards-section">
+            {currentItems.map((product) => (
+              <Card key={product.id} product={product} />
+            ))}
+          </div>
 
-        <section className="pagination-section">
-          {totalPages > 1 && (
-            <CustomPagination
-              count={totalPages}
-              page={currentPage}
-              onChange={handlePageChange}
-            />
-          )}
+          <section className="pagination-section">
+            {totalPages > 1 && (
+              <CustomPagination
+                count={totalPages}
+                page={currentPage}
+                onChange={handlePageChange}
+              />
+            )}
+          </section>
         </section>
-      </section>
+      </div>
     </section>
   );
 }
