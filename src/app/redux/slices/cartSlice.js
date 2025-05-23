@@ -5,6 +5,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { getToken } from "../../../services/authService";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const initialState = {
   cartCount: 0,
   cartItems: [], // Array to store IDs or items added to favorites
@@ -28,7 +30,7 @@ const cartSlice = createSlice({
       state.cartItems = state.cartItems.filter((id) => id !== itemId);
       state.cartCount = Math.max(state.cartCount - 1, 0);
     },
-    // Replace favorites (used after successful sync with backend)
+    // Replace selected goods (used after successful sync with backend)
     setCart: (state, action) => {
       state.cartItems = action.payload;
       state.cartCount = action.payload.length;
@@ -44,7 +46,7 @@ const cartSlice = createSlice({
 export const { addToCart, removeFromCart, setCart, setInitialized } =
   cartSlice.actions;
 
-// Thunk to initialize favorites after user login
+// Thunk to initialize cart's goods after user login
 export const initializeCart = () => async (dispatch, getState) => {
   try {
     const userToken = getToken();
@@ -53,7 +55,7 @@ export const initializeCart = () => async (dispatch, getState) => {
     }
 
     // Fetch user info and basket data
-    const response = await axios.get("/api/user/info", {
+    const response = await axios.get(`${API_URL}/api/user/info`, {
       headers: { Authorization: `Bearer ${userToken}` },
     });
 
@@ -83,7 +85,7 @@ export const syncCartWithBackend = () => async (dispatch, getState) => {
     const updatedCart = state.cart.cartItems; // Get latest Redux state
 
     // Fetch user id
-    const basketResponse = await axios.get("/api/user/info", {
+    const basketResponse = await axios.get(`${API_URL}/api/user/info`, {
       headers: {
         Authorization: `Bearer ${userToken}`, // Include token in headers
       },
@@ -97,9 +99,9 @@ export const syncCartWithBackend = () => async (dispatch, getState) => {
     }
 
     // Send updated favorites to BE
-    // const response = await axios.post('/api/basket/add-selected-goods',
-    //     {id, selectedGoods: updatedCart},
-    // );
+    const response = await axios.post(`${API_URL}/api/basket/add-selected-goods`,
+        {id, selectedGoods: updatedCart},
+    );
   } catch (error) {
     console.error("Error syncing goodsIds in Cart with backend:", error);
   }
