@@ -2,7 +2,7 @@ import Banner from "../components/Banner/Banner";
 import Brands from "../components/Brands/Brands";
 import Bestsellers from "../components/Bestsellers/Bestsellers";
 import NewArrivals from "../components/NewArrivals/NewArrivals";
-import AboutUs from "../components/AboutUs/AboutUs";
+import AboutUsImages from "../components/AboutUsImages/AboutUsImages";
 import Popular from "../components/Popular/Popular";
 import CategoriesHome from "../components/CategoriesHome/CategoriesHome";
 
@@ -25,7 +25,7 @@ function HomePage() {
             {/*<ContentWrapper>*/}
             <CategoriesHome/>
             <NewArrivals/>
-            <AboutUs/>
+            <AboutUsImages/>
             <Popular/>
             <Brands/>
             <Bestsellers/>

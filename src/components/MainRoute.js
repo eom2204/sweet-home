@@ -21,7 +21,7 @@ export const childrenRoutes = [
   { path: "/", element: <HomePage /> },
   { path: "/catalogue/:categorySlug", element: <CataloguePage /> },
   { path: "/catalogue", element: <CataloguePage /> },
-  { path: "/aboutUs", element: <AboutUsPage /> },
+  { path: "/about-us", element: <AboutUsPage /> },
   { path: "/delivery", element: <DeliveryPage /> },
   { path: "/login", element: <LoginPage /> },
   { path: "/catalogue/:categorySlug/:productSlug", element: <ProductPage /> },

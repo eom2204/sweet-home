@@ -1,50 +1,81 @@
+import * as React from 'react';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import aboutUsImgLarge from '../../assets/aboutUs_img_large.png';
 import './AboutUs.scss';
 
-import qualityGoods_img from '../../assets/ok_img.png';
-import fastDelivery_img from '../../assets/fastDelivery_img.png';
-import currentOffers_img from '../../assets/currentOffers_img.png';
-import trustedPartner_img from '../../assets/trustedPartner_img.png';
-import {Link} from "react-router-dom";
-import WrapperSection from "../WrapperSection/WrapperSection";
 
-
-function AboutUs() {
-
+function AboutUs(props) {
     return (
-        <section className="about">
-            <WrapperSection>
-                <h2 className="about__title">About us</h2>
-                <div className="">
-                    <ul className="about-container">
-                        <li className="about-container__item">
-                            <a href="" className="about-container__link">
-                                <img src={qualityGoods_img} alt="" className="about-container__img"/>
-                                <p className="about-container__title">Quality goods</p>
-                            </a>
-                        </li>
-                        <li className="about-container__item">
-                            <Link to="/delivery" className="about-container__link">
-                                <img src={fastDelivery_img} alt="" className="about-container__img"/>
-                                <p className="about-container__title">Fast delivery</p>
-                            </Link>
-                        </li>
-                        <li className="about-container__item">
-                            <a href="" className="about-container__link">
-                                <img src={currentOffers_img} alt="" className="about-container__img"/>
-                                <p className="about-container__title">Current offers</p>
-                            </a>
-                        </li>
-                        <li className="about-container__item">
-                            <a href="" className="about-container__link">
-                                <img src={trustedPartner_img} alt="" className="about-container__img"/>
-                                <p className="about-container__title">Trusted partners</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </WrapperSection>
-        </section>
-    );
+        <>
+            <Typography component="h2" variant="h2">About us</Typography>
+            <img src={aboutUsImgLarge} alt="About Us" className='about_img'/>
+            <div className='about_accordion'>
+                <Accordion className='about_accordion_head'>
+                    <AccordionSummary
+                        expandIcon={<ArrowDownwardIcon/>}
+                        aria-controls="panel1-content"
+                        id="panel1-header"
+                    >
+                        <Typography component="h3" variant="h3">The widest range of beauty products
+                        </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            More than 4,500 brands and 249,000 products — our team knows what is relevant today and the
+                            appearance of which brands will cause a stir among real connoisseurs of cosmetics and
+                            perfumes. World bestsellers and novelties, exclusive premieres, rare fragrances, brands from
+                            different parts of the planet — Sweet Home's range is constantly expanding, providing
+                            opportunities for experimentation and making the boldest ideas a reality.
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion className='about_accordion_head'>
+                    <AccordionSummary
+                        expandIcon={<ArrowDownwardIcon/>}
+                        aria-controls="panel1-content"
+                        id="panel1-header"
+                    >
+                        <Typography component="h3" variant="h3">Official partnership with top brands</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Official partnership with top brands Sweet Home is authorized and works under direct
+                            contracts with the largest luxe brands: YSL, Lancome, Biotherm, Armani, Prada, Valentino,
+                            Estee Lauder, Clinique... We are proud to cooperate with official suppliers and offer only
+                            original products, unique collections and additional benefits from brands.
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion className='about_accordion_head'>
+                    <AccordionSummary
+                        expandIcon={<ArrowDownwardIcon/>}
+                        aria-controls="panel1-content"
+                        id="panel1-header"
+                    >
+                        <Typography component="h3" variant="h3">Shopping with comfort</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            Shopping with comfort Have you noticed that often the products you need are located on the
+                            shopping card in the most inconvenient way? Your favorite fragrance is in one store, pillows
+                            are in a separate chain of stores, children's goods are exclusively in children's stores. We
+                            believe that tiring marathons to replenish stocks and long searches for good deals should
+                            put an end to it! Sweet Home has collected in its assortment all categories, home goods from
+                            the most remote corners of the planet and in any variations — from mass market to luxury. A
+                            modern system of price control, monitoring of current novelties and mega-convenient delivery
+                            will allow you to enjoy shopping, saving time for more important things. Over the years of
+                            its existence, Sweet Home has become synonymous with comfortable shopping, we do not stop
+                            and improve our service every day! Join Sweet Home and create a cozy story with us!
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+            </div>
+        </>
+    )
 }
 
 export default AboutUs;

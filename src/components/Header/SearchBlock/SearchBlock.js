@@ -17,8 +17,6 @@ const SearchBlock = () => {
     const navigate = useNavigate();
     const imagePath = process.env.REACT_APP_IMAGE_PATH;
 
-    console.log(goods);
-
     // Debounced filtering logic
     const debouncedFilter = debounce((query) => {
         const filtered = goods.filter(item =>

@@ -1,7 +1,7 @@
 import { Link, useLocation, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import "./Breadcrumb.scss";
 import { generateSlug } from "../../utils/generateSlus.js";
+import "./Breadcrumb.scss";
 
 const Breadcrumb = () => {
   const location = useLocation();
@@ -46,6 +46,7 @@ const Breadcrumb = () => {
       to: "/catalogue",
       isLast: pathnames.length === 1,
     });
+
     if (pathnames.length >= 2) {
       const categorySlugFromPath = pathnames[1];
 
@@ -67,6 +68,14 @@ const Breadcrumb = () => {
         });
       }
     }
+  } else {
+    pathnames.forEach((segment, index) => {
+      breadcrumbSegments.push({
+        text: formatText(segment),
+        to: '/' + pathnames.slice(0, index + 1).join('/'),
+        isLast: index === pathnames.length - 1,
+      });
+    });
   }
 
   return (
