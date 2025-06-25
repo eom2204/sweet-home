@@ -1,10 +1,14 @@
+import Breadcrumb from "../components/Breadcrumb/Breadcrumb";
+import AboutUs from "../components/AboutUs/AboutUs";
+import WrapperSection from "../components/WrapperSection/WrapperSection";
 
 
 function AboutUsPage() {
     return (
-        <h1>
-            About Us
-        </h1>
+        <WrapperSection>
+            <Breadcrumb/>
+            <AboutUs/>
+        </WrapperSection>
     )
 }
 
