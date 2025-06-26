@@ -6,15 +6,23 @@
     width: 100%;
     margin-bottom: 48px;
     margin-top: 48px;
+
+    @media screen and (max-width: 600px) {
+      margin-bottom: 44px;
+      margin-top: 0;
+    }
   }
 
   &_accordion {
     max-width: 868px;
     margin: 0 auto 80px;
 
+    @media screen and (max-width: 600px) {
+      margin-bottom: 28px;
+    }
+
     &_head {
       margin-bottom: 24px;
-
     }
   }
 }

@@ -1,18 +1,25 @@
 import * as React from 'react';
+import {useMediaQuery} from "@mui/system";
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import aboutUsImgLarge from '../../assets/aboutUs_img_large.png';
+import aboutUsImgSmall from '../../assets/aboutUs_img_small.png';
 import './AboutUs.scss';
 
 
 function AboutUs(props) {
+    const isSmallScreen = useMediaQuery('(max-width:600px)');
+
     return (
         <>
             <Typography component="h2" variant="h2">About us</Typography>
-            <img src={aboutUsImgLarge} alt="About Us" className='about_img'/>
+            {!isSmallScreen && (
+                <img src={aboutUsImgLarge} alt='About Us' className='about_img'/>
+            )}
+
             <div className='about_accordion'>
                 <Accordion className='about_accordion_head'>
                     <AccordionSummary
@@ -74,6 +81,9 @@ function AboutUs(props) {
                     </AccordionDetails>
                 </Accordion>
             </div>
+            {isSmallScreen && (
+                <img src={aboutUsImgSmall} alt='About Us' className='about_img'/>
+            )}
         </>
     )
 }

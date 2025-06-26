@@ -24,22 +24,6 @@ const theme = createTheme({
         },
     },
 
-    // typography: {
-    //     fontFamily: "Inter, sans-serif",
-    //     h1: {
-    //         fontFamily: "Inter, sans-serif",
-    //     },
-    //     h2: {
-    //         fontFamily: "Inter, sans-serif",
-    //     },
-    //     h3: {
-    //         fontFamily: "Inter, sans-serif",
-    //     },
-    //     h4: {
-    //         fontFamily: "Inter, sans-serif",
-    //     },
-    // },
-
     components: {
 
         MuiAccordion: {
