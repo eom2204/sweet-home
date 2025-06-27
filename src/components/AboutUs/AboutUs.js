@@ -31,7 +31,7 @@ function AboutUs(props) {
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography>
+                        <Typography component='p' variant='body1'>
                             More than 4,500 brands and 249,000 products — our team knows what is relevant today and the
                             appearance of which brands will cause a stir among real connoisseurs of cosmetics and
                             perfumes. World bestsellers and novelties, exclusive premieres, rare fragrances, brands from
@@ -49,7 +49,7 @@ function AboutUs(props) {
                         <Typography component="h3" variant="h3">Official partnership with top brands</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography>
+                        <Typography component='p' variant='body1'>
                             Official partnership with top brands Sweet Home is authorized and works under direct
                             contracts with the largest luxe brands: YSL, Lancome, Biotherm, Armani, Prada, Valentino,
                             Estee Lauder, Clinique... We are proud to cooperate with official suppliers and offer only
@@ -66,17 +66,21 @@ function AboutUs(props) {
                         <Typography component="h3" variant="h3">Shopping with comfort</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography>
-                            Shopping with comfort Have you noticed that often the products you need are located on the
+                        <Typography component='p' variant='body1'>
+                            <p className='about_accordion_paragraph'>Have you noticed that often the products you need are located on the
                             shopping card in the most inconvenient way? Your favorite fragrance is in one store, pillows
                             are in a separate chain of stores, children's goods are exclusively in children's stores. We
                             believe that tiring marathons to replenish stocks and long searches for good deals should
-                            put an end to it! Sweet Home has collected in its assortment all categories, home goods from
+                            put an end to it!</p>
+
+                            <p className='about_accordion_paragraph'>Sweet Home has collected in its assortment all categories, home goods from
                             the most remote corners of the planet and in any variations — from mass market to luxury. A
                             modern system of price control, monitoring of current novelties and mega-convenient delivery
                             will allow you to enjoy shopping, saving time for more important things. Over the years of
                             its existence, Sweet Home has become synonymous with comfortable shopping, we do not stop
-                            and improve our service every day! Join Sweet Home and create a cozy story with us!
+                            and improve our service every day!</p>
+
+                            <p>Join Sweet Home and create a cozy story with us!</p>
                         </Typography>
                     </AccordionDetails>
                 </Accordion>

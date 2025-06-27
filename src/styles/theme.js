@@ -1,6 +1,6 @@
 // global styles for MUI components
 
-import { createTheme } from '@mui/material/styles';
+import {createTheme} from '@mui/material/styles';
 import './_variables.scss';
 
 const theme = createTheme({
@@ -12,16 +12,21 @@ const theme = createTheme({
             lineHeight: '124%',
             letterSpacing: '-2px',
             textAlign: 'center',
-            verticalAlign: 'middle',
-},
+        },
         h3: {
             fontFamily: 'Helvetica',
             fontWeight: 400,
             fontSize: '24px',
             lineHeight: '124%',
             letterSpacing: '1px',
-            verticalAlign: 'middle',
         },
+        body1: {
+            fontFamily: 'Inter',
+            fontWeight: 400,
+            fontSize: '16px',
+            lineHeight: '124%',
+            letterSpacing: '1px',
+        }
     },
 
     components: {
@@ -56,7 +61,6 @@ const theme = createTheme({
                 },
             },
         },
-
 
 
     },
