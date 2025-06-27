@@ -41,7 +41,7 @@ function BurgerMenu() {
                                 <Link className="burger-menu__list-link" to="/catalogue">Catalogue</Link>
                             </li>
                             <li className="burger-menu__list-item" onClick={toggleMenu}>
-                                <Link className="burger-menu__list-link" to="/aboutUs">About us</Link>
+                                <Link className="burger-menu__list-link" to="/about-us">About us</Link>
                             </li>
                             <li className="burger-menu__list-item" onClick={toggleMenu}>
                                 <Link className="burger-menu__list-link" to="/delivery">Delivery</Link>

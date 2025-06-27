@@ -1,9 +1,13 @@
+import WrapperSection from "../components/WrapperSection/WrapperSection";
+import Breadcrumb from "../components/Breadcrumb/Breadcrumb";
+import Delivery from "../components/Delivery/Delivery";
 
 function DeliveryPage() {
     return (
-        <h1>
-            Delivery terms
-        </h1>
+        <WrapperSection>
+            <Breadcrumb/>
+            <Delivery/>
+        </WrapperSection>
     )
 }
 
