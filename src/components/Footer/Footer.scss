@@ -6,33 +6,56 @@
   &-container {
     color: $color-text-gray;
     font-family: $font-primary;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: 1px;
+
     display: flex;
-    gap: 7.5rem;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 7rem;
     padding: 60px 0 56px;
 
     @media screen and (max-width: $large-screen) {
-      gap: 3rem;
+      gap: 2rem;
     }
 
     @media screen and (max-width: $tablet-end) {
-      gap: 20px;
       padding: 16px 0;
+      gap: 3rem;
     }
 
-    &__item-flex {
+    &__item {
       display: flex;
-      justify-content: space-between;
       gap: 7.5rem;
+      justify-content: space-around;
 
       @media screen and (max-width: $large-screen) {
         gap: 3rem;
       }
 
       @media screen and (max-width: $tablet-end) {
-        flex-direction: column;
-        align-content: space-between;
-        gap: 10px;
+        gap: 5rem;
+      }
+
+      @media screen and (max-width: $mobile-end) {
+          flex-direction: column;
+          gap: 14px;
+        }
+
+      &-flex {
+        display: flex;
+        justify-content: space-around;
+        gap: 7.5rem;
+
+        @media screen and (max-width: $large-screen) {
+          gap: 3rem;
+        }
+
+        @media screen and (max-width: $tablet-end) {
+          flex-direction: column;
+          gap: 0;
+        }
       }
     }
 
@@ -56,6 +79,7 @@
 
         @media screen and (max-width: $tablet-end) {
           display: block;
+          margin-left: 35px;
         }
       }
     }
@@ -128,6 +152,13 @@
       font-weight: 300;
       line-height: 21.78px;
       letter-spacing: 0.02em;
+
+      &-span {
+
+        @media screen and (max-width: $mobile-end) {
+          display: block;
+        }
+      }
     }
   }
 }
