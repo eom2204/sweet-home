@@ -79,13 +79,6 @@ const Product = () => {
     });
   }, [productSlug]);
 
-  // Отладка
-  console.log("Product - categorySlug:", categorySlug);
-  console.log("Product - productSlug:", productSlug);
-  console.log("Product - Goods length:", goods.length);
-  console.log("Product - Product:", product);
-  console.log("Product - Images:", product?.images);
-
   if (goodsStatus === "loading" || status === "loading") {
     return <div>Loading...</div>;
   }
@@ -129,8 +122,8 @@ const Product = () => {
   }
 
   return (
-    <section className="wrapper-section">
-      <Breadcrumb />
+    <section className="wrapper-product-section">
+      <Breadcrumb className="breadcrumb" />
 
       <article className="article-section">
         <div className="photo-section">

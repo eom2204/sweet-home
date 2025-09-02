@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.wrapper-section {
+.wrapper-product-section {
   margin-left: 84px;
   margin-right: 84px;
 
@@ -10,8 +10,7 @@
   }
 
   @media screen and (max-width: $mobile-end) {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 27px 10px 0 10px;
   }
 }
 
@@ -153,6 +152,7 @@
   line-height: 124%;
   letter-spacing: 1px;
   align-items: center;
+  gap: 8px;
 }
 
 .random-section {
@@ -205,4 +205,141 @@
   font-size: 16px;
   line-height: 124%;
   letter-spacing: 1px;
+}
+
+@media screen and (max-width: 1272px) {
+  .article-section {
+    flex-direction: column;
+    margin-top: 24px;
+  }
+
+  .card-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .low-description-section {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .random-section {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .random-section-header {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .photo-section {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .small-photo-section {
+    display: flex;
+    width: 28vw;
+  }
+
+  .small-photo-section ul {
+    width: 100%;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .main-image {
+    width: 60vw;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .breadcrumb {
+    display: none;
+  }
+
+  .photo-section {
+    display: block;
+  }
+
+  .small-photo-section {
+    display: none;
+  }
+
+  .description-header {
+    display: none;
+  }
+
+  .card-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-price-original {
+    display: none;
+  }
+
+  .card-image,
+  .image-card {
+    width: 100%;
+    max-width: 202px;
+    max-height: 248px;
+  }
+
+  .main-image {
+    max-width: 430px;
+    max-height: 540px;
+    width: 100%;
+  }
+
+  .button-price {
+    display: none;
+  }
+
+  .free-shopping {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .article-section {
+    margin-top: 12px;
+  }
+
+  .main-image {
+    max-width: 355px;
+    max-height: 540px;
+    width: 100%;
+  }
+
+  .card-image,
+  .image-card {
+    width: 100%;
+    max-width: 175px;
+    max-height: 241px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .article-section {
+    margin-top: 12px;
+  }
+
+  .main-image {
+    max-width: 320px;
+    max-height: 540px;
+    width: 100%;
+  }
+
+  .card-image,
+  .image-card {
+    width: 100%;
+    max-width: 147px;
+    max-height: 248px;
+  }
 }

@@ -60,7 +60,6 @@
     }
 
     &__logo {
-
       &--long {
         display: block;
         margin-left: -20px;
@@ -98,15 +97,13 @@
       }
 
       &-location {
-
-       @media screen and (max-width: $tablet-end) {
-         display: none;
-       }
+        @media screen and (max-width: $tablet-end) {
+          display: none;
+        }
       }
     }
 
     &__list {
-
       list-style: disc;
       list-style-position: inside;
       padding-left: 0;
@@ -140,7 +137,6 @@
     }
   }
 
-
   &__copyright {
     background-color: $color-background-copyright;
     text-align: center;
@@ -160,5 +156,13 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
   }
 }
