@@ -59,3 +59,54 @@
 .pagination-section {
   margin-top: 40px;
 }
+
+@media screen and (max-width: 375px) {
+  .card-image img {
+    width: 147px !important;
+    height: 248px;
+    object-fit: cover;
+  }
+  .cards-section {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .card-image img {
+    width: 178px !important;
+  }
+  .cards-section {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    margin: 12px 10px;
+  }
+
+  .aside-list {
+    display: none;
+  }
+
+  .catalogue-selects {
+    display: none;
+  }
+
+  .main-section {
+    margin: 0;
+  }
+
+  .cards-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-column-gap: 6px;
+    grid-row-gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .cards-section {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
